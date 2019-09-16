@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 import com.google.gson.Gson;
 import com.vdoers.Database.StateCityDBHandler;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         try {
+            //String x="";
             String json = AssetJSONFile(this, "workflowlistresponse.json");
             Gson gson = new Gson();
             JsonWorkflowListResponse jsonWorkflowListResponse = gson.fromJson(json, JsonWorkflowListResponse.class);

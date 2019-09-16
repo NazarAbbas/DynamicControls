@@ -17,6 +17,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.vdoers.dynamiccontrolslibrary.R;
+import com.vdoers.dynamiccontrolslibrary.Utils.ThemeColor;
 import com.vdoers.dynamiccontrolslibrary.mControls.adapters.SearchListviewCustomAdapter;
 
 import java.util.ArrayList;
@@ -55,6 +56,7 @@ public class mSearchListView extends AppCompatActivity implements View.OnClickLi
         tvHeader = (TextView) findViewById(R.id.tv_header);
         Button btnClear = (Button) findViewById(R.id.btn_clear);
         Button btnDone = (Button) findViewById(R.id.btn_done);
+        btnDone.setBackgroundColor(ThemeColor.themeColor);
         btnDone.setOnClickListener(this);
         final EditText editSearch = (EditText) findViewById(R.id.edit_search);
         listView = (ListView) findViewById(R.id.lst);

@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.vdoers.dynamiccontrolslibrary.R;
+import com.vdoers.dynamiccontrolslibrary.Utils.ThemeColor;
 
 
 public class mOTPReciever extends LinearLayout {
@@ -52,6 +53,7 @@ public class mOTPReciever extends LinearLayout {
         editText = (EditText) topLayout.findViewById(R.id.edit_text);
         tilTvHeading = (TextInputLayout) topLayout.findViewById(R.id.til);
         btn = (Button) topLayout.findViewById(R.id.btn_next);
+        btn.setBackgroundColor(ThemeColor.themeColor);
         tvResendOTP = (TextView) topLayout.findViewById(R.id.tv_resend_otp);
         addView(topLayout);
         tvResendOTP.setOnClickListener(new OnClickListener() {

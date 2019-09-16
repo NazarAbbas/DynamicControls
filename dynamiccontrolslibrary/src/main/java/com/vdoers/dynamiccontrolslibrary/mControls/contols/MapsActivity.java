@@ -31,6 +31,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.vdoers.dynamiccontrolslibrary.R;
+import com.vdoers.dynamiccontrolslibrary.Utils.ThemeColor;
 
 import java.util.List;
 import java.util.Locale;
@@ -57,6 +58,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         setContentView(R.layout.activity_maps);
         //getLayoutInflater().inflate(R.layout.activity_maps, frameContainer);
         btnDone = (Button) findViewById(R.id.btn_done);
+        btnDone.setBackgroundColor(ThemeColor.themeColor);
         btnDone.setOnClickListener(this);
         showProgressDialog(this, true);
         buildGoogleApiClient();

@@ -23,6 +23,7 @@ import com.vdoers.dynamiccontrolslibrary.R;
 import com.vdoers.dynamiccontrolslibrary.Utils.FileUtilsPath;
 import com.vdoers.dynamiccontrolslibrary.Utils.Permissions;
 
+import com.vdoers.dynamiccontrolslibrary.Utils.ThemeColor;
 import com.vdoers.dynamiccontrolslibrary.mControls.SignatureActivity;
 import com.vdoers.dynamiccontrolslibrary.mControls.adapters.FileAdapter;
 import com.vdoers.dynamiccontrolslibrary.mControls.models.FileSavedModel;
@@ -62,6 +63,7 @@ public class mFile extends LinearLayout implements View.OnClickListener {
         gallery = (Gallery) topLayout.findViewById(R.id.gallery);
         alignGalleryToLeft(gallery);
         button = (mCircleButton) topLayout.findViewById(R.id.btn);
+        button.setColor(ThemeColor.themeColor);
         if (field.getType().equalsIgnoreCase(Types.CAMERA)
                 || field.getType().equalsIgnoreCase(Types.CROP_CAMERA)) {
             button.setImageDrawable(context.getResources().getDrawable(R.drawable.camera_white));
@@ -125,10 +127,10 @@ public class mFile extends LinearLayout implements View.OnClickListener {
     private void showUI(JsonWorkflowList.Field field) {
         String heading = field.getLabel();
 
-        if (field.getMinLength()>0) {
+        if (field.getMinLength() > 0) {
             heading = heading + " (Min " + field.getMinLength();
         }
-        if (field.getMaxLength()>0) {
+        if (field.getMaxLength() > 0) {
             heading = heading + ", Max " + field.getMaxLength() + ")";
         }
         tvHeading.setText(heading);

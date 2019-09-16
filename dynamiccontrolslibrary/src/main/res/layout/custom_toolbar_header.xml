@@ -32,7 +32,6 @@
 
         <TextView
             android:id="@+id/tv_header"
-            style="@style/TextViewStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"

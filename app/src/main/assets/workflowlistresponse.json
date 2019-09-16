@@ -19,7 +19,7 @@
               "ReadMoreURL": "",
               "Regex": "",
               "required": "N",
-              "type": "heading"
+              "type": "cropcamera"
             },
             {
               "IsAllCaps": true,

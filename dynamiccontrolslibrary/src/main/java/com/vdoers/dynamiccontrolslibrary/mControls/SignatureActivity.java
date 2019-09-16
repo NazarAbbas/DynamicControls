@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.vdoers.dynamiccontrolslibrary.BuildConfig;
 import com.vdoers.dynamiccontrolslibrary.R;
 import com.vdoers.dynamiccontrolslibrary.Utils.Permissions;
+import com.vdoers.dynamiccontrolslibrary.Utils.ThemeColor;
 import com.williamww.silkysignature.views.SignaturePad;
 
 import java.io.ByteArrayOutputStream;
@@ -53,7 +54,9 @@ public class SignatureActivity extends Permissions implements View.OnClickListen
     private void initUI() {
         signaturePad = (SignaturePad) findViewById(R.id.signaturePad);
         btnDone = (Button) findViewById(R.id.btn_done);
+        btnDone.setBackgroundColor(ThemeColor.themeColor);
         btnClear = (Button) findViewById(R.id.btn_clear);
+        btnClear.setBackgroundColor(ThemeColor.themeColor);
         signaturePad.setOnSignedListener(new SignaturePad.OnSignedListener() {
             @Override
             public void onStartSigning() {
