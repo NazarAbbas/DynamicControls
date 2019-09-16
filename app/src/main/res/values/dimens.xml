@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="font_small">12dp</dimen>
+    <dimen name="font_medium">13dp</dimen>
+
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+
+    <!-- Per the design guidelines, navigation drawers should be between 240dp and 320dp:
+         https://developer.android.com/design/patterns/navigation-drawer.html -->
+
+    <!--general adapter dimensions-->
+
+    <dimen name="padding_five">5dp</dimen>
+
+
+    <dimen name="txt_size_20">20sp</dimen>
+    <dimen name="text_size_15">15dp</dimen>
+    <dimen name="text_size_13">13dp</dimen>
+
+    <!--home adapter dimension-->
+
+</resources>

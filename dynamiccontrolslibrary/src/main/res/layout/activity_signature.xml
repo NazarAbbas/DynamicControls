@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ll_bottom"
+        android:orientation="vertical">
+        <!--    <com.williamww.silkysignature.views.SignaturePad
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:id="@+id/signaturePad"/>-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="Signature"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:textStyle="bold" />
+
+        <com.williamww.silkysignature.views.SignaturePad xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/signaturePad"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:penColor="@android:color/black" />
+        <!--<ImageView
+            android:id="@+id/img_signature"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            />-->
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+        <!-- <Button
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/clearButton"
+             android:text="Clear"
+             android:layout_weight="1"
+             android:textColor="@color/White"
+             android:background="@color/sky_blue_light"/>-->
+        <com.vdoers.dynamiccontrolslibrary.mControls.MaterialRippleLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            app:mrl_rippleColor="@color/white"
+            app:mrl_rippleRoundedCorners="25dp">
+
+            <Button
+                android:id="@+id/btn_clear"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/dark_blue"
+                android:text="@string/clear"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </com.vdoers.dynamiccontrolslibrary.mControls.MaterialRippleLayout>
+
+        <com.vdoers.dynamiccontrolslibrary.mControls.MaterialRippleLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            app:mrl_rippleColor="@color/white"
+            app:mrl_rippleRoundedCorners="25dp">
+
+            <Button
+                android:id="@+id/btn_done"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/done"
+                android:background="@color/dark_blue"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </com.vdoers.dynamiccontrolslibrary.mControls.MaterialRippleLayout>
+        <!--    <Button
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_next"
+                android:text="Done"
+                android:layout_weight="1"
+                android:textColor="@color/White"
+                android:background="@color/sky_blue_light"/>-->
+
+
+    </LinearLayout>
+
+</RelativeLayout>
+

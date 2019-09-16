@@ -1,0 +1,74 @@
+{
+  "CaseTypeId": 13,
+  "id": "1",
+  "isCompleted": false,
+  "IsMandatory": true,
+  "name": "New Lead",
+  "subforms": [
+    {
+      "back": "True",
+      "fields": [
+        {
+          "IsAllCaps": true,
+          "label": "Name",
+          "maxLength": 0,
+          "minLength": 2,
+          "name": "Name",
+          "ReadMoreURL": "",
+          "Regex": "",
+          "required": "N",
+          "type": "text"
+        },
+
+        {
+          "IsAllCaps": false,
+          "label": "Next",
+          "maxLength": -1,
+          "minLength": -1,
+          "name": "Next",
+          "ReadMoreURL": "",
+          "Regex": "",
+          "required": "Y",
+          "type": "button"
+        }
+      ],
+      "gotoId": "2",
+      "id": "1",
+      "next": "True",
+      "title": "Other"
+    },
+    {
+      "back": "True",
+      "fields": [
+        {
+          "IsAllCaps": true,
+          "label": "VIDEO",
+          "maxLength": 0,
+          "minLength": 0,
+          "name": "video",
+          "ReadMoreURL": "",
+          "Regex": "",
+          "required": "Y",
+          "type": "cropcamera"
+        },
+        {
+          "IsAllCaps": false,
+          "label": "Submit",
+          "maxLength": -1,
+          "minLength": -1,
+          "name": "submit",
+          "ReadMoreURL": "",
+          "Regex": "",
+          "required": "Y",
+          "type": "button"
+        }
+      ],
+      "gotoId": "3",
+      "id": "2",
+      "next": "True",
+      "title": "Other"
+    }
+  ],
+  "version": "1",
+  "WorkflowId": 63
+}

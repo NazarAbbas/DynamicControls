@@ -1,0 +1,46 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="AppTheme.Base">
+
+    </style>
+
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/dark_blue</item>
+        <item name="colorPrimaryDark">@color/dark_blue</item>
+        <item name="colorAccent">@color/dark_blue</item>
+        <item name="windowActionBar">true</item>
+    </style>
+
+    <style name="TextViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:singleLine">false</item>
+        <item name="android:typeface">serif</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/font_medium</item>
+        <item name="android:textColor">@color/Black</item>
+    </style>
+
+
+    <style name="BlueActionBarTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/dark_blue</item>
+        <item name="colorPrimaryDark">@color/dark_blue</item>
+        <item name="colorAccent">@color/dark_blue</item>
+        <item name="windowActionBar">true</item>
+        <item name="android:statusBarColor">@color/dark_blue</item>
+    </style>
+
+    <style name="InputErrorStyle" parent="TextAppearance.Design.Error">
+        <item name="android:textSize">@dimen/text_size_13</item>
+
+    </style>
+
+    <style name="InputHintStyle" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">@dimen/text_size_13</item>
+        <item name="android:textColor">@color/dark_gray</item>
+    </style>
+
+
+</resources>

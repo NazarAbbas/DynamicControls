@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <!--
+                <commdel.com.chaloapp.components.CustomFontTextView
+                    android:id="@+id/tv_value"
+                    style="@style/TextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_centerVertical="true"
+                    android:text="Value"
+                    android:textColor="@color/Black"
+                    android:textSize="@dimen/font_small"
+                    android:layout_alignParentLeft="true"/>-->
+
+        <CheckBox
+            android:id="@+id/chk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="10dp"
+            android:text="hello"
+            android:textSize="@dimen/font_small" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
+

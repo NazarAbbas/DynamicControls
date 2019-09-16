@@ -1,0 +1,70 @@
+{
+  "UserID": 424,
+  "ResponseCode": 200,
+  "ResponseMessage": "Success",
+  "Count": 9,
+  "StateCityList": [{
+    "CityId": 701,
+    "CityName": "North West Delhi",
+    "StateId": 7,
+    "StateName": "DELHI",
+    "ModifiedDate": "02/16/2018 20:54:57",
+    "Action": "A"
+  }, {
+    "CityId": 702,
+    "CityName": "North Delhi",
+    "StateId": 7,
+    "StateName": "DELHI",
+    "ModifiedDate": "02/16/2018 20:54:57",
+    "Action": "A"
+  }, {
+    "CityId": 703,
+    "CityName": "North East Delhi",
+    "StateId": 7,
+    "StateName": "DELHI",
+    "ModifiedDate": "02/16/2018 20:54:57",
+    "Action": "A"
+  }, {
+    "CityId": 704,
+    "CityName": "East Delhi",
+    "StateId": 7,
+    "StateName": "DELHI",
+    "ModifiedDate": "02/16/2018 20:54:57",
+    "Action": "A"
+  }, {
+    "CityId": 705,
+    "CityName": "New Delhi",
+    "StateId": 7,
+    "StateName": "DELHI",
+    "ModifiedDate": "02/16/2018 20:54:57",
+    "Action": "A"
+  }, {
+    "CityId": 706,
+    "CityName": "Central Delhi",
+    "StateId": 7,
+    "StateName": "DELHI",
+    "ModifiedDate": "02/16/2018 20:54:57",
+    "Action": "A"
+  }, {
+    "CityId": 707,
+    "CityName": "West Delhi",
+    "StateId": 7,
+    "StateName": "DELHI",
+    "ModifiedDate": "02/16/2018 20:54:57",
+    "Action": "A"
+  }, {
+    "CityId": 708,
+    "CityName": "South West Delhi",
+    "StateId": 7,
+    "StateName": "DELHI",
+    "ModifiedDate": "02/16/2018 20:54:57",
+    "Action": "A"
+  }, {
+    "CityId": 709,
+    "CityName": "South Delhi",
+    "StateId": 7,
+    "StateName": "DELHI",
+    "ModifiedDate": "02/16/2018 20:54:57",
+    "Action": "A"
+  }]
+}

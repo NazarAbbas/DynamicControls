@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--App Colors-->
+    <color name="dark_blue">#005da5</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">@android:color/transparent</color>
+    <color name="Black">#000000</color>
+    <color name="dark_gray">#888888</color>
+    <color name="rfab__color_text_label_item">#777777</color>
+    <color name="rfab__color_background_normal">#ffffff</color>
+    <color name="rfab__color_background_pressed">#dddddd</color>
+    <color name="rfab__color_frame">#ffffff</color>
+    <color name="rfab__color_shadow">#c6c6c6</color>
+    <color name="warm_grey">#8c7d70</color>
+
+
+
+</resources>

@@ -1,0 +1,3050 @@
+{
+  "JsonWorkflowList": [
+    {
+      "CaseTypeId": 13,
+      "id": "15",
+      "isCompleted": false,
+      "IsMandatory": true,
+      "name": "New Lead",
+      "subforms": [
+        {
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": true,
+              "label": "Tenant Name",
+              "maxLength": 20,
+              "minLength": 0,
+              "name": "TenantName",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "text"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Tenant Address",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "AddressLine1",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "text"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Tenant Address(Registered)",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "AddressLine2",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "text"
+            },
+            {
+              "IsAllCaps": true,
+              "label": "Region",
+              "maxLength": 0,
+              "minLength": 0,
+              "name": "Region",
+              "optionList": [
+                {
+                  "gotoId": "0",
+                  "id": "167",
+                  "isChecked": false,
+                  "value": "Medan"
+                }
+              ],
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "dropdown"
+            },
+            {
+              "IsAllCaps": true,
+              "label": "City",
+              "maxLength": 0,
+              "minLength": 0,
+              "name": "City",
+              "optionList": null,
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "city"
+            },
+            {
+              "IsAllCaps": true,
+              "label": "Company Name",
+              "maxLength": 10,
+              "minLength": 0,
+              "name": "CompanyName",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "text"
+            },
+            {
+              "IsAllCaps": true,
+              "label": "Mobile Number",
+              "maxLength": 50,
+              "minLength": 0,
+              "name": "MobileNumber",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "number"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Category",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "Category",
+              "optionList": [
+                {
+                  "gotoId": "2",
+                  "id": "165",
+                  "isChecked": false,
+                  "value": "Independent"
+                },
+                {
+                  "gotoId": "4",
+                  "id": "166",
+                  "isChecked": false,
+                  "value": "Mall"
+                }
+              ],
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "choice"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Next",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "leadnextscreen",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "button"
+            }
+          ],
+          "gotoId": "2",
+          "id": "1",
+          "next": "True",
+          "title": "Basic Details"
+        },
+        {
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": false,
+              "label": "Indepenedent",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "Indepenedent",
+              "optionList": [
+                {
+                  "gotoId": "0",
+                  "id": "168",
+                  "isChecked": false,
+                  "value": "Pasar Ikan (Area Ruko Textile)"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "169",
+                  "isChecked": false,
+                  "value": "Kesawan Square"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "170",
+                  "isChecked": false,
+                  "value": "Ring Road Center"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "171",
+                  "isChecked": false,
+                  "value": "Komplek Ruko Tasbi "
+                },
+                {
+                  "gotoId": "0",
+                  "id": "172",
+                  "isChecked": false,
+                  "value": "Jl. Multatuli"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "173",
+                  "isChecked": false,
+                  "value": "Jl. Gagak Hitam"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "174",
+                  "isChecked": false,
+                  "value": "Jl. S.Parman"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "175",
+                  "isChecked": false,
+                  "value": "Jl. Gatot Subroto"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "176",
+                  "isChecked": false,
+                  "value": "Jl. Mojopahit"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "177",
+                  "isChecked": false,
+                  "value": "Jl. Iskandar Muda"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "178",
+                  "isChecked": false,
+                  "value": "Jl. Brigjen Katamso"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "179",
+                  "isChecked": false,
+                  "value": "Jl. Palangkaraya"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "180",
+                  "isChecked": false,
+                  "value": "Jl. Jl. Zainul Arifin"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "181",
+                  "isChecked": false,
+                  "value": "Jl. Surabaya"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "182",
+                  "isChecked": false,
+                  "value": "Jl. Halat"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "183",
+                  "isChecked": false,
+                  "value": "Jl. Dr.Mansyur"
+                }
+              ],
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "dropdown"
+            },
+            {
+              "IsAllCaps": true,
+              "label": "Continue",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "Next",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "button"
+            }
+          ],
+          "gotoId": "5",
+          "id": "2",
+          "next": "True",
+          "title": "Independent"
+        },
+        {
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": false,
+              "label": "Mall",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "Mall",
+              "optionList": [
+                {
+                  "gotoId": "0",
+                  "id": "283",
+                  "isChecked": false,
+                  "value": "Thamrin Plaza"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "284",
+                  "isChecked": false,
+                  "value": "Centre Point"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "285",
+                  "isChecked": false,
+                  "value": "Sun Plaza"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "286",
+                  "isChecked": false,
+                  "value": "Plaza Medan Fair"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "287",
+                  "isChecked": false,
+                  "value": "Lippo Plaza"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "288",
+                  "isChecked": false,
+                  "value": "Plaza Mellenium"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "289",
+                  "isChecked": false,
+                  "value": "Cambridge City Square"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "290",
+                  "isChecked": false,
+                  "value": "Grand Palladium"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "291",
+                  "isChecked": false,
+                  "value": "Manhattan Times Square"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "292",
+                  "isChecked": false,
+                  "value": "Focal Point"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "293",
+                  "isChecked": false,
+                  "value": "Ring Road Citywalk"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "294",
+                  "isChecked": false,
+                  "value": "Hermes Palace"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "295",
+                  "isChecked": false,
+                  "value": "Binjai Super Mall (Binjai Kota)"
+                }
+              ],
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "dropdown"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Next",
+              "maxLength": -1,
+              "minLength": 0,
+              "name": "leadnextscreen",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "button"
+            }
+          ],
+          "gotoId": "5",
+          "id": "4",
+          "next": "True",
+          "title": "Mall"
+        },
+        {
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": true,
+              "label": "ZipCode",
+              "maxLength": 6,
+              "minLength": 6,
+              "name": "ZipCode",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "mapaddress"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Leader Name",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "LeaderName",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "text"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Visited Date",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "VisitedDate",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "date"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Timestamp",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "Timestamp",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "time"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Tenant Have BCA EDC",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "TenantHaveBCAEDC",
+              "optionList": [
+                {
+                  "gotoId": "6",
+                  "id": "139",
+                  "isChecked": false,
+                  "value": "Yes"
+                },
+                {
+                  "gotoId": "6",
+                  "id": "140",
+                  "isChecked": false,
+                  "value": "No"
+                }
+              ],
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "choice"
+            },
+            {
+              "IsAllCaps": true,
+              "label": "Next",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "leadnextscreen",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "button"
+            }
+          ],
+          "gotoId": "6",
+          "id": "5",
+          "next": "True",
+          "title": "Other Details"
+        },
+        {
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": false,
+              "label": "Test EDC",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "testEdc",
+              "optionList": [
+                {
+                  "gotoId": "0",
+                  "id": "250",
+                  "isChecked": false,
+                  "value": "Amex Ok"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "251",
+                  "isChecked": false,
+                  "value": "Not Supported"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "252",
+                  "isChecked": false,
+                  "value": "Removed Card"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "253",
+                  "isChecked": false,
+                  "value": "Invalid Bin"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "254",
+                  "isChecked": false,
+                  "value": "Declined"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "255",
+                  "isChecked": false,
+                  "value": "Alert"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "256",
+                  "isChecked": false,
+                  "value": "EDC Mati"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "257",
+                  "isChecked": false,
+                  "value": "5 Times attempt"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "258",
+                  "isChecked": false,
+                  "value": "No Permit"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "259",
+                  "isChecked": false,
+                  "value": "No Terminal"
+                }
+              ],
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "dropdown"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Cashier Awareness ",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "cashierawareness",
+              "optionList": [
+                {
+                  "gotoId": "0",
+                  "id": "260",
+                  "isChecked": false,
+                  "value": "Aware"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "261",
+                  "isChecked": false,
+                  "value": "Not Aware"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "262",
+                  "isChecked": false,
+                  "value": "N/A"
+                }
+              ],
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "dropdown"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Is Merchant have POSM",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "ismerchanthaveposm",
+              "optionList": [
+                {
+                  "gotoId": "0",
+                  "id": "263",
+                  "isChecked": false,
+                  "value": "Yes"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "264",
+                  "isChecked": false,
+                  "value": "No"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "265",
+                  "isChecked": false,
+                  "value": "N/A"
+                }
+              ],
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "dropdown"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Willing to be Placed POSM",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "willingtobeplacedposm",
+              "optionList": [
+                {
+                  "gotoId": "0",
+                  "id": "277",
+                  "isChecked": false,
+                  "value": "Have POSM Displayed"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "278",
+                  "isChecked": false,
+                  "value": "Allowed to Placed"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "279",
+                  "isChecked": false,
+                  "value": "Not Allowed to Placed"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "280",
+                  "isChecked": false,
+                  "value": "N/A"
+                }
+              ],
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "dropdown"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Kind POSM to be Placed",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "kindposmtobeplaced",
+              "optionList": [
+                {
+                  "gotoId": "0",
+                  "id": "266",
+                  "isChecked": false,
+                  "value": "Tent Card Besar"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "267",
+                  "isChecked": false,
+                  "value": "Tent Card Kecil"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "268",
+                  "isChecked": false,
+                  "value": "Sticker"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "269",
+                  "isChecked": false,
+                  "value": "Flyer"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "270",
+                  "isChecked": false,
+                  "value": "Pen Stand"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "271",
+                  "isChecked": false,
+                  "value": "Business Card"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "272",
+                  "isChecked": false,
+                  "value": "N/A"
+                }
+              ],
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "multichoice"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "MID",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "midnumberselection",
+              "optionList": [
+                {
+                  "gotoId": "7",
+                  "id": "273",
+                  "isChecked": false,
+                  "value": "Available"
+                },
+                {
+                  "gotoId": "8",
+                  "id": "274",
+                  "isChecked": false,
+                  "value": "N/A"
+                }
+              ],
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "choice"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Next",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "leadnextscreen",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "button"
+            }
+          ],
+          "gotoId": "7",
+          "id": "6",
+          "next": "True",
+          "title": "EDC"
+        },
+        {
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": false,
+              "label": "MID Number",
+              "maxLength": 20,
+              "minLength": -1,
+              "name": "midnumber",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "number"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Next",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "leadnextscreen",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "button"
+            }
+          ],
+          "gotoId": "8",
+          "id": "7",
+          "next": "True",
+          "title": "Input MID"
+        },
+        {
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": false,
+              "label": "TID",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "tidnumberselection",
+              "optionList": [
+                {
+                  "gotoId": "9",
+                  "id": "275",
+                  "isChecked": false,
+                  "value": "Available"
+                },
+                {
+                  "gotoId": "10",
+                  "id": "276",
+                  "isChecked": false,
+                  "value": "N/A"
+                }
+              ],
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "choice"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Next",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "leadnextscreen",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "button"
+            }
+          ],
+          "gotoId": "9",
+          "id": "8",
+          "next": "True",
+          "title": "Input TID"
+        },
+        {
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": false,
+              "label": "TID Number",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "tidnumber",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "text"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Next",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "leadnextscreen",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "button"
+            }
+          ],
+          "gotoId": "10",
+          "id": "9",
+          "next": "True",
+          "title": "Input TID"
+        },
+        {
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": false,
+              "label": "Description",
+              "maxLength": -1,
+              "minLength": 1,
+              "name": "notes",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "text"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Photo",
+              "maxLength": 5,
+              "minLength": 1,
+              "name": "photosection",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "snap"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Remarks",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "Remarks",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "text"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Submit",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "submit",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "button"
+            }
+          ],
+          "gotoId": "10",
+          "id": "10",
+          "next": "True",
+          "title": "Other"
+        }
+      ],
+      "version": "1",
+      "WorkflowId": 63
+    },
+    {
+      "CaseTypeId": 13,
+      "id": "16",
+      "isCompleted": false,
+      "IsMandatory": true,
+      "name": "Onborad",
+      "subforms": [
+        {
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": false,
+              "label": "Nomor NPWP Owner(Owner Tax Payer Number)",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "AvaiableNotAvaiable",
+              "optionList": [
+                {
+                  "gotoId": "2",
+                  "id": "214",
+                  "isChecked": false,
+                  "value": "Available"
+                },
+                {
+                  "gotoId": "4",
+                  "id": "215",
+                  "isChecked": false,
+                  "value": "Not Available"
+                }
+              ],
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "choice"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Next",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "leadnextscreen",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "button"
+            }
+          ],
+          "gotoId": "2",
+          "id": "1",
+          "next": "True",
+          "title": "Owner Details"
+        },
+        {
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": false,
+              "label": "Nomor NPWP Owner(Owner Tax Payer Number)",
+              "maxLength": 30,
+              "minLength": 1,
+              "name": "Nomor",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "number"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Next",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "leadnextscreen",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "button"
+            }
+          ],
+          "gotoId": "4",
+          "id": "2",
+          "next": "True",
+          "title": "Merchant Details"
+        },
+        {
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": false,
+              "label": "Kota",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "city",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "text"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Kode Pos",
+              "maxLength": 20,
+              "minLength": 1,
+              "name": "zipcode",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "number"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Next",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "leadnextscreen",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "button"
+            }
+          ],
+          "gotoId": "6",
+          "id": "4",
+          "next": "True",
+          "title": "Details"
+        },
+        {
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": false,
+              "label": "Nama Merchant",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "merchantname",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "text"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Next",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "leadnextscreen",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "button"
+            }
+          ],
+          "gotoId": "7",
+          "id": "6",
+          "next": "True",
+          "title": "Merchant Name"
+        },
+        {
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": false,
+              "label": "Alamat Merchant",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "merchantaddress",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "text"
+            },
+            {
+              "IsAllCaps": true,
+              "label": "No Telepon Merchant",
+              "maxLength": 50,
+              "minLength": 1,
+              "name": "merchantphonenumber",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "number"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Next",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "leadnextscreen",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "button"
+            }
+          ],
+          "gotoId": "9",
+          "id": "7",
+          "next": "True",
+          "title": "Merchant Basic Details"
+        },
+        {
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": false,
+              "label": "Jenis Usaha",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "businesstype",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "text"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Next",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "leadnextscreen",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "button"
+            }
+          ],
+          "gotoId": "10",
+          "id": "9",
+          "next": "True",
+          "title": "Business Details"
+        },
+        {
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": false,
+              "label": "Nama Pemilik Usaha",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "nameofbusinessowner",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "text"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Alamat Owner",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "owneraddress",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "text"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "No Hp Merchant",
+              "maxLength": 50,
+              "minLength": 1,
+              "name": "businessmerchantphonenumber",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "number"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Nama pejabat Yang Berwenang",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "namapejatayang",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "text"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Nomor KTP Owner",
+              "maxLength": 20,
+              "minLength": 1,
+              "name": "owneridnumber",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "number"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Email Owner",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "emailowner",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "text"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Pengendali Akhir",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "pengendaliakhir",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "text"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Nasabah BCA",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "nashabahbca",
+              "optionList": [
+                {
+                  "gotoId": "0",
+                  "id": "220",
+                  "isChecked": false,
+                  "value": "Giro/Tabungan"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "221",
+                  "isChecked": false,
+                  "value": "Debitur"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "222",
+                  "isChecked": false,
+                  "value": "Solitaire"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "223",
+                  "isChecked": false,
+                  "value": "Prioritas"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "224",
+                  "isChecked": false,
+                  "value": "Bizz"
+                }
+              ],
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "multichoice"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Nasabah Bank Lain",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "nashabahbanklain",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "text"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Terminal Bank Lain Yang Dimilik Merchant",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "terminalbanklainyang",
+              "optionList": [
+                {
+                  "gotoId": "0",
+                  "id": "225",
+                  "isChecked": false,
+                  "value": "Bank Mandiri"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "226",
+                  "isChecked": false,
+                  "value": "BNI"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "227",
+                  "isChecked": false,
+                  "value": "CIMB Niaga"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "228",
+                  "isChecked": false,
+                  "value": "Bll"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "229",
+                  "isChecked": false,
+                  "value": "Lainnya"
+                }
+              ],
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "multichoice"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Bank Mandiri",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "nashabahbankBankMandiri",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "number"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "BNI",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "nashabahbankBNI",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "number"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "CIMB Niaga",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "nashabahbankCIMBNiaga",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "number"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Bll",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "nashabahbankBill",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "number"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Lainnya",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "nashabahbankLainnya",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "number"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Sejak Tahun",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "SejakTahun",
+              "optionList": [
+                {
+                  "gotoId": "0",
+                  "id": "368",
+                  "isChecked": false,
+                  "value": "1980"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "369",
+                  "isChecked": false,
+                  "value": "1981"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "370",
+                  "isChecked": false,
+                  "value": "1982"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "371",
+                  "isChecked": false,
+                  "value": "1983"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "372",
+                  "isChecked": false,
+                  "value": "1984"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "373",
+                  "isChecked": false,
+                  "value": "1985"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "374",
+                  "isChecked": false,
+                  "value": "1986"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "375",
+                  "isChecked": false,
+                  "value": "1987"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "376",
+                  "isChecked": false,
+                  "value": "1988"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "377",
+                  "isChecked": false,
+                  "value": "1989"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "378",
+                  "isChecked": false,
+                  "value": "1990"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "379",
+                  "isChecked": false,
+                  "value": "1991"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "380",
+                  "isChecked": false,
+                  "value": "1992"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "381",
+                  "isChecked": false,
+                  "value": "1993"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "382",
+                  "isChecked": false,
+                  "value": "1994"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "383",
+                  "isChecked": false,
+                  "value": "1995"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "384",
+                  "isChecked": false,
+                  "value": "1996"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "385",
+                  "isChecked": false,
+                  "value": "1997"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "386",
+                  "isChecked": false,
+                  "value": "1998"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "387",
+                  "isChecked": false,
+                  "value": "1999"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "388",
+                  "isChecked": false,
+                  "value": "2000"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "389",
+                  "isChecked": false,
+                  "value": "2001"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "390",
+                  "isChecked": false,
+                  "value": "2002"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "391",
+                  "isChecked": false,
+                  "value": "2003"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "392",
+                  "isChecked": false,
+                  "value": "2004"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "393",
+                  "isChecked": false,
+                  "value": "2005"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "394",
+                  "isChecked": false,
+                  "value": "2006"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "395",
+                  "isChecked": false,
+                  "value": "2007"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "396",
+                  "isChecked": false,
+                  "value": "2008"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "397",
+                  "isChecked": false,
+                  "value": "2009"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "398",
+                  "isChecked": false,
+                  "value": "2010"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "399",
+                  "isChecked": false,
+                  "value": "2011"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "400",
+                  "isChecked": false,
+                  "value": "2012"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "401",
+                  "isChecked": false,
+                  "value": "2013"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "402",
+                  "isChecked": false,
+                  "value": "2014"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "357",
+                  "isChecked": false,
+                  "value": "2015"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "358",
+                  "isChecked": false,
+                  "value": "2016"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "359",
+                  "isChecked": false,
+                  "value": "2017"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "360",
+                  "isChecked": false,
+                  "value": "2018"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "361",
+                  "isChecked": false,
+                  "value": "2019"
+                }
+              ],
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "dropdown"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Atas Nama",
+              "maxLength": 20,
+              "minLength": 1,
+              "name": "AtasNama",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "text"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Next",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "leadnextscreen",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "button"
+            }
+          ],
+          "gotoId": "14",
+          "id": "10",
+          "next": "True",
+          "title": "Business Details"
+        },
+        {
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": false,
+              "label": "No Rekening",
+              "maxLength": 20,
+              "minLength": 1,
+              "name": "AccountNumber",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "number"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Next",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "leadnextscreen",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "button"
+            }
+          ],
+          "gotoId": "15",
+          "id": "14",
+          "next": "True",
+          "title": "Account Details"
+        },
+        {
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": false,
+              "label": "Penerima User Id Dan Password Portal mPOS",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "passwordportalmpos",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "text"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Disclaimer  Merchant bertanggung jawab sepenuhnya atas Kebenaran dan kesahihan data dan/atau keterangan dan/atau dokumen lainnya yang diserahkan oleh Merchant kepada BCA dan Merchant dengan ini membebaskan BCA dari segala klaim/gugatan dan tuntutan hukum dalam bentuk apapun dan dari pihak manapun termasuk dari Merchant sehubungan dengan pengisian Formulir Data Merchant ini.",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "disclaimer",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "textview"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Tgl",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "Tgl",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "date"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Nama",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "Nama",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "text"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Jabatan",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "Jabatan",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "text"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Ttd",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "merchantsignature",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "sign"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Next",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "mdebitnext",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "button"
+            }
+          ],
+          "gotoId": "16",
+          "id": "15",
+          "next": "True",
+          "title": "mPos Details"
+        },
+        {
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": false,
+              "label": "Fasilitas Yang di berikan untuk Merchant - Debit",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "fasilitasyangdiberikanuntukmerchantDebit",
+              "optionList": [
+                {
+                  "gotoId": "0",
+                  "id": "232",
+                  "isChecked": false,
+                  "value": "DEBIT ON US 0.15%"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "234",
+                  "isChecked": false,
+                  "value": "MAESTRO 2%"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "235",
+                  "isChecked": false,
+                  "value": "SAKUKU"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "236",
+                  "isChecked": false,
+                  "value": "FLAZZ PAYMENT"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "237",
+                  "isChecked": false,
+                  "value": "FLAZZ TOP UP KARTU \u0026 UPDATE SALDO"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "233",
+                  "isChecked": false,
+                  "value": "DEBIT OFF US 1%"
+                }
+              ],
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "multichoice"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Next",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "merchantcreditnext",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "button"
+            }
+          ],
+          "gotoId": "17",
+          "id": "16",
+          "next": "True",
+          "title": "Debit Area"
+        },
+        {
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": false,
+              "label": "Fasilitas Yang di berikan untuk Merchant - KREDIT",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "fasilitasyangdiberikanuntukmerchantkredit",
+              "optionList": [
+                {
+                  "gotoId": "0",
+                  "id": "238",
+                  "isChecked": false,
+                  "value": "BCA CARD 1.5%"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "239",
+                  "isChecked": false,
+                  "value": "VISA 2%"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "240",
+                  "isChecked": false,
+                  "value": "MASTER CARD 2%"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "241",
+                  "isChecked": false,
+                  "value": "JCB 2%"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "242",
+                  "isChecked": false,
+                  "value": "UNIONPAY 2%"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "243",
+                  "isChecked": false,
+                  "value": "AMEX 3.25%"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "244",
+                  "isChecked": false,
+                  "value": "DEBIT ON US 0.15%"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "245",
+                  "isChecked": false,
+                  "value": "DEBIT OFF US 1%"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "246",
+                  "isChecked": false,
+                  "value": "MAESTRO 2%"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "247",
+                  "isChecked": false,
+                  "value": "SAKUKU"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "248",
+                  "isChecked": false,
+                  "value": "FLAZZ PAYMENT"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "249",
+                  "isChecked": false,
+                  "value": "FLAZZ TOP UP KARTU \u0026 UPDATE SALDO"
+                }
+              ],
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "multichoice"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Next",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "leadnextscreen",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "button"
+            }
+          ],
+          "gotoId": "18",
+          "id": "17",
+          "next": "True",
+          "title": "Kredit Area"
+        },
+        {
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": false,
+              "label": "Posisi Lokasi Usaha Merchant",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "PosisiLokasiUsahaMerchant",
+              "optionList": [
+                {
+                  "gotoId": "0",
+                  "id": "403",
+                  "isChecked": false,
+                  "value": "Pinggir jalan raya"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "406",
+                  "isChecked": false,
+                  "value": "Dalam Gang"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "407",
+                  "isChecked": false,
+                  "value": "Stand dalam Mall/ Shopping Center /Plaza/ Perkantoran"
+                }
+              ],
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "dropdown"
+            },
+            {
+              "IsAllCaps": true,
+              "label": "Lokasi Usaha",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "LokasiUsaha",
+              "optionList": [
+                {
+                  "gotoId": "0",
+                  "id": "408",
+                  "isChecked": false,
+                  "value": "Supermarket"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "409",
+                  "isChecked": false,
+                  "value": "Dept. Store"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "410",
+                  "isChecked": false,
+                  "value": "Ruko"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "411",
+                  "isChecked": false,
+                  "value": "Rumah Tinggal"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "413",
+                  "isChecked": false,
+                  "value": "Mall/Shopping Center/Plaza"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "412",
+                  "isChecked": false,
+                  "value": "Lainnya"
+                }
+              ],
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "dropdown"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Lainnya",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "LainnyaText",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "text"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Status Kepemilikan",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "StatusKepemilikan",
+              "optionList": [
+                {
+                  "gotoId": "19",
+                  "id": "414",
+                  "isChecked": false,
+                  "value": "Milik Sendiri"
+                },
+                {
+                  "gotoId": "19",
+                  "id": "415",
+                  "isChecked": false,
+                  "value": "Sewa"
+                }
+              ],
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "choice"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Jangka Waktu Tahun",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "JangkaWaktuTahun",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "number"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Luas Tempat Usaha(m2)",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "LuasTempatUsaha",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "number"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Jumlah Lantai",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "JumlahLantai",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "number"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Jumlah Counter Kasir",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "JumlahCounterKasir",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "number"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Next",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "leadnextscreen",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "button"
+            }
+          ],
+          "gotoId": "19",
+          "id": "18",
+          "next": "True",
+          "title": "Informasi Lokasi Usaha Merchant"
+        },
+        {
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": false,
+              "label": "Akta Pendirian / Anggaran Dasar",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "AktaPendirianAnggaran Dasar",
+              "optionList": [
+                {
+                  "gotoId": "21",
+                  "id": "416",
+                  "isChecked": false,
+                  "value": "Tidak"
+                },
+                {
+                  "gotoId": "20",
+                  "id": "417",
+                  "isChecked": false,
+                  "value": "Ya"
+                }
+              ],
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "choice"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Next",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "leadnextscreen",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "button"
+            }
+          ],
+          "gotoId": "20",
+          "id": "19",
+          "next": "True",
+          "title": "Informasi Perijinan"
+        },
+        {
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": false,
+              "label": "Akta Pendirian / Anggaran Dasar Ya",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "AktaPendirianAnggaranDasar",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "text"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Next",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "leadnextscreen",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "button"
+            }
+          ],
+          "gotoId": "21",
+          "id": "20",
+          "next": "True",
+          "title": "Akta Pendirian/AnggaranDasar Ya"
+        },
+        {
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": false,
+              "label": "Pengesahan / Persetujuan Menkumham",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "PengesahanPersetujuanMenkumham",
+              "optionList": [
+                {
+                  "gotoId": "23",
+                  "id": "418",
+                  "isChecked": false,
+                  "value": "Tidak"
+                },
+                {
+                  "gotoId": "22",
+                  "id": "419",
+                  "isChecked": false,
+                  "value": "Ya"
+                }
+              ],
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "choice"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Next",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "leadnextscreen",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "button"
+            }
+          ],
+          "gotoId": "21",
+          "id": "21",
+          "next": "True",
+          "title": "Informasi Perijinan Continue"
+        },
+        {
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": false,
+              "label": "Pengesahan Persetujuan Menkumham Ya",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "PengesahanPersetujuanMenkumhamYa",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "text"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Next",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "leadnextscreen",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "button"
+            }
+          ],
+          "gotoId": "23",
+          "id": "22",
+          "next": "True",
+          "title": "Pengesahan Persetujuan Menkumham Ya"
+        },
+        {
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": false,
+              "label": "Akta Perubahan Pengurus (Yang Terakhir)",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "AktaPerubahanPengurus(YangTerakhir)",
+              "optionList": [
+                {
+                  "gotoId": "25",
+                  "id": "420",
+                  "isChecked": false,
+                  "value": "Tidak"
+                },
+                {
+                  "gotoId": "24",
+                  "id": "421",
+                  "isChecked": false,
+                  "value": "Ya"
+                }
+              ],
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "choice"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Next",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "leadnextscreen",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "button"
+            }
+          ],
+          "gotoId": "24",
+          "id": "23",
+          "next": "True",
+          "title": "Informasi Perijinan Continued"
+        },
+        {
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": false,
+              "label": "Akta Perubahan Pengurus(Yang Terakhir) Ya",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "AktaPerubahanPengurus(YangTerakhir)Ya",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "text"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Next",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "leadnextscreen",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "button"
+            }
+          ],
+          "gotoId": "25",
+          "id": "24",
+          "next": "True",
+          "title": "Akta Perubahan Pengurus(Yang Terakhir) Ya"
+        },
+        {
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": false,
+              "label": "No",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "No",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "text"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Tanggal",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "Tanggal",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "date"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Masa Berlaku",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "MasaBerlaku",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "date"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Next",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "leadnextscreen",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "button"
+            }
+          ],
+          "gotoId": "26",
+          "id": "25",
+          "next": "True",
+          "title": "Surat Ijin Usaha Perdagangan"
+        },
+        {
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": false,
+              "label": "No",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "No1",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "text"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Tanggal",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "Tanggal1",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "date"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Masa Berlaku",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "MasaBerlaku1",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "date"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Next",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "leadnextscreen",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "button"
+            }
+          ],
+          "gotoId": "27",
+          "id": "26",
+          "next": "True",
+          "title": "Surat keterangan Domisili Usaha / SITU"
+        },
+        {
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": false,
+              "label": "No",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "No2",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "text"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Tanggal",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "Tanggal2",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "date"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Masa Berlaku",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "MasaBerlaku2",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "date"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Next",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "leadnextscreen",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "button"
+            }
+          ],
+          "gotoId": "28",
+          "id": "27",
+          "next": "True",
+          "title": "Tanda Daftar Perusahaan"
+        },
+        {
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": false,
+              "label": "Usaha/Toko Berdiri Sejak Tahun",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "UsahaTokoBerdiriSejakTahun",
+              "optionList": [
+                {
+                  "gotoId": "0",
+                  "id": "422",
+                  "isChecked": false,
+                  "value": "1980"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "423",
+                  "isChecked": false,
+                  "value": "1981"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "424",
+                  "isChecked": false,
+                  "value": "1982"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "425",
+                  "isChecked": false,
+                  "value": "1983"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "426",
+                  "isChecked": false,
+                  "value": "1984"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "427",
+                  "isChecked": false,
+                  "value": "1985"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "428",
+                  "isChecked": false,
+                  "value": "1986"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "429",
+                  "isChecked": false,
+                  "value": "1987"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "430",
+                  "isChecked": false,
+                  "value": "1988"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "431",
+                  "isChecked": false,
+                  "value": "1989"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "432",
+                  "isChecked": false,
+                  "value": "1990"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "433",
+                  "isChecked": false,
+                  "value": "1991"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "434",
+                  "isChecked": false,
+                  "value": "1992"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "435",
+                  "isChecked": false,
+                  "value": "1993"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "436",
+                  "isChecked": false,
+                  "value": "1994"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "437",
+                  "isChecked": false,
+                  "value": "1995"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "438",
+                  "isChecked": false,
+                  "value": "1996"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "439",
+                  "isChecked": false,
+                  "value": "1997"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "440",
+                  "isChecked": false,
+                  "value": "1998"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "441",
+                  "isChecked": false,
+                  "value": "1999"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "442",
+                  "isChecked": false,
+                  "value": "2000"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "443",
+                  "isChecked": false,
+                  "value": "2001"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "444",
+                  "isChecked": false,
+                  "value": "2002"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "445",
+                  "isChecked": false,
+                  "value": "2003"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "446",
+                  "isChecked": false,
+                  "value": "2004"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "447",
+                  "isChecked": false,
+                  "value": "2005"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "448",
+                  "isChecked": false,
+                  "value": "2006"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "449",
+                  "isChecked": false,
+                  "value": "2007"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "450",
+                  "isChecked": false,
+                  "value": "2008"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "451",
+                  "isChecked": false,
+                  "value": "2009"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "452",
+                  "isChecked": false,
+                  "value": "2010"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "453",
+                  "isChecked": false,
+                  "value": "2011"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "454",
+                  "isChecked": false,
+                  "value": "2012"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "455",
+                  "isChecked": false,
+                  "value": "2013"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "456",
+                  "isChecked": false,
+                  "value": "2014"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "457",
+                  "isChecked": false,
+                  "value": "2015"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "458",
+                  "isChecked": false,
+                  "value": "2016"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "459",
+                  "isChecked": false,
+                  "value": "2017"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "460",
+                  "isChecked": false,
+                  "value": "2018"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "461",
+                  "isChecked": false,
+                  "value": "2019"
+                }
+              ],
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "dropdown"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Surat Sewa/Jual Beli Tempat Usaha/Toko",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "SuratSewaJualBeliTempatUsahaToko",
+              "optionList": [
+                {
+                  "gotoId": "0",
+                  "id": "462",
+                  "isChecked": false,
+                  "value": "Ada"
+                },
+                {
+                  "gotoId": "0",
+                  "id": "463",
+                  "isChecked": false,
+                  "value": "Tidak"
+                }
+              ],
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "dropdown"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Next",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "leadnextscreen",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "button"
+            }
+          ],
+          "gotoId": "30",
+          "id": "28",
+          "next": "True",
+          "title": "Informasi Aktivitas Merchant "
+        },
+        {
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": false,
+              "label": "Tampak Depan",
+              "maxLength": 1,
+              "minLength": 1,
+              "name": "Photo",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "snap"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Samping Kanan",
+              "maxLength": 1,
+              "minLength": 1,
+              "name": "SampingKanan",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "snap"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Samping Kiri",
+              "maxLength": 1,
+              "minLength": 1,
+              "name": "SampingKiri",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "snap"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Tampak Dalam",
+              "maxLength": 1,
+              "minLength": 1,
+              "name": "TampakDalam",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "snap"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Barang Yang Di Jual",
+              "maxLength": 1,
+              "minLength": 1,
+              "name": "BarangYangDiJual",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "snap"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Meja Kasir",
+              "maxLength": 1,
+              "minLength": 1,
+              "name": "MejaKasir",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "snap"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Plang Nama Usaha",
+              "maxLength": 1,
+              "minLength": 1,
+              "name": "PlangNamaUsaha",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "snap"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Lainnya",
+              "maxLength": 3,
+              "minLength": 0,
+              "name": "AmexPhoto",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "snap"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Remarks",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "Remarks",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "text"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Submit",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "Saveandcontinue",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "button"
+            }
+          ],
+          "gotoId": "29",
+          "id": "29",
+          "next": "True",
+          "title": "Photos"
+        },
+        {
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": false,
+              "label": "*Rp Per bulan",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "RpPerbulan",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "number"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "*Tunai %",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "Tunai",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "number"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "*Kartu Kredit %",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "KartuKredit",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "number"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "*Rata-Rata Transaksi *Rp pertransaksi",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "RataRataTransaksi",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "number"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "*Frekuensi Transaksi Kali Perhari",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "FrekuensiTransaksiKaliPerhari",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "number"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "*Jam Buka Usaha/Toko jam paling ramai",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "JamBukaUsaha",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "time"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "*Jam Buka Usaha/Toko jam paling ramai",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "JamBukaUsahaTo",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "time"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "*Harga Barang Termurah Rp per",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "*HargaBarangTermurah",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "text"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "*Harga Barang Termahal Rp per",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "*HargaBarangermahal",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "text"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Next",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "leadnextscreen",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "button"
+            }
+          ],
+          "gotoId": "29",
+          "id": "30",
+          "next": "True",
+          "title": "Rata-Rata Omzet"
+        }
+      ],
+      "version": "1",
+      "WorkflowId": 64
+    }
+  ],
+  "ActionList": [],
+  "ResponseCode": 200,
+  "ResponseMessage": "Success"
+}

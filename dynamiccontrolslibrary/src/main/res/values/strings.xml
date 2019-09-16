@@ -1,0 +1,39 @@
+<resources>
+    <!--<string name="app_name">library</string>-->
+
+    <!-- rfaLayout中的覆盖层默认透明度 -->
+
+    <string name="app_name_uat">Dynamic Controls</string>
+    <string name="rfab_rfal__float_convert_color_alpha">0.7</string>
+    <string name="app_name">MobileForce</string>
+    <string name="search">Search...</string>
+    <string name="selecet_address">SELECT ADDRESS</string>
+    <string name="selected_address">SELECTED ADDRESS</string>
+    <string name="preview">PREVIEW</string>
+    <string name="terms_and_condition">Terms And Condition</string>
+    <string name="take_signature">Please take signature</string>
+
+    <string name="signature_bytes_array">SIGNATURE_BYTES_ARRAY</string>
+
+    <string name="turn_on_gps_message">Please turn on GPS</string>
+    <string name="button">Button</string>
+    <string name="heading">Heading</string>
+    <string name="spinner_label">Spinner Label</string>
+    <string name="title">Title</string>
+    <string name="no_report_available">No Report available</string>
+    <string name="invalid">Invalid</string>
+    <string name="please_enter">Please enter</string>
+    <string name="please_select">Please select</string>
+    <string name="atleast">at least</string>
+    <string name="files">file</string>
+    <string name="permisssion_required_message">You have forcefully denied some of the required permissions for this action. Please open settings, go to permissions and allow them.</string>
+    <string name="permission_required_title">Permissions Required</string>
+    <string name="setting_button">Settings</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="done">Done</string>
+    <string name="clear">Clear</string>
+
+    <!--new keys-->
+
+
+</resources>
