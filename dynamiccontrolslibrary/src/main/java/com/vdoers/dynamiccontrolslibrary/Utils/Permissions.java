@@ -34,11 +34,12 @@ import com.vdoers.dynamiccontrolslibrary.R;
 import com.vdoers.dynamiccontrolslibrary.mControls.DataObject;
 
 
-public class Permissions extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener{
+public class Permissions extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
     public int PERMISSION_ALL = 1;
     private boolean isPermissionDenied = true;
     public static DataObject dataObject = null;// new DataObject();
     private GoogleApiClient googleApiClient;
+    public static String testingValue="It is just testing value";
 
 
     @Override
