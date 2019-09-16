@@ -36,6 +36,7 @@ public class Types {
     public static final String CAMERA = "snap";
     public static final String CROP_CAMERA = "cropcamera";
     public static final String OTP_RECIEVER = "otp_reciever";
+    public static final String HEADING = "heading";
 
 
     //Some other constants defined

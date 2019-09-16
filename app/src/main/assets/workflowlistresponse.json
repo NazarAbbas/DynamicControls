@@ -12,6 +12,17 @@
           "fields": [
             {
               "IsAllCaps": true,
+              "label": "Testing Heading",
+              "maxLength": 0,
+              "minLength": 0,
+              "name": "heading",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "heading"
+            },
+            {
+              "IsAllCaps": true,
               "label": "Tenant Name",
               "maxLength": 20,
               "minLength": 0,

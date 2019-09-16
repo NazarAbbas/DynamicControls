@@ -26,6 +26,7 @@ import com.vdoers.dynamiccontrolslibrary.mControls.contols.mCheckbox;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.mDate;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.mEditBox;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.mFile;
+import com.vdoers.dynamiccontrolslibrary.mControls.contols.mHeading;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.mMapEditBoxAddress;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.mMultipleChoice;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.mOTPReciever;
@@ -185,7 +186,12 @@ public class ControlRederer {
             } else if (field.getType().equalsIgnoreCase(Types.OTP_RECIEVER)) {
                 field.setObject(new mOTPReciever(ctx, field));
                 mainLayout.addView((View) field.getObject());
-            } else if (field.getType().equalsIgnoreCase(Types.PDF_FILE)
+            }
+            else if (field.getType().equalsIgnoreCase(Types.HEADING)) {
+                field.setObject(new mHeading(ctx, field));
+                mainLayout.addView((View) field.getObject());
+            }
+            else if (field.getType().equalsIgnoreCase(Types.PDF_FILE)
                     || field.getType().equalsIgnoreCase(Types.WORD_FILE)
 
                     || field.getType().equalsIgnoreCase(Types.EXCEL_FILE)
@@ -243,6 +249,11 @@ public class ControlRederer {
             if (field.getType().equalsIgnoreCase(Types.TIME)) {
                 mTime time = (mTime) field.getObject();
                 field.setAnswer(time.getValue(), field);
+            }
+
+            if (field.getType().equalsIgnoreCase(Types.HEADING)) {
+                mHeading mHeading = (mHeading) field.getObject();
+                field.setAnswer(mHeading.getValue(), field);
             }
            /* if (field.getType().equalsIgnoreCase(Types.SIGNATURE)) {
                 if (field.getImageSavedModelList() == null || field.getImageSavedModelList().size() == 0) {
