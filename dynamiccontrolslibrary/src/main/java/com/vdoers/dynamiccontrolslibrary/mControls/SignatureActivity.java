@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.vdoers.dynamiccontrolslibrary.BuildConfig;
 import com.vdoers.dynamiccontrolslibrary.R;
+import com.vdoers.dynamiccontrolslibrary.Utils.FileUtilsPath;
 import com.vdoers.dynamiccontrolslibrary.Utils.Permissions;
 import com.vdoers.dynamiccontrolslibrary.Utils.ThemeColor;
 import com.williamww.silkysignature.views.SignaturePad;
@@ -129,7 +130,7 @@ public class SignatureActivity extends Permissions implements View.OnClickListen
         try {
             ByteArrayOutputStream bytes = new ByteArrayOutputStream();
             bmp.compress(Bitmap.CompressFormat.PNG, 100, bytes);
-            File dir = new File(Environment.getExternalStorageDirectory(), BuildConfig.APPLICATION_ID + "Images");
+            File dir = new File(Environment.getExternalStorageDirectory(), FileUtilsPath.folderName);
             if (!dir.exists()) {
                 dir.mkdirs();
             }

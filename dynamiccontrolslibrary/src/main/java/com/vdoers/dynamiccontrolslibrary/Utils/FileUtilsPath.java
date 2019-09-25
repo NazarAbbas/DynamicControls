@@ -36,7 +36,7 @@ import java.util.Locale;
 public class FileUtilsPath {
     //public static Uri fileUri;
 
-    private static String folderName;
+    public static String folderName;
 
     public static void setImagesFolderName(String folder) {
         folderName = folder;
