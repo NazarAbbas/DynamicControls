@@ -16,12 +16,14 @@
                 android:layout_height="200dp"
                 android:id="@+id/signaturePad"/>-->
         <TextView
-            android:id="@+id/tv_heading"
+            android:layout_marginTop="10dp"
+            android:id="@+id/tv_signature_heading"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:gravity="center"
             android:text="Signature"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:textColor="@color/Black"
+            android:textSize="18dp"
             android:textStyle="bold" />
 
         <com.williamww.silkysignature.views.SignaturePad xmlns:android="http://schemas.android.com/apk/res/android"

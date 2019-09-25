@@ -231,6 +231,7 @@ public class mFile extends LinearLayout implements View.OnClickListener {
             return;
         } else if (field.getType().equalsIgnoreCase(Types.SIGNATURE)) {
             intent = new Intent(context, SignatureActivity.class);
+            intent.putExtra(SignatureActivity.SIGNATURE_HEADING, "TESING");
             context.startActivityForResult(intent, Types.File_REQUEST_CODE);
             return;
         } else {

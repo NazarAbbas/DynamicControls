@@ -52,7 +52,7 @@ public class SignatureActivity extends Permissions implements View.OnClickListen
 
     private void showUI() {
         String heading = getIntent().getStringExtra(SIGNATURE_HEADING);
-        if (!heading.isEmpty()) {
+        if (heading != null && !heading.isEmpty()) {
             tvheading.setText(heading);
         }
     }
@@ -68,7 +68,7 @@ public class SignatureActivity extends Permissions implements View.OnClickListen
         btnDone.setBackgroundColor(ThemeColor.themeColor);
         btnClear = (Button) findViewById(R.id.btn_clear);
         btnClear.setBackgroundColor(ThemeColor.themeColor);
-        tvheading = (TextView) findViewById(R.id.tv_heading);
+        tvheading = (TextView) findViewById(R.id.tv_signature_heading);
         signaturePad.setOnSignedListener(new SignaturePad.OnSignedListener() {
             @Override
             public void onStartSigning() {

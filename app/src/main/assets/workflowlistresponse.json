@@ -22,6 +22,17 @@
               "type": "cropcamera"
             },
             {
+              "IsAllCaps": false,
+              "label": "Ttd",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "techsignature",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "sign"
+            },
+            {
               "IsAllCaps": true,
               "label": "Tenant Name",
               "maxLength": 20,
