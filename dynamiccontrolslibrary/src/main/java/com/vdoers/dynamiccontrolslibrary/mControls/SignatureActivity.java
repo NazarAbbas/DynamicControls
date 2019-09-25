@@ -94,6 +94,7 @@ public class SignatureActivity extends Permissions implements View.OnClickListen
             }
         }
         else if(v.getId()==R.id.btn_clear){
+            isSignatured=false;
             signaturePad.clear();
         }
        /* switch (v.getId()) {
