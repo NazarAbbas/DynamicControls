@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.vdoers.dynamiccontrolslibrary.BuildConfig;
@@ -33,6 +34,8 @@ public class SignatureActivity extends Permissions implements View.OnClickListen
     private int signatureCodeType;
     // private ImageView imgSignature;
     public static SignatureActivity signatureActivity;
+    private TextView tvheading;
+    public static String SIGNATURE_HEADING = "signature_heading";
 
 
     @Override
@@ -44,6 +47,14 @@ public class SignatureActivity extends Permissions implements View.OnClickListen
         signatureCodeType = getIntent().getIntExtra(Constant.SIGNATURE_CODE_TYPE, 0);
         initUI();
         setClickListener();
+        showUI();
+    }
+
+    private void showUI() {
+        String heading = getIntent().getStringExtra(SIGNATURE_HEADING);
+        if (!heading.isEmpty()) {
+            tvheading.setText(heading);
+        }
     }
 
     private void setClickListener() {
@@ -57,6 +68,7 @@ public class SignatureActivity extends Permissions implements View.OnClickListen
         btnDone.setBackgroundColor(ThemeColor.themeColor);
         btnClear = (Button) findViewById(R.id.btn_clear);
         btnClear.setBackgroundColor(ThemeColor.themeColor);
+        tvheading = (TextView) findViewById(R.id.tv_heading);
         signaturePad.setOnSignedListener(new SignaturePad.OnSignedListener() {
             @Override
             public void onStartSigning() {
@@ -85,16 +97,15 @@ public class SignatureActivity extends Permissions implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
-        if(v.getId()==R.id.btn_done){
+        if (v.getId() == R.id.btn_done) {
             if (!isSignatured) {
                 Toast.makeText(this, getString(R.string.take_signature), Toast.LENGTH_LONG).show();
                 return;
             } else {
                 savebitmap(signaturePad.getSignatureBitmap());
             }
-        }
-        else if(v.getId()==R.id.btn_clear){
-            isSignatured=false;
+        } else if (v.getId() == R.id.btn_clear) {
+            isSignatured = false;
             signaturePad.clear();
         }
        /* switch (v.getId()) {
