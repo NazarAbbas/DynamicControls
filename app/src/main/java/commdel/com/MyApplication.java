@@ -20,6 +20,6 @@ public class MyApplication extends MultiDexApplication {
         super.onCreate();
         Permissions.dataObject = new DataObject();
         ThemeColor.themeColor = getResources().getColor(R.color.app_theme_color);
-        FileUtilsPath.setImagesFolderName("TestingNewImages");
+        FileUtilsPath.setImagesFolderName("CroppedImages");
     }
 }
