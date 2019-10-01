@@ -15,7 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
-import com.theartofdev.edmodo.cropper.CropImage;
+import com.vdoers.cropper.CropImage;
 import com.vdoers.dynamiccontrolslibrary.R;
 import com.vdoers.dynamiccontrolslibrary.Utils.FileUtilsPath;
 import com.vdoers.dynamiccontrolslibrary.Utils.Permissions;
@@ -30,6 +30,7 @@ import com.vdoers.dynamiccontrolslibrary.mControls.contols.mHeading;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.mMapEditBoxAddress;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.mMultipleChoice;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.mOTPReciever;
+import com.vdoers.dynamiccontrolslibrary.mControls.contols.mPermanentAndCurrentEditBoxAddress;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.mSearchEditBox;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.mSingleChoice;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.mSpinner;
@@ -186,12 +187,10 @@ public class ControlRederer {
             } else if (field.getType().equalsIgnoreCase(Types.OTP_RECIEVER)) {
                 field.setObject(new mOTPReciever(ctx, field));
                 mainLayout.addView((View) field.getObject());
-            }
-            else if (field.getType().equalsIgnoreCase(Types.HEADING)) {
+            } else if (field.getType().equalsIgnoreCase(Types.HEADING)) {
                 field.setObject(new mHeading(ctx, field));
                 mainLayout.addView((View) field.getObject());
-            }
-            else if (field.getType().equalsIgnoreCase(Types.PDF_FILE)
+            } else if (field.getType().equalsIgnoreCase(Types.PDF_FILE)
                     || field.getType().equalsIgnoreCase(Types.WORD_FILE)
 
                     || field.getType().equalsIgnoreCase(Types.EXCEL_FILE)
@@ -207,6 +206,9 @@ public class ControlRederer {
                 field.setObject(new mFile(ctx, field));
                 mainLayout.addView((View) field.getObject());
 
+            } else if (field.getType().equalsIgnoreCase(Types.PERMANENT_AND_CURRENT_ADDRESS)) {
+                field.setObject(new mPermanentAndCurrentEditBoxAddress(ctx, field));
+                mainLayout.addView((View) field.getObject());
             }
 
 
@@ -305,6 +307,10 @@ public class ControlRederer {
                 mMapEditBoxAddress mapEditBoxAddress = (mMapEditBoxAddress) field.getObject();
                 field.setAnswer(mapEditBoxAddress.getValue(), field);
             }
+            if (field.getType().equalsIgnoreCase(Types.PERMANENT_AND_CURRENT_ADDRESS)) {
+                mPermanentAndCurrentEditBoxAddress permanentAndCurrentEditBoxAddress = (mPermanentAndCurrentEditBoxAddress) field.getObject();
+                field.setAnswer(permanentAndCurrentEditBoxAddress.getValue(), field);
+            }
 
 
         }
@@ -387,7 +393,7 @@ public class ControlRederer {
                         return false;
                     }
                 } else {
-                    if (!mOTPReciever.getValue().isEmpty() && field.getMinLength() >0
+                    if (!mOTPReciever.getValue().isEmpty() && field.getMinLength() > 0
                             && mOTPReciever.getValue().length() < field.getMinLength()) {
                         mOTPReciever.setError(activity.getString(R.string.invalid) + " " + field.getLabel().replace("*", ""));
                         return false;
@@ -543,6 +549,16 @@ public class ControlRederer {
                 mMapEditBoxAddress mapEditBoxAddress = (mMapEditBoxAddress) field.getObject();
                 if (field.getRequired().equalsIgnoreCase("Y")) {
                     if (mapEditBoxAddress.getValue().isEmpty()) {
+                        Toast.makeText(activity, "Please enter " + field.getLabel(), Toast.LENGTH_LONG).show();
+                        return false;
+                    }
+                }
+            }
+
+            if (field.getType().equalsIgnoreCase(Types.PERMANENT_AND_CURRENT_ADDRESS)) {
+                mPermanentAndCurrentEditBoxAddress mPermanentAndCurrentEditBoxAddress = (mPermanentAndCurrentEditBoxAddress) field.getObject();
+                if (field.getRequired().equalsIgnoreCase("Y")) {
+                    if (mPermanentAndCurrentEditBoxAddress.getValue().isEmpty()) {
                         Toast.makeText(activity, "Please enter " + field.getLabel(), Toast.LENGTH_LONG).show();
                         return false;
                     }

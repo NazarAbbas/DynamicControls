@@ -17,8 +17,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.theartofdev.edmodo.cropper.CropImage;
-import com.theartofdev.edmodo.cropper.CropImageView;
+import com.vdoers.cropper.CropImage;
+import com.vdoers.cropper.CropImageView;
 import com.vdoers.dynamiccontrolslibrary.R;
 import com.vdoers.dynamiccontrolslibrary.Utils.Permissions;
 import com.vdoers.dynamiccontrolslibrary.mControls.Constant;

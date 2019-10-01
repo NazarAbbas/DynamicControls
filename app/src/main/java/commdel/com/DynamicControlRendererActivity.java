@@ -12,8 +12,8 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
 import com.google.gson.Gson;
-import com.theartofdev.edmodo.cropper.CropImage;
-import com.theartofdev.edmodo.cropper.CropImageView;
+import com.vdoers.cropper.CropImage;
+import com.vdoers.cropper.CropImageView;
 import com.vdoers.dynamiccontrolslibrary.Utils.Permissions;
 import com.vdoers.dynamiccontrolslibrary.mControls.Constant;
 import com.vdoers.dynamiccontrolslibrary.mControls.ControlRederer;

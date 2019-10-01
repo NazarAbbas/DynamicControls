@@ -1,0 +1,118 @@
+package com.vdoers.dynamiccontrolslibrary.mControls.contols;
+
+import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.content.LocalBroadcastManager;
+import android.view.View;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.vdoers.dynamiccontrolslibrary.R;
+import com.vdoers.dynamiccontrolslibrary.Utils.Permissions;
+
+
+public class mPermanentAndCurrentEditBoxAddress extends LinearLayout {
+
+    private EditText etCurrentAddress;
+    private EditText etPermanenrAddress;
+    private TextView tvCurrentAddressHeading;
+    private TextView tvPermanentAddressHeading;
+    private JsonWorkflowList.Field field;
+    private Activity context;
+    private CheckBox checkBox;
+
+    public mPermanentAndCurrentEditBoxAddress(Context context) {
+        super(context);
+    }
+
+    public String getValue() {
+        return etPermanenrAddress.getText().toString().trim() + "|" + etCurrentAddress.getText().toString().trim();
+    }
+
+    public mPermanentAndCurrentEditBoxAddress(Activity context, JsonWorkflowList.Field field) {
+        super(context);
+        setOrientation(LinearLayout.VERTICAL);
+        this.field = field;
+        this.context = context;
+        initUI(context, field);
+        showUI(field);
+
+    }
+
+    private void initUI(Activity context, JsonWorkflowList.Field field) {
+        LinearLayout topLayout = (LinearLayout) context.getLayoutInflater().inflate(R.layout.dynamic_permanaent_and_current_address_edittext, null);
+        etPermanenrAddress = (EditText) topLayout.findViewById(R.id.tv_permanent_address);
+        tvPermanentAddressHeading = (TextView) topLayout.findViewById(R.id.tv_permanent_heading);
+        etCurrentAddress = (EditText) topLayout.findViewById(R.id.tv_current_address);
+        tvCurrentAddressHeading = (TextView) topLayout.findViewById(R.id.tv_current_address_heading);
+        checkBox = (CheckBox) topLayout.findViewById(R.id.check);
+        checkBox.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (checkBox.isChecked()) {
+                    etCurrentAddress.setText(etPermanenrAddress.getText().toString().trim());
+                } else {
+                    etCurrentAddress.setText("");
+                }
+            }
+        });
+        addView(topLayout);
+
+
+    }
+
+
+    private void showUI(JsonWorkflowList.Field field) {
+        try {
+            String[] separated = null;
+            if (field.getAnswer() != null && !((String) field.getAnswer()).isEmpty()) {
+                separated = ((String) field.getAnswer()).split("\\|");
+                try {
+                    if (separated[0] != null)
+                        etPermanenrAddress.setText(separated[0]);
+                } catch (Exception ex) {
+
+                }
+                try {
+                    if (separated[1] != null)
+                        etCurrentAddress.setText(separated[1]);
+                } catch (Exception ex) {
+
+                }
+            }
+            if (field.getLabel() != null && !field.getLabel().isEmpty()) {
+                separated = field.getLabel().split("\\|");
+                try {
+                    if (separated[0] != null)
+                        tvPermanentAddressHeading.setText(separated[0]);
+                } catch (Exception ex) {
+
+                }
+                try {
+                    if (separated[1] != null)
+                        checkBox.setText(separated[1]);
+                } catch (Exception ex) {
+
+                }
+                try {
+                    if (separated[2] != null)
+                        tvCurrentAddressHeading.setText(separated[2]);
+                } catch (Exception ezx) {
+
+                }
+            }
+        } catch (Exception ex) {
+
+        }
+    }
+
+
+}

@@ -37,6 +37,7 @@ public class Types {
     public static final String CROP_CAMERA = "cropcamera";
     public static final String OTP_RECIEVER = "otp_reciever";
     public static final String HEADING = "heading";
+    public static final String PERMANENT_AND_CURRENT_ADDRESS = "permanent_and_current_address";
 
 
     //Some other constants defined

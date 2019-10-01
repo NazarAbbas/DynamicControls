@@ -274,6 +274,17 @@
             },
             {
               "IsAllCaps": true,
+              "label": "Permanent Address|Same as permenent|Current Address",
+              "maxLength": 0,
+              "minLength": 0,
+              "name": "heading",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "permanent_and_current_address"
+            },
+            {
+              "IsAllCaps": true,
               "label": "Continue",
               "maxLength": -1,
               "minLength": -1,
