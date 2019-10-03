@@ -10,6 +10,8 @@ import android.os.Build;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.text.Editable;
+import android.text.InputFilter;
+import android.text.InputType;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.CheckBox;
@@ -46,6 +48,7 @@ public class mPermanentAndCurrentEditBoxAddress extends LinearLayout {
         this.context = context;
         initUI(context, field);
         setClickListener();
+        setFilter(field);
         showUI(field);
 
     }
@@ -101,6 +104,40 @@ public class mPermanentAndCurrentEditBoxAddress extends LinearLayout {
 
     }
 
+    private void setFilter(JsonWorkflowList.Field field) {
+        InputFilter lengthFilter = null;
+        if (field.getMaxLength() > 0) {
+            etCurrentAddress.setFilters(new InputFilter[]{new InputFilter.LengthFilter(field.getMaxLength())});
+            lengthFilter = new InputFilter.LengthFilter(field.getMaxLength());
+
+            etPermanenrAddress.setFilters(new InputFilter[]{new InputFilter.LengthFilter(field.getMaxLength())});
+            lengthFilter = new InputFilter.LengthFilter(field.getMaxLength());
+        }
+        if (field.getType().equalsIgnoreCase(Types.EDITBOX_NUMBER_TYPE)) {
+            etCurrentAddress.setInputType(InputType.TYPE_CLASS_NUMBER);
+            etPermanenrAddress.setInputType(InputType.TYPE_CLASS_NUMBER);
+        }
+        if (field.getType().equalsIgnoreCase(Types.EXACT_EDITBOX_NUMBER_TYPE)) {
+            etCurrentAddress.setInputType(InputType.TYPE_CLASS_PHONE);
+            etPermanenrAddress.setInputType(InputType.TYPE_CLASS_PHONE);
+        }
+        //field.setAllCaps(true);
+        InputFilter capsFilter = null;
+        if (field.isAllCaps()) {
+            capsFilter = new InputFilter.AllCaps();
+            InputFilter[] editFilters = etPermanenrAddress.getFilters();
+            InputFilter[] newFilters = new InputFilter[editFilters.length + 1];
+            System.arraycopy(editFilters, 0, newFilters, 0, editFilters.length);
+            newFilters[editFilters.length] = capsFilter;
+            etPermanenrAddress.setFilters(newFilters);
+            etCurrentAddress.setFilters(newFilters);
+
+        }
+
+        /*if (lengthFilter != null && capsFilter != null) {
+            editText.setFilters(new InputFilter[]{lengthFilter, capsFilter});
+        }*/
+    }
 
     private void showUI(JsonWorkflowList.Field field) {
         try {
