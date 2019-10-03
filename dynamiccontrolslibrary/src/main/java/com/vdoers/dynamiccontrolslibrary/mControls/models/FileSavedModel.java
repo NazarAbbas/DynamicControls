@@ -3,15 +3,14 @@ package com.vdoers.dynamiccontrolslibrary.mControls.models;
 public class FileSavedModel {
     private String fileName;
     private String filePath;
-    private String caseId;
-
+    private String CaseId;
 
     public String getCaseId() {
-        return caseId;
+        return CaseId;
     }
 
     public void setCaseId(String caseId) {
-        this.caseId = caseId;
+        CaseId = caseId;
     }
 
     public String getFileName() {
