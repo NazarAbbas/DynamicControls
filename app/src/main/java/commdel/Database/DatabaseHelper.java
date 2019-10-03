@@ -16,6 +16,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_FILE_NAME = "file_name";
     public static final String COL_FILE_PATH = "file_path";
     public static final String COL_CREATED_DATE = "created_date";
+    public static final String COL_CASE_ID = "case_id";
 
 
     //tbl Json workfloe

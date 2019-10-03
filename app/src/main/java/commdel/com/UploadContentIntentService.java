@@ -58,7 +58,7 @@ public class UploadContentIntentService extends IntentService {
                         MultipartBody.Part body = MultipartBody.Part.createFormData("image", fileSavedModel.getImageName(), requestFile);*/
 
                         DataServiceApi api = new RestClient().getApi();
-                        Call<ResponseDto> call = api.uploadCaseImage("123", fileSavedModel.getFileName(), fileToUpload);
+                        Call<ResponseDto> call = api.uploadCaseImage(fileSavedModel.getCaseId(), fileSavedModel.getFileName(), fileToUpload);
                         ResponseDto responseDto = call.execute().body();
                         if (responseDto.getResponseCode() == 200) {
                             String x = "";

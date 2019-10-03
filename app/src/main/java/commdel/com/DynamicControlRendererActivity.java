@@ -379,6 +379,7 @@ public class DynamicControlRendererActivity extends Permissions implements View.
                             if (fileImageSavedModelList != null && fileImageSavedModelList.size() > 0) {
                                 for (int k = 0; k < fileImageSavedModelList.size(); k++) {
                                     fileSavedModel = new FileSavedModel();
+                                    fileSavedModel.setCaseId("12345");
                                     fileSavedModel.setFileName(fileImageSavedModelList.get(k).getFileName());
                                     fileSavedModel.setFilePath(fileImageSavedModelList.get(k).getFilePath());
                                     FileDBHandler.saveFile(this, fileSavedModel);

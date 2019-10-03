@@ -21,6 +21,7 @@ public class FileDBHandler {
             ContentValues contentValues = new ContentValues();
             contentValues.put(DatabaseHelper.COL_FILE_NAME, fileSavedModel.getFileName());
             contentValues.put(DatabaseHelper.COL_FILE_PATH, fileSavedModel.getFilePath());
+            contentValues.put(DatabaseHelper.COL_CASE_ID, fileSavedModel.getCaseId());
             sqdb.insert(DatabaseHelper.TBL_FILE, null, contentValues);
 
         } catch (Exception ex) {
@@ -112,12 +113,13 @@ public class FileDBHandler {
             dbHelper = new DatabaseHelper(context);
             sqdb = dbHelper.getWritableDatabase();
             cursor = sqdb.query(DatabaseHelper.TBL_FILE, new String[]{DatabaseHelper.COL_FILE_NAME,
-                            DatabaseHelper.COL_FILE_PATH},
+                            DatabaseHelper.COL_FILE_PATH, DatabaseHelper.COL_CASE_ID},
                     DatabaseHelper.Row_ID + "=" + rowId, null, null, null, null);
             while (cursor.moveToNext()) {
                 fileSavedModel = new FileSavedModel();
                 fileSavedModel.setFileName(cursor.getString(cursor.getColumnIndex(DatabaseHelper.COL_FILE_NAME)));
                 fileSavedModel.setFilePath(cursor.getString(cursor.getColumnIndex(DatabaseHelper.COL_FILE_PATH)));
+                fileSavedModel.setCaseId(cursor.getString(cursor.getColumnIndex(DatabaseHelper.COL_CASE_ID)));
             }
         } catch (Exception ex) {
             ex.printStackTrace();
