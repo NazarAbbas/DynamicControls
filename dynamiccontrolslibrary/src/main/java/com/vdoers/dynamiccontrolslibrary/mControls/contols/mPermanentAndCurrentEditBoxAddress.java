@@ -9,6 +9,8 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.LocalBroadcastManager;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -34,7 +36,7 @@ public class mPermanentAndCurrentEditBoxAddress extends LinearLayout {
     }
 
     public String getValue() {
-        return etPermanenrAddress.getText().toString().trim() + "|" + etCurrentAddress.getText().toString().trim();
+        return etPermanenrAddress.getText().toString() + "|" + checkBox.isChecked() + "|" + etCurrentAddress.getText().toString();
     }
 
     public mPermanentAndCurrentEditBoxAddress(Activity context, JsonWorkflowList.Field field) {
@@ -43,8 +45,31 @@ public class mPermanentAndCurrentEditBoxAddress extends LinearLayout {
         this.field = field;
         this.context = context;
         initUI(context, field);
+        setClickListener();
         showUI(field);
 
+    }
+
+    private void setClickListener() {
+        etPermanenrAddress.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (checkBox.isChecked()) {
+                    etCurrentAddress.setText(etPermanenrAddress.getText().toString());
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
     }
 
     private void initUI(Activity context, JsonWorkflowList.Field field) {
@@ -58,9 +83,16 @@ public class mPermanentAndCurrentEditBoxAddress extends LinearLayout {
             @Override
             public void onClick(View v) {
                 if (checkBox.isChecked()) {
-                    etCurrentAddress.setText(etPermanenrAddress.getText().toString().trim());
+                    etCurrentAddress.setText(etPermanenrAddress.getText().toString());
+                    //etCurrentAddress.setEnabled(false);
+                    //etCurrentAddress.setKeyListener(null);
+                    etCurrentAddress.setFocusable(false);
                 } else {
                     etCurrentAddress.setText("");
+                    //etCurrentAddress.setEnabled(true);
+                    //etCurrentAddress.setKeyListener(etCurrentAddress.getKeyListener());
+                    etCurrentAddress.setFocusable(true);
+                    etCurrentAddress.setFocusableInTouchMode(true);
                 }
             }
         });
@@ -82,8 +114,20 @@ public class mPermanentAndCurrentEditBoxAddress extends LinearLayout {
 
                 }
                 try {
-                    if (separated[1] != null)
-                        etCurrentAddress.setText(separated[1]);
+                    if (separated[1] != null) {
+                        if (separated[1].equalsIgnoreCase("True")) {
+                            checkBox.setChecked(true);
+                        } else {
+                            checkBox.setChecked(false);
+                        }
+                    }
+
+                } catch (Exception ex) {
+
+                }
+                try {
+                    if (separated[2] != null)
+                        etCurrentAddress.setText(separated[2]);
                 } catch (Exception ex) {
 
                 }

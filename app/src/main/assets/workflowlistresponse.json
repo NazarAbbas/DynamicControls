@@ -274,7 +274,7 @@
             },
             {
               "IsAllCaps": true,
-              "label": "Permanent Address|Same as permenent|Current Address",
+              "label": "Current Address|Same as perma|Permanent Address",
               "maxLength": 0,
               "minLength": 0,
               "name": "heading",

@@ -558,9 +558,32 @@ public class ControlRederer {
             if (field.getType().equalsIgnoreCase(Types.PERMANENT_AND_CURRENT_ADDRESS)) {
                 mPermanentAndCurrentEditBoxAddress mPermanentAndCurrentEditBoxAddress = (mPermanentAndCurrentEditBoxAddress) field.getObject();
                 if (field.getRequired().equalsIgnoreCase("Y")) {
-                    if (mPermanentAndCurrentEditBoxAddress.getValue().isEmpty()) {
-                        Toast.makeText(activity, "Please enter " + field.getLabel(), Toast.LENGTH_LONG).show();
-                        return false;
+                    String[] separatedLabel = null;
+                    if (field.getLabel() != null && !field.getLabel().isEmpty()) {
+                        separatedLabel = field.getLabel().split("\\|");
+                    }
+                    if (!mPermanentAndCurrentEditBoxAddress.getValue().isEmpty()) {
+                        String[] separated = mPermanentAndCurrentEditBoxAddress.getValue().split("\\|");
+                        try {
+                            if (separated[0] == null || separated[0].isEmpty()) {
+                                Toast.makeText(activity, "Please enter " + separatedLabel[0], Toast.LENGTH_LONG).show();
+                                return false;
+                            }
+
+                        } catch (Exception ex) {
+                            Toast.makeText(activity, "Please enter " + separatedLabel[0], Toast.LENGTH_LONG).show();
+                            return false;
+                        }
+                        try {
+                            if (separated[2] == null || separated[2].isEmpty()) {
+                                Toast.makeText(activity, "Please enter " + separatedLabel[2], Toast.LENGTH_LONG).show();
+                                return false;
+                            }
+
+                        } catch (Exception ex) {
+                            Toast.makeText(activity, "Please enter " + separatedLabel[2], Toast.LENGTH_LONG).show();
+                            return false;
+                        }
                     }
                 }
             }

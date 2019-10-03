@@ -46,16 +46,18 @@
                 android:layout_marginTop="5dp"
                 android:minLines="5"
                 android:maxLines="5"
+                android:lines="5"
                 android:textCursorDrawable="@drawable/cursor_dark_gray"
                 android:textSize="@dimen/text_size_15" />
 
         <CheckBox
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:id="@+id/check"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Same as permanent"
             android:layout_gravity="right"
+            android:textSize="10dp"
             android:textColor="@color/Black" />
       <!--  </android.support.design.widget.TextInputLayout>-->
 
@@ -63,7 +65,6 @@
             android:id="@+id/tv_current_address_heading"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
             android:gravity="center_vertical"
             android:paddingLeft="3dp"
             android:text="Current Address"
@@ -92,6 +93,7 @@
             android:layout_marginTop="5dp"
             android:minLines="5"
             android:maxLines="5"
+            android:lines="5"
             android:textCursorDrawable="@drawable/cursor_dark_gray"
             android:textSize="@dimen/text_size_15" />
 
