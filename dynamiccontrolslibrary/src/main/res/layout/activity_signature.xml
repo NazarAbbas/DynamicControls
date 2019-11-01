@@ -55,35 +55,33 @@
              android:layout_weight="1"
              android:textColor="@color/White"
              android:background="@color/sky_blue_light"/>-->
-        <com.vdoers.dynamiccontrolslibrary.mControls.MaterialRippleLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            app:mrl_rippleColor="@color/white"
-            app:mrl_rippleRoundedCorners="25dp">
+            android:background="@drawable/rounded_border_primary_color_background">
 
             <Button
                 android:id="@+id/btn_clear"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="@color/dark_blue"
+                android:background="@drawable/ripple_effect_white_color"
                 android:text="@string/clear"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
-        </com.vdoers.dynamiccontrolslibrary.mControls.MaterialRippleLayout>
+    </LinearLayout>
 
-        <com.vdoers.dynamiccontrolslibrary.mControls.MaterialRippleLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            app:mrl_rippleColor="@color/white"
-            app:mrl_rippleRoundedCorners="25dp">
+           android:background="@drawable/rounded_border_primary_color_background">
 
             <Button
                 android:id="@+id/btn_done"
@@ -91,10 +89,10 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="5dp"
                 android:text="@string/done"
-                android:background="@color/dark_blue"
+                android:background="@drawable/ripple_effect_white_color"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
-        </com.vdoers.dynamiccontrolslibrary.mControls.MaterialRippleLayout>
+        </LinearLayout>
         <!--    <Button
                 android:layout_marginTop="5dp"
                 android:layout_width="match_parent"

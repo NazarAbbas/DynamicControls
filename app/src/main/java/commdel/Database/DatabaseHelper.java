@@ -82,6 +82,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     + Row_ID + " integer primary key autoincrement, "
                     + COL_FILE_NAME + " varchar, "
                     + COL_FILE_PATH + " varchar, "
+                    + COL_CASE_ID + " varchar, "
                     + COL_CREATED_DATE + " DATETIME DEFAULT CURRENT_DATE)";
             db.execSQL(str_image);
             Log.d("Table: ", "Table creation query: " + str_image);

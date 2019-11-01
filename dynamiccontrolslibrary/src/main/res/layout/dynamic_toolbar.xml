@@ -12,25 +12,24 @@
         android:layout_height="50dp"
         android:layout_marginTop="5dp">
 
-        <com.vdoers.dynamiccontrolslibrary.mControls.MaterialRippleLayout
+        <LinearLayout
             android:id="@+id/mrl"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
-            app:mrl_rippleColor="#000000"
-            app:mrl_rippleRoundedCorners="100dp">
+           >
 
 
             <ImageView
-
                 android:id="@+id/img_back"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
+                android:background="@drawable/ripple_effect_gray_color"
                 android:layout_gravity="center"
                 android:src="@drawable/dark_blue_back" />
-        </com.vdoers.dynamiccontrolslibrary.mControls.MaterialRippleLayout>
+        </LinearLayout>
 
         <TextView
             android:id="@+id/tv_header_title"

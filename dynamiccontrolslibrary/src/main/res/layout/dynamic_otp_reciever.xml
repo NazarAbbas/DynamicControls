@@ -4,115 +4,115 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
 
-    <ImageView
-        android:id="@+id/img_banner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:scaleType="centerCrop"
-        android:src="@drawable/banner" />
-    <LinearLayout
-        android:layout_below="@+id/img_banner"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:layout_height="match_parent">
 
         <ImageView
-            android:layout_marginTop="10dp"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:src="@drawable/sms_icon"/>
-
-        <TextView
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/Black"
-            android:gravity="center"
-            android:textSize="@dimen/text_size_15"
-            android:text="Sit back and relax! while we verify your\nmobile number"/>
-
-        <TextView
-            android:layout_marginTop="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/Black"
-            android:gravity="center"
-            android:textSize="11dp"
-            android:text="(Enter the OTP in case if we fail to detect the sms automatically!)"/>
-
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/til"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:foregroundTint="@color/dark_gray"
-            android:padding="@dimen/padding_five"
-            android:textColorHint="@color/warm_grey"
-            app:errorTextAppearance="@style/InputErrorStyle"
-            app:hintTextAppearance="@style/InputHintStyle"
-            app:passwordToggleEnabled="true"
-            app:passwordToggleTint="@color/Black">
-
-            <EditText
-                android:id="@+id/edit_text"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:background="@drawable/edittext_bg"
-                android:drawableLeft="@drawable/lock"
-                android:drawablePadding="10dp"
-                android:drawableStart="@drawable/lock"
-                android:hint="Enter verification code"
-                android:imeOptions="actionDone"
-                android:inputType="numberPassword"
-                android:maxLines="1"
-                android:maxLength="4"
-                android:paddingLeft="5dp"
-                android:textColor="@color/Black"
-                android:textCursorDrawable="@drawable/cursor_dark_gray"
-                android:textSize="16dp" />
-
-
-        </android.support.design.widget.TextInputLayout>
-
-        <com.vdoers.dynamiccontrolslibrary.mControls.MaterialRippleLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="40dp"
-            app:mrl_rippleColor="@color/white"
-            app:mrl_rippleRoundedCorners="25dp">
-
-            <Button
-                android:id="@+id/btn_next"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:background="@color/dark_blue"
-                android:text="Verify"
-                android:textColor="@color/white" />
-        </com.vdoers.dynamiccontrolslibrary.mControls.MaterialRippleLayout>
-
-        <TextView
-            android:layout_marginTop="10dp"
-            android:id="@+id/tv_resend_otp"
+            android:id="@+id/img_banner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:textSize="@dimen/text_size_15"
-            android:textColor="@color/Black"
-            android:text="Resend OTP"/>
+            android:layout_gravity="left"
+            android:scaleType="centerCrop"
+            android:src="@drawable/banner" />
 
-    </LinearLayout>
-</RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/img_banner"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/sms_icon" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Sit back and relax! while we verify your\nmobile number"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/text_size_15" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="(Enter the OTP in case if we fail to detect the sms automatically!)"
+                android:textColor="@color/Black"
+                android:textSize="11dp" />
+
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/til"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:foregroundTint="@color/dark_gray"
+                android:padding="@dimen/padding_five"
+                android:textColorHint="@color/warm_grey"
+                app:errorTextAppearance="@style/InputErrorStyle"
+                app:hintTextAppearance="@style/InputHintStyle"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/Black">
+
+                <EditText
+                    android:id="@+id/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:background="@drawable/edittext_bg"
+                    android:drawableStart="@drawable/lock"
+                    android:drawableLeft="@drawable/lock"
+                    android:drawablePadding="10dp"
+                    android:hint="Enter verification code"
+                    android:imeOptions="actionDone"
+                    android:inputType="numberPassword"
+                    android:maxLength="4"
+                    android:maxLines="1"
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/Black"
+                    android:textCursorDrawable="@drawable/cursor_dark_gray"
+                    android:textSize="16dp" />
+
+
+            </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rounded_border_primary_color_background">
+
+                <Button
+                    android:id="@+id/btn_next"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@drawable/ripple_effect_white_color"
+                    android:text="Verify"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_resend_otp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="Resend OTP"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/text_size_15" />
+
+        </LinearLayout>
+    </RelativeLayout>
 </LinearLayout>

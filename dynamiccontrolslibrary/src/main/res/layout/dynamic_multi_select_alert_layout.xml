@@ -33,12 +33,10 @@
             android:orientation="horizontal"
             android:weightSum="2">
 
-            <com.vdoers.dynamiccontrolslibrary.mControls.MaterialRippleLayout
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                app:mrl_rippleColor="@color/dark_gray"
-                app:mrl_rippleRoundedCorners="0dp">
+                android:layout_weight="1">
 
                 <TextView
                     android:id="@+id/tv_cancel"
@@ -46,22 +44,22 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:text="CLEAR"
+                    android:background="@drawable/ripple_effect_gray_color"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textColor="#000000"
                     android:textStyle="bold" />
-            </com.vdoers.dynamiccontrolslibrary.mControls.MaterialRippleLayout>
+            </LinearLayout>
 
             <View
                 android:layout_width="1px"
                 android:layout_height="match_parent"
                 android:background="@color/dark_blue" />
 
-            <com.vdoers.dynamiccontrolslibrary.mControls.MaterialRippleLayout
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                app:mrl_rippleColor="@color/dark_gray"
-                app:mrl_rippleRoundedCorners="0dp">
+                >
 
                 <TextView
                     android:id="@+id/tv_ok"
@@ -69,10 +67,11 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:text="SET"
+                    android:background="@drawable/ripple_effect_gray_color"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textColor="#000000"
                     android:textStyle="bold" />
-            </com.vdoers.dynamiccontrolslibrary.mControls.MaterialRippleLayout>
+            </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>

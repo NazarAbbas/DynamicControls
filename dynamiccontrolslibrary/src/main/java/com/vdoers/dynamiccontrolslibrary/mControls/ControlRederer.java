@@ -8,6 +8,8 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.provider.OpenableColumns;
 import android.util.Base64;
 import android.view.View;
@@ -42,9 +44,14 @@ import com.vdoers.dynamiccontrolslibrary.mControls.models.FileSavedModel;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 
 public class ControlRederer {
@@ -849,6 +856,39 @@ public class ControlRederer {
         }
 
     }
+
+
+    private static Uri getImagePath(Uri uri, Context context) {
+        Uri imageUri = null;
+        Bitmap bitmap = null;
+        try {
+            try {
+                bitmap = MediaStore.Images.Media.getBitmap(context.getContentResolver(), uri);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, bytes);
+            File dir = new File(Environment.getExternalStorageDirectory(), FileUtilsPath.folderName);
+            if (!dir.exists()) {
+                dir.mkdirs();
+            }
+            String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss",
+                    Locale.getDefault()).format(new Date());
+            File f = new File(dir.getPath() + File.separator
+                    + "IMG_" + timeStamp + ".png");
+            f.createNewFile();
+            FileOutputStream fo = new FileOutputStream(f);
+            fo.write(bytes.toByteArray());
+            fo.close();
+            imageUri = Uri.fromFile(f);
+
+        } catch (Exception ex) {
+            String x = ex.getMessage();
+        }
+        return imageUri;
+    }
+
 
 
     public static String BitMapToString(Bitmap bitmap) {

@@ -11,15 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="50dp">
 
-        <com.vdoers.dynamiccontrolslibrary.mControls.MaterialRippleLayout
+        <LinearLayout
             android:id="@+id/mrl"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            app:mrl_rippleColor="@color/dark_blue"
-            app:mrl_rippleRoundedCorners="100dp">
+            android:layout_marginLeft="10dp">
 
 
             <ImageView
@@ -27,8 +25,9 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center"
+                android:background="@drawable/ripple_effect_white_color"
                 android:src="@drawable/dark_blue_back" />
-        </com.vdoers.dynamiccontrolslibrary.mControls.MaterialRippleLayout>
+        </LinearLayout>
 
         <TextView
             android:id="@+id/tv_header"

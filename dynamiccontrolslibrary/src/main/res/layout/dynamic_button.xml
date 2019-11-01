@@ -15,21 +15,20 @@
         android:orientation="vertical">
 
 
-        <com.vdoers.dynamiccontrolslibrary.mControls.MaterialRippleLayout
+        <LinearLayout
             android:id="@+id/mrl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:mrl_rippleColor="@color/white"
-            app:mrl_rippleRoundedCorners="0dp">
+            android:background="@drawable/rounded_border_primary_color_background">
 
             <Button
                 android:id="@+id/btn_next"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="@color/dark_blue"
+                android:background="@drawable/ripple_effect_white_color"
                 android:text="@string/button"
                 android:textColor="@color/white" />
 
-        </com.vdoers.dynamiccontrolslibrary.mControls.MaterialRippleLayout>
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

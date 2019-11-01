@@ -344,7 +344,7 @@ public class DynamicControlRendererActivity extends Permissions implements View.
             if (resultCode == RESULT_OK) {
                 Uri selectedImage = mFile.fileUri;//getOutputMediaFileUri(this);// fileUri.getPath();//.getData();
                 CropImage.activity(selectedImage)
-                        .setGuidelines(CropImageView.Guidelines.ON).setRequestedSize(Constant.IMAGE_REQUESTED_WIDTH, Constant.IMAGE_REQUESTED_HEIGHT)
+                        .setGuidelines(CropImageView.Guidelines.ON)//.setRequestedSize(Constant.IMAGE_REQUESTED_WIDTH, Constant.IMAGE_REQUESTED_HEIGHT)
                         .start(this);
             }
         }
