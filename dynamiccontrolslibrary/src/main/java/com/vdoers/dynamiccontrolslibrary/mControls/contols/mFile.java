@@ -162,14 +162,16 @@ public class mFile extends LinearLayout implements View.OnClickListener {
                 }
             }
             if (field.getRequired().equalsIgnoreCase("Y")) {
-                if (field.getFileSavedModelList() == null || field.getFileSavedModelList().size() < field.getMaxLength()) {
+                if (field.getFileSavedModelList() == null || field.getFileSavedModelList().size() < field.getMaxLength()
+                        || field.getMaxLength() == -1) {
                     openFileChooser();
                 } else {
                     Toast.makeText(context, "You can select max " + field.getMaxLength() + " file", Toast.LENGTH_LONG).show();
                 }
             } else {
                 if (field.getMaxLength() != 0) {
-                    if (field.getFileSavedModelList() == null || field.getFileSavedModelList().size() < field.getMaxLength()) {
+                    if (field.getFileSavedModelList() == null || field.getFileSavedModelList().size() < field.getMaxLength()
+                            || field.getMaxLength() == -1) {
                         openFileChooser();
                     } else {
                         Toast.makeText(context, "You can select max " + field.getMaxLength() + " file", Toast.LENGTH_LONG).show();

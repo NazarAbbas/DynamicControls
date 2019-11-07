@@ -10,13 +10,13 @@
       "fields": [{
         "IsAllCaps": true,
         "label": "Testing Heading",
-        "maxLength": 0,
+        "maxLength": 1,
         "minLength": 1,
         "name": "heading",
         "ReadMoreURL": "",
         "Regex": "",
         "required": "N",
-        "type": "cropcamera"
+        "type": "snap"
       },
         {
           "IsAllCaps": false,
