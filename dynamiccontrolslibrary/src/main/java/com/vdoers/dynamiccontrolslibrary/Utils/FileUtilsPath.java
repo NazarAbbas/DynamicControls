@@ -37,10 +37,18 @@ public class FileUtilsPath {
     //public static Uri fileUri;
 
     public static String folderName;
+    public static int imageHeightSize = 1000;
+    public static int imageWidthSize = 1000;
 
     public static void setImagesFolderName(String folder) {
         folderName = folder;
     }
+
+    public static void setImageHeightWidth(int width, int height) {
+        imageHeightSize = height;
+        imageWidthSize = width;
+    }
+
 
     /* Get uri related content real local file path. */
     public static String getPath(Context ctx, Uri uri) {
@@ -65,7 +73,7 @@ public class FileUtilsPath {
         //copy file and send new file path
         String fileName = getFileName(contentUri);
         if (!TextUtils.isEmpty(fileName)) {
-            File dir = new File(Environment.getExternalStorageDirectory(), folderName +File.separator + fileName);
+            File dir = new File(Environment.getExternalStorageDirectory(), folderName + File.separator + fileName);
            /* String TEMP_DIR_PATH = Environment.getExternalStorageDirectory().getPath();
             File copyFile = new File(TEMP_DIR_PATH + File.separator + fileName);
             Log.d("DREG", "FilePath copyFile: " + copyFile);

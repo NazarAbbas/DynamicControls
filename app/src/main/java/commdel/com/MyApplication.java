@@ -21,5 +21,6 @@ public class MyApplication extends MultiDexApplication {
         Permissions.dataObject = new DataObject();
         ThemeColor.themeColor = getResources().getColor(R.color.app_theme_color);
         FileUtilsPath.setImagesFolderName("CroppedImages");
+        FileUtilsPath.setImageHeightWidth(1000, 1000);
     }
 }

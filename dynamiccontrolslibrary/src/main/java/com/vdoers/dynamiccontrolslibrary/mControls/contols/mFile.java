@@ -131,7 +131,10 @@ public class mFile extends LinearLayout implements View.OnClickListener {
             heading = heading + " (Min " + field.getMinLength();
         }
         if (field.getMaxLength() > 0) {
-            heading = heading + ", Max " + field.getMaxLength() + ")";
+            if (field.getMinLength() > 0)
+                heading = heading + ", Max " + field.getMaxLength() + ")";
+            else
+                heading = heading + " (Max " + field.getMaxLength() + ")";
         }
         tvHeading.setText(heading);
         //tvHeading.setText(field.getLabel());
