@@ -337,6 +337,10 @@ public class ControlRederer {
             if (field.getType().equalsIgnoreCase(Types.EDITBOX_TYPE)) {
                 mEditBox dynamicEditBox = (mEditBox) field.getObject();
                 if (field.getRequired().equalsIgnoreCase("Y")) {
+                    if (dynamicEditBox.getValue().isEmpty()) {
+                        dynamicEditBox.setError(activity.getString(R.string.please_enter) + " " + field.getLabel().replace("*", ""));
+                        return false;
+                    }
                     if (field.getRegex() != null && !field.getRegex().isEmpty()) {
                         if (!dynamicEditBox.isValid(dynamicEditBox.getValue(), field.getRegex(), field.getType())) {
                             dynamicEditBox.setError(activity.getString(R.string.invalid) + " " + field.getLabel().replace("*", ""));
@@ -347,10 +351,7 @@ public class ControlRederer {
                         dynamicEditBox.setError(activity.getString(R.string.invalid) + " " + field.getLabel().replace("*", ""));
                         return false;
                     }
-                    if (dynamicEditBox.getValue().isEmpty()) {
-                        dynamicEditBox.setError(activity.getString(R.string.please_enter) + " " + field.getLabel().replace("*", ""));
-                        return false;
-                    }
+
                 } else {
                     if (field.getRegex() != null && !field.getRegex().isEmpty() && !dynamicEditBox.getValue().isEmpty()) {
                         if (!dynamicEditBox.isValid(dynamicEditBox.getValue(), field.getRegex(), field.getType())) {
@@ -368,6 +369,11 @@ public class ControlRederer {
             if (field.getType().equalsIgnoreCase(Types.EDITBOX_EMAIL)) {
                 mEditBox dynamicEditBox = (mEditBox) field.getObject();
                 if (field.getRequired().equalsIgnoreCase("Y")) {
+                    if (dynamicEditBox.getValue().isEmpty()) {
+                        dynamicEditBox.setError(activity.getString(R.string.please_enter) + " " + field.getLabel().replace("*", ""));
+                        return false;
+                    }
+
                     if (!dynamicEditBox.isValid(dynamicEditBox.getValue(), field.getRegex(), field.getType())) {
                         dynamicEditBox.setError(activity.getString(R.string.invalid) + " " + field.getLabel().replace("*", ""));
                         return false;
@@ -387,6 +393,10 @@ public class ControlRederer {
             if (field.getType().equalsIgnoreCase(Types.EDITBOX_NUMBER_TYPE)) {
                 mEditBox dynamicEditBox = (mEditBox) field.getObject();
                 if (field.getRequired().equalsIgnoreCase("Y")) {
+                    if (dynamicEditBox.getValue().isEmpty()) {
+                        dynamicEditBox.setError(activity.getString(R.string.please_enter) + " " + field.getLabel().replace("*", ""));
+                        return false;
+                    }
                     if (field.getMinLength() > 0 && dynamicEditBox.getValue().length() < field.getMinLength()) {
                         dynamicEditBox.setError(activity.getString(R.string.invalid) + " " + field.getLabel().replace("*", ""));
                         return false;
@@ -403,6 +413,10 @@ public class ControlRederer {
             if (field.getType().equalsIgnoreCase(Types.OTP_RECIEVER)) {
                 mOTPReciever mOTPReciever = (mOTPReciever) field.getObject();
                 if (field.getRequired().equalsIgnoreCase("Y")) {
+                    if (mOTPReciever.getValue().isEmpty()) {
+                        mOTPReciever.setError(activity.getString(R.string.please_enter) + " " + field.getLabel().replace("*", ""));
+                        return false;
+                    }
                     if (field.getMinLength() > 0 && mOTPReciever.getValue().length() < field.getMinLength()) {
                         mOTPReciever.setError(activity.getString(R.string.invalid) + " " + field.getLabel().replace("*", ""));
                         return false;

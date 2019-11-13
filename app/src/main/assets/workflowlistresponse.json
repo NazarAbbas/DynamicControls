@@ -37,7 +37,7 @@
           "name": "TenantName",
           "ReadMoreURL": "",
           "Regex": "",
-          "required": "N",
+          "required": "Y",
           "type": "text"
         },
         {
@@ -105,12 +105,12 @@
         {
           "IsAllCaps": true,
           "label": "Mobile Number",
-          "maxLength": 50,
-          "minLength": 0,
+          "maxLength": 10,
+          "minLength": 10,
           "name": "MobileNumber",
           "ReadMoreURL": "",
           "Regex": "",
-          "required": "N",
+          "required": "Y",
           "type": "number"
         },
         {
