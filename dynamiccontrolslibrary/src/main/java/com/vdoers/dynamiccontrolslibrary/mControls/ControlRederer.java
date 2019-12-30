@@ -38,6 +38,7 @@ import com.vdoers.dynamiccontrolslibrary.mControls.contols.mMapEditBoxAddress;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.mMultipleChoice;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.mOTPReciever;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.mPermanentAndCurrentEditBoxAddress;
+import com.vdoers.dynamiccontrolslibrary.mControls.contols.mRemarks;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.mSearchEditBox;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.mSingleChoice;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.mSpinner;
@@ -178,6 +179,9 @@ public class ControlRederer {
             } else if (field.getType().equalsIgnoreCase(Types.TEXTVIEW)) {
                 field.setObject(new mTextView(ctx, field));
                 mainLayout.addView((View) field.getObject());
+            } else if (field.getType().equalsIgnoreCase(Types.REMARKS)) {
+                field.setObject(new mRemarks(ctx, field));
+                mainLayout.addView((View) field.getObject());
             } else if (field.getType().equalsIgnoreCase(Types.TIME)) {
                 field.setObject(new mTime(ctx, field));
                 mainLayout.addView((View) field.getObject());
@@ -239,6 +243,11 @@ public class ControlRederer {
                     || field.getType().equalsIgnoreCase(Types.EDITBOX_EMAIL)) {
                 mEditBox dynamicEditBox = (mEditBox) field.getObject();
                 field.setAnswer(dynamicEditBox.getValue(), field);
+            }
+
+            if (field.getType().equalsIgnoreCase(Types.REMARKS)) {
+                mRemarks remarks = (mRemarks) field.getObject();
+                field.setAnswer(remarks.getValue(), field);
             }
 
             if (field.getType().equalsIgnoreCase(Types.DROPDOWN) || field.getType().equalsIgnoreCase(Types.CITY) || field.getType().equalsIgnoreCase(Types.STATE)) {
@@ -392,6 +401,26 @@ public class ControlRederer {
 
             if (field.getType().equalsIgnoreCase(Types.EDITBOX_NUMBER_TYPE)) {
                 mEditBox dynamicEditBox = (mEditBox) field.getObject();
+                if (field.getRequired().equalsIgnoreCase("Y")) {
+                    if (dynamicEditBox.getValue().isEmpty()) {
+                        dynamicEditBox.setError(activity.getString(R.string.please_enter) + " " + field.getLabel().replace("*", ""));
+                        return false;
+                    }
+                    if (field.getMinLength() > 0 && dynamicEditBox.getValue().length() < field.getMinLength()) {
+                        dynamicEditBox.setError(activity.getString(R.string.invalid) + " " + field.getLabel().replace("*", ""));
+                        return false;
+                    }
+                } else {
+                    if (!dynamicEditBox.getValue().isEmpty() && field.getMinLength() > 0
+                            && dynamicEditBox.getValue().length() < field.getMinLength()) {
+                        dynamicEditBox.setError(activity.getString(R.string.invalid) + " " + field.getLabel().replace("*", ""));
+                        return false;
+                    }
+                }
+            }
+
+            if (field.getType().equalsIgnoreCase(Types.REMARKS)) {
+                mRemarks dynamicEditBox = (mRemarks) field.getObject();
                 if (field.getRequired().equalsIgnoreCase("Y")) {
                     if (dynamicEditBox.getValue().isEmpty()) {
                         dynamicEditBox.setError(activity.getString(R.string.please_enter) + " " + field.getLabel().replace("*", ""));

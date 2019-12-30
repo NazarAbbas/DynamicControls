@@ -1,0 +1,100 @@
+{
+  "JsonWorkflowList": [
+    {
+      "CaseTypeId": 13,
+      "id": "15",
+      "isCompleted": false,
+      "IsMandatory": true,
+      "name": "New Lead",
+      "subforms": [
+        {
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": true,
+              "label": "Tenant Name",
+              "maxLength": 20,
+              "minLength": 0,
+              "name": "TenantName",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "text"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "ARE YOU OK ?",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "HealthQuestion",
+              "optionList": [
+                {
+                  "gotoId": "2",
+                  "id": "165",
+                  "isChecked": false,
+                  "value": "YES"
+                },
+                {
+                  "gotoId": "4",
+                  "id": "166",
+                  "isChecked": false,
+                  "value": "NO"
+                }
+              ],
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "choice"
+            },
+
+            {
+              "IsAllCaps": false,
+              "label": "ARE YOU FROM DELHI",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "FromDelhi",
+              "optionList": [
+                {
+                  "gotoId": "2",
+                  "id": "167",
+                  "isChecked": false,
+                  "value": "YES"
+                },
+                {
+                  "gotoId": "4",
+                  "id": "168",
+                  "isChecked": false,
+                  "value": "NO"
+                }
+              ],
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "Y",
+              "type": "choice"
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Submit",
+              "maxLength": -1,
+              "minLength": -1,
+              "name": "submit",
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "button"
+            }
+          ],
+          "gotoId": "2",
+          "id": "1",
+          "next": "True",
+          "title": "Basic Details"
+        }
+      ],
+      "version": "1",
+      "WorkflowId": 63
+    }
+  ],
+  "ActionList": [],
+  "ResponseCode": 200,
+  "ResponseMessage": "Success"
+}

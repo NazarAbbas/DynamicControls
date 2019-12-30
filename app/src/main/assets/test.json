@@ -1,73 +1,560 @@
 {
-  "CaseTypeId": 13,
-  "id": "1",
-  "isCompleted": false,
-  "IsMandatory": true,
-  "name": "New Lead",
-  "subforms": [
+  "JsonWorkflowList": [
     {
-      "back": "True",
-      "fields": [
+      "CaseTypeId": 0,
+      "id": null,
+      "isCompleted": false,
+      "IsMandatory": false,
+      "name": null,
+      "subforms": [
         {
-          "IsAllCaps": true,
-          "label": "Crop Camera",
-          "maxLength": 4,
-          "minLength": 4,
-          "name": "Signature",
-          "ReadMoreURL": "",
-          "Regex": "",
-          "required": "Y",
-          "type": "mapaddress"
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": false,
+              "label": "Unique order ID generation -Order ID should be generated uniquely",
+              "maxLength": 0,
+              "minLength": 0,
+              "name": "2",
+              "optionList": [
+                {
+                  "gotoId": "",
+                  "id": "1",
+                  "isChecked": false,
+                  "value": "Yes",
+                  "QuestionId": 0
+                },
+                {
+                  "gotoId": "",
+                  "id": "0",
+                  "isChecked": false,
+                  "value": "No",
+                  "QuestionId": 0
+                }
+              ],
+              "ReadMoreURL": null,
+              "Regex": null,
+              "required": "1",
+              "type": "choice",
+              "SectionId": 0
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Request Tampering-Fetching the amount values from the database or passing/validating the required parameters through session/validation parameter (Hash, Encryption, track Id)",
+              "maxLength": 0,
+              "minLength": 0,
+              "name": "3",
+              "optionList": [
+                {
+                  "gotoId": "",
+                  "id": "1",
+                  "isChecked": false,
+                  "value": "Yes",
+                  "QuestionId": 0
+                },
+                {
+                  "gotoId": "",
+                  "id": "0",
+                  "isChecked": false,
+                  "value": "No",
+                  "QuestionId": 0
+                }
+              ],
+              "ReadMoreURL": null,
+              "Regex": null,
+              "required": "0",
+              "type": "choice",
+              "SectionId": 0
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Response Tampering-Encrypted Response validation with the current session/order id",
+              "maxLength": 0,
+              "minLength": 0,
+              "name": "7",
+              "optionList": [
+                {
+                  "gotoId": "",
+                  "id": "1",
+                  "isChecked": false,
+                  "value": "Yes",
+                  "QuestionId": 0
+                },
+                {
+                  "gotoId": "",
+                  "id": "0",
+                  "isChecked": false,
+                  "value": "No",
+                  "QuestionId": 0
+                }
+              ],
+              "ReadMoreURL": null,
+              "Regex": null,
+              "required": "1",
+              "type": "choice",
+              "SectionId": 0
+            },
+            {
+              "IsAllCaps": false,
+              "label": "URL redirection validation",
+              "maxLength": 0,
+              "minLength": 0,
+              "name": "22",
+              "optionList": [
+                {
+                  "gotoId": "",
+                  "id": "1",
+                  "isChecked": false,
+                  "value": "Yes",
+                  "QuestionId": 0
+                },
+                {
+                  "gotoId": "",
+                  "id": "0",
+                  "isChecked": false,
+                  "value": "No",
+                  "QuestionId": 0
+                }
+              ],
+              "ReadMoreURL": null,
+              "Regex": null,
+              "required": "0",
+              "type": "choice",
+              "SectionId": 0
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Duplicate entry validation",
+              "maxLength": 0,
+              "minLength": 0,
+              "name": "21",
+              "optionList": [
+                {
+                  "gotoId": "",
+                  "id": "1",
+                  "isChecked": false,
+                  "value": "Yes",
+                  "QuestionId": 0
+                },
+                {
+                  "gotoId": "",
+                  "id": "0",
+                  "isChecked": false,
+                  "value": "No",
+                  "QuestionId": 0
+                }
+              ],
+              "ReadMoreURL": null,
+              "Regex": null,
+              "required": "0",
+              "type": "choice",
+              "SectionId": 0
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Receipt Generation",
+              "maxLength": 0,
+              "minLength": 0,
+              "name": "23",
+              "optionList": [
+                {
+                  "gotoId": "",
+                  "id": "1",
+                  "isChecked": false,
+                  "value": "Yes",
+                  "QuestionId": 0
+                },
+                {
+                  "gotoId": "",
+                  "id": "0",
+                  "isChecked": false,
+                  "value": "No",
+                  "QuestionId": 0
+                }
+              ],
+              "ReadMoreURL": null,
+              "Regex": null,
+              "required": "0",
+              "type": "choice",
+              "SectionId": 0
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Implementation of a valid and secure SSL (For Seamless integration)",
+              "maxLength": 0,
+              "minLength": 0,
+              "name": "24",
+              "optionList": [
+                {
+                  "gotoId": "",
+                  "id": "1",
+                  "isChecked": false,
+                  "value": "Yes",
+                  "QuestionId": 0
+                },
+                {
+                  "gotoId": "",
+                  "id": "0",
+                  "isChecked": false,
+                  "value": "No",
+                  "QuestionId": 0
+                }
+              ],
+              "ReadMoreURL": null,
+              "Regex": null,
+              "required": "0",
+              "type": "choice",
+              "SectionId": 0
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Next",
+              "maxLength": 0,
+              "minLength": 0,
+              "name": "next",
+              "optionList": [],
+              "ReadMoreURL": null,
+              "Regex": null,
+              "required": null,
+              "type": "button",
+              "SectionId": 0
+            }
+          ],
+          "gotoId": "2",
+          "id": "1",
+          "next": "True",
+          "title": "Checklist"
         },
         {
-          "IsAllCaps": false,
-          "label": "Next",
-          "maxLength": -1,
-          "minLength": -1,
-          "name": "Next",
-          "ReadMoreURL": "",
-          "Regex": "",
-          "required": "Y",
-          "type": "button"
-        }
-      ],
-      "gotoId": "2",
-      "id": "1",
-      "next": "True",
-      "title": "Other"
-    },
-    {
-      "back": "True",
-      "fields": [
-        {
-          "IsAllCaps": true,
-          "label": "VIDEO",
-          "maxLength": 0,
-          "minLength": 0,
-          "name": "video",
-          "ReadMoreURL": "",
-          "Regex": "",
-          "required": "Y",
-          "type": "cropcamera"
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": false,
+              "label": "MERCHANT NAME",
+              "maxLength": 0,
+              "minLength": 0,
+              "name": "25",
+              "optionList": [],
+              "ReadMoreURL": null,
+              "Regex": null,
+              "required": "1",
+              "type": "text",
+              "SectionId": 0
+            },
+            {
+              "IsAllCaps": false,
+              "label": "TID / ACCOUNT ID",
+              "maxLength": 0,
+              "minLength": 0,
+              "name": "26",
+              "optionList": [],
+              "ReadMoreURL": null,
+              "Regex": null,
+              "required": "1",
+              "type": "text",
+              "SectionId": 0
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Web URL / URL to download the application (IOS/Android) ",
+              "maxLength": 0,
+              "minLength": 0,
+              "name": "27",
+              "optionList": [],
+              "ReadMoreURL": null,
+              "Regex": null,
+              "required": "0",
+              "type": "text",
+              "SectionId": 0
+            },
+            {
+              "IsAllCaps": false,
+              "label": "IOS UDID(Only for IOS integration mandatory) ",
+              "maxLength": 0,
+              "minLength": 0,
+              "name": "28",
+              "optionList": [],
+              "ReadMoreURL": null,
+              "Regex": null,
+              "required": "0",
+              "type": "text",
+              "SectionId": 0
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Android Application compatibility (Android Version) (Only for Android integration mandatory)",
+              "maxLength": 0,
+              "minLength": 0,
+              "name": "29",
+              "optionList": [],
+              "ReadMoreURL": null,
+              "Regex": null,
+              "required": "0",
+              "type": "text",
+              "SectionId": 0
+            },
+            {
+              "IsAllCaps": false,
+              "label": "TRANSACTION URL is publicly accessible",
+              "maxLength": 0,
+              "minLength": 0,
+              "name": "30",
+              "optionList": [
+                {
+                  "gotoId": "",
+                  "id": "1",
+                  "isChecked": false,
+                  "value": "Yes",
+                  "QuestionId": 0
+                },
+                {
+                  "gotoId": "",
+                  "id": "0",
+                  "isChecked": false,
+                  "value": "No",
+                  "QuestionId": 0
+                }
+              ],
+              "ReadMoreURL": null,
+              "Regex": null,
+              "required": "0",
+              "type": "choice",
+              "SectionId": 0
+            },
+            {
+              "IsAllCaps": false,
+              "label": "LOGIN ID",
+              "maxLength": 0,
+              "minLength": 0,
+              "name": "31",
+              "optionList": [],
+              "ReadMoreURL": null,
+              "Regex": null,
+              "required": "0",
+              "type": "text",
+              "SectionId": 0
+            },
+            {
+              "IsAllCaps": false,
+              "label": "LOGIN Password",
+              "maxLength": 0,
+              "minLength": 0,
+              "name": "32",
+              "optionList": [],
+              "ReadMoreURL": null,
+              "Regex": null,
+              "required": "0",
+              "type": "text",
+              "SectionId": 0
+            },
+            {
+              "IsAllCaps": false,
+              "label": "RESPONSE URL",
+              "maxLength": 0,
+              "minLength": 0,
+              "name": "33",
+              "optionList": [],
+              "ReadMoreURL": null,
+              "Regex": null,
+              "required": "0",
+              "type": "text",
+              "SectionId": 0
+            },
+            {
+              "IsAllCaps": false,
+              "label": "DEVELOPER CONTACT NO",
+              "maxLength": 0,
+              "minLength": 0,
+              "name": "34",
+              "optionList": [],
+              "ReadMoreURL": null,
+              "Regex": null,
+              "required": "0",
+              "type": "text",
+              "SectionId": 0
+            },
+            {
+              "IsAllCaps": false,
+              "label": "DEVELOPER EMAIL ID ",
+              "maxLength": 0,
+              "minLength": 0,
+              "name": "35",
+              "optionList": [],
+              "ReadMoreURL": null,
+              "Regex": null,
+              "required": "0",
+              "type": "text",
+              "SectionId": 0
+            },
+            {
+              "IsAllCaps": false,
+              "label": "TYPE",
+              "maxLength": 0,
+              "minLength": 0,
+              "name": "36",
+              "optionList": [
+                {
+                  "gotoId": "",
+                  "id": "1",
+                  "isChecked": false,
+                  "value": "VAS",
+                  "QuestionId": 0
+                },
+                {
+                  "gotoId": "",
+                  "id": "2",
+                  "isChecked": false,
+                  "value": "MIGS",
+                  "QuestionId": 0
+                },
+                {
+                  "gotoId": "",
+                  "id": "3",
+                  "isChecked": false,
+                  "value": "CYBS",
+                  "QuestionId": 0
+                },
+                {
+                  "gotoId": "",
+                  "id": "4",
+                  "isChecked": false,
+                  "value": "BQR",
+                  "QuestionId": 0
+                }
+              ],
+              "ReadMoreURL": null,
+              "Regex": null,
+              "required": "0",
+              "type": "dropdown",
+              "SectionId": 0
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Transaction Flow verified",
+              "maxLength": 0,
+              "minLength": 0,
+              "name": "37",
+              "optionList": [],
+              "ReadMoreURL": null,
+              "Regex": null,
+              "required": "0",
+              "type": "text",
+              "SectionId": 0
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Multiple Amount Values",
+              "maxLength": 0,
+              "minLength": 0,
+              "name": "38",
+              "optionList": [],
+              "ReadMoreURL": null,
+              "Regex": null,
+              "required": "0",
+              "type": "text",
+              "SectionId": 0
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Transactions response is being stored in the database (including Failed) ",
+              "maxLength": 0,
+              "minLength": 0,
+              "name": "39",
+              "optionList": [
+                {
+                  "gotoId": "",
+                  "id": "1",
+                  "isChecked": false,
+                  "value": "Yes",
+                  "QuestionId": 0
+                },
+                {
+                  "gotoId": "",
+                  "id": "0",
+                  "isChecked": false,
+                  "value": "No",
+                  "QuestionId": 0
+                }
+              ],
+              "ReadMoreURL": null,
+              "Regex": null,
+              "required": "0",
+              "type": "choice",
+              "SectionId": 0
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Next",
+              "maxLength": 0,
+              "minLength": 0,
+              "name": "next",
+              "optionList": [],
+              "ReadMoreURL": null,
+              "Regex": null,
+              "required": null,
+              "type": "button",
+              "SectionId": 0
+            }
+          ],
+          "gotoId": "3",
+          "id": "2",
+          "next": "True",
+          "title": "Audit Table"
         },
         {
-          "IsAllCaps": false,
-          "label": "Submit",
-          "maxLength": -1,
-          "minLength": -1,
-          "name": "submit",
-          "ReadMoreURL": "",
-          "Regex": "",
-          "required": "Y",
-          "type": "button"
+          "back": "True",
+          "fields": [
+            {
+              "IsAllCaps": false,
+              "label": "Picture",
+              "maxLength": 0,
+              "minLength": 0,
+              "name": "8",
+              "optionList": [],
+              "ReadMoreURL": null,
+              "Regex": null,
+              "required": "1",
+              "type": "snap",
+              "SectionId": 0
+            },
+            {
+              "IsAllCaps": false,
+              "label": "Remarks Test",
+              "maxLength": 10,
+              "minLength": 5,
+              "name": "900",
+              "optionList": [],
+              "ReadMoreURL": null,
+              "Regex": null,
+              "required": "Y",
+              "type": "remarks",
+              "SectionId": 0
+            },
+            {
+              "IsAllCaps": true,
+              "label": "Submit",
+              "maxLength": 0,
+              "minLength": 0,
+              "name": "submit",
+              "optionList": [],
+              "ReadMoreURL": null,
+              "Regex": null,
+              "required": null,
+              "type": "button",
+              "SectionId": 0
+            }
+          ],
+          "gotoId": null,
+          "id": "3",
+          "next": "False",
+          "title": "Submit"
         }
       ],
-      "gotoId": "3",
-      "id": "2",
-      "next": "True",
-      "title": "Other"
+      "version": null,
+      "WorkflowId": 0
     }
   ],
-  "version": "1",
-  "WorkflowId": 63
+  "ActionList": [],
+  "ResponseCode": 200,
+  "ResponseMessage": "Success"
 }

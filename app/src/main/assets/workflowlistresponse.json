@@ -16,7 +16,7 @@
         "ReadMoreURL": "",
         "Regex": "",
         "required": "N",
-        "type": "snap"
+        "type": "video"
       },
         {
           "IsAllCaps": false,

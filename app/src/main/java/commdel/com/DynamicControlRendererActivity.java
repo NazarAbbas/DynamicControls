@@ -101,11 +101,41 @@ public class DynamicControlRendererActivity extends Permissions implements View.
 
     private void showUI() {
         if (jsonWorkflowList != null) {
-
             for (int i = 0; i < jsonWorkflowList.getSubforms().size(); i++) {
                 workFlowListObject.put(Integer.parseInt(jsonWorkflowList.getSubforms().get(i).getId()), jsonWorkflowList.getSubforms().get(i));
             }
             subForm = workFlowListObject.get(Integer.parseInt(jsonWorkflowList.getSubforms().get(0).getId()));
+
+            //for Testing
+
+           /* leadDetailsObject = getIntent().getStringExtra(Constant.LEAD_DETAIL_OBJECT);
+            if (leadDetailsObject != null && !leadDetailsObject.equalsIgnoreCase("")) {
+                try {
+                    obj = new JSONObject(leadDetailsObject);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                for (int i = 0; i < subForm.getFields().size(); i++) {
+                    Iterator<String> iter = obj.keys();
+                    JsonWorkflowList.Field field = subForm.getFields().get(i);
+                    while (iter.hasNext()) {
+                        String key = iter.next();
+                        try {
+                            if (field.getName().equalsIgnoreCase(key)) {
+                                Object value = obj.get(key);
+                                Permissions.dataObject.put(field.getName(), value);
+                            }
+                        } catch (JSONException e) {
+                            String x = "";
+                        }
+
+
+                    }
+                }
+            }*/
+            //Testing End
+
             ControlRederer.renderSubScreens(this, subForm, llTopLayout);
 
         }
@@ -143,8 +173,7 @@ public class DynamicControlRendererActivity extends Permissions implements View.
             ControlRederer.setValues(subForm);
             insetFileIntoTable();
             submitData();
-        }
-        if (field.getName().equalsIgnoreCase("Verify")) {
+        } else if (field.getName().equalsIgnoreCase("Verify")) {
             //  Call OTP API
             String xx = mOTPReciever.otpText;
             String x = xx;
@@ -191,7 +220,7 @@ public class DynamicControlRendererActivity extends Permissions implements View.
 
         List<JsonWorkflowList.OptionList> optionList = null;
         for (int i = 0; i < subForm.getFields().size(); i++) {
-            if (subForm.getFields().get(i).getOptionList() != null && subForm.getFields().get(i).getRequired().equalsIgnoreCase("Y")
+            if (subForm.getFields().get(i).getOptionList() != null && !subForm.getFields().get(i).getOptionList().isEmpty() && subForm.getFields().get(i).getRequired().equalsIgnoreCase("Y")
                     && subForm.getFields().get(i).getType().equalsIgnoreCase(Types.CHOICE)) {
                 optionList = subForm.getFields().get(i).getOptionList();
             }
