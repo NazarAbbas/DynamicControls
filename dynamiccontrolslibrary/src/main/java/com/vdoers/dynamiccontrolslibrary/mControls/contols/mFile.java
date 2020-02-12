@@ -66,10 +66,12 @@ public class mFile extends LinearLayout implements View.OnClickListener {
         button.setColor(ThemeColor.themeColor);
         if (field.getType().equalsIgnoreCase(Types.CAMERA)
                 || field.getType().equalsIgnoreCase(Types.CROP_CAMERA)) {
-            button.setImageDrawable(context.getResources().getDrawable(R.drawable.camera_white));
+            // button.setImageDrawable(context.getResources().getDrawable(R.drawable.camera_white));
+            button.setImageResource(R.drawable.camera_white);
         }
         if (field.getType().equalsIgnoreCase(Types.SIGNATURE)) {
-            button.setImageDrawable(context.getResources().getDrawable(R.drawable.signature_button));
+            //button.setImageDrawable(context.getResources().getDrawable(R.drawable.signature_button));
+            button.setImageResource(R.drawable.signature_button);
         }
 
         tvHeading = (TextView) topLayout.findViewById(R.id.tv_heading);

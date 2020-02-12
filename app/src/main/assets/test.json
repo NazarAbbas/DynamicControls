@@ -12,6 +12,19 @@
           "fields": [
             {
               "IsAllCaps": false,
+              "label": "Picture",
+              "maxLength": 0,
+              "minLength": 0,
+              "name": "8",
+              "optionList": [],
+              "ReadMoreURL": null,
+              "Regex": null,
+              "required": "1",
+              "type": "snap",
+              "SectionId": 0
+            },
+            {
+              "IsAllCaps": false,
               "label": "Unique order ID generation -Order ID should be generated uniquely",
               "maxLength": 0,
               "minLength": 0,
@@ -526,7 +539,7 @@
               "optionList": [],
               "ReadMoreURL": null,
               "Regex": null,
-              "required": "Y",
+              "required": "N",
               "type": "remarks",
               "SectionId": 0
             },
