@@ -15,6 +15,7 @@ import com.google.gson.Gson;
 import com.vdoers.cropper.CropImage;
 import com.vdoers.cropper.CropImageView;
 import com.vdoers.dynamiccontrolslibrary.Utils.Permissions;
+import com.vdoers.dynamiccontrolslibrary.mControls.Constant;
 import com.vdoers.dynamiccontrolslibrary.mControls.ControlRederer;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.JsonWorkflowList;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.Types;
@@ -231,7 +232,7 @@ public class DynamicControlRendererActivity extends Permissions implements View.
                     gotoId = optionList.get(i).getGotoId();
                 }
             }
-            if (gotoId.equalsIgnoreCase("-100")) {
+            if (gotoId.isEmpty() || gotoId.equalsIgnoreCase("-100")) {
                 subForm = workFlowListObject.get(Integer.parseInt(subForm.getGotoId()));
             } else {
                 subForm = workFlowListObject.get(Integer.parseInt(gotoId));

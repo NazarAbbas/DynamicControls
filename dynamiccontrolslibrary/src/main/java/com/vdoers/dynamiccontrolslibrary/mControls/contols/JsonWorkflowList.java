@@ -228,6 +228,29 @@ public class JsonWorkflowList implements Serializable {
         @Expose
         private Integer minLength;
 
+        @SerializedName("IsEditable")
+        @Expose
+        private boolean isEditable;
+       /* @SerializedName("DefaultValue")
+        @Expose
+        private String defaultValue;
+
+        public String getDefaultValue() {
+            return defaultValue;
+        }
+
+        public void setDefaultValue(String defaultValue) {
+            this.defaultValue = defaultValue;
+        }*/
+
+        public boolean isEditable() {
+            return isEditable;
+        }
+
+        public void setEditable(boolean editable) {
+            isEditable = editable;
+        }
+
         public Integer getMinLength() {
             return minLength;
         }

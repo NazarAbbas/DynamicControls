@@ -12,19 +12,6 @@
           "fields": [
             {
               "IsAllCaps": false,
-              "label": "Picture",
-              "maxLength": 0,
-              "minLength": 0,
-              "name": "8",
-              "optionList": [],
-              "ReadMoreURL": null,
-              "Regex": null,
-              "required": "1",
-              "type": "snap",
-              "SectionId": 0
-            },
-            {
-              "IsAllCaps": false,
               "label": "Unique order ID generation -Order ID should be generated uniquely",
               "maxLength": 0,
               "minLength": 0,
@@ -47,9 +34,11 @@
               ],
               "ReadMoreURL": null,
               "Regex": null,
-              "required": "1",
+              "required": "y",
               "type": "choice",
-              "SectionId": 0
+              "SectionId": 0,
+              "IsEditable": true,
+              "answer": ""
             },
             {
               "IsAllCaps": false,
@@ -75,9 +64,11 @@
               ],
               "ReadMoreURL": null,
               "Regex": null,
-              "required": "0",
+              "required": "n",
               "type": "choice",
-              "SectionId": 0
+              "SectionId": 0,
+              "IsEditable": true,
+              "answer": ""
             },
             {
               "IsAllCaps": false,
@@ -103,9 +94,11 @@
               ],
               "ReadMoreURL": null,
               "Regex": null,
-              "required": "1",
+              "required": "y",
               "type": "choice",
-              "SectionId": 0
+              "SectionId": 0,
+              "IsEditable": true,
+              "answer": ""
             },
             {
               "IsAllCaps": false,
@@ -131,9 +124,11 @@
               ],
               "ReadMoreURL": null,
               "Regex": null,
-              "required": "0",
+              "required": "n",
               "type": "choice",
-              "SectionId": 0
+              "SectionId": 0,
+              "IsEditable": true,
+              "answer": ""
             },
             {
               "IsAllCaps": false,
@@ -159,9 +154,11 @@
               ],
               "ReadMoreURL": null,
               "Regex": null,
-              "required": "0",
+              "required": "n",
               "type": "choice",
-              "SectionId": 0
+              "SectionId": 0,
+              "IsEditable": true,
+              "answer": ""
             },
             {
               "IsAllCaps": false,
@@ -187,9 +184,11 @@
               ],
               "ReadMoreURL": null,
               "Regex": null,
-              "required": "0",
+              "required": "n",
               "type": "choice",
-              "SectionId": 0
+              "SectionId": 0,
+              "IsEditable": true,
+              "answer": ""
             },
             {
               "IsAllCaps": false,
@@ -215,9 +214,11 @@
               ],
               "ReadMoreURL": null,
               "Regex": null,
-              "required": "0",
+              "required": "n",
               "type": "choice",
-              "SectionId": 0
+              "SectionId": 0,
+              "IsEditable": true,
+              "answer": ""
             },
             {
               "IsAllCaps": false,
@@ -230,7 +231,9 @@
               "Regex": null,
               "required": null,
               "type": "button",
-              "SectionId": 0
+              "SectionId": 0,
+              "IsEditable": false,
+              "answer": null
             }
           ],
           "gotoId": "2",
@@ -250,9 +253,11 @@
               "optionList": [],
               "ReadMoreURL": null,
               "Regex": null,
-              "required": "1",
+              "required": "y",
               "type": "text",
-              "SectionId": 0
+              "SectionId": 0,
+              "IsEditable": false,
+              "answer": "hdfc"
             },
             {
               "IsAllCaps": false,
@@ -263,9 +268,11 @@
               "optionList": [],
               "ReadMoreURL": null,
               "Regex": null,
-              "required": "1",
+              "required": "y",
               "type": "text",
-              "SectionId": 0
+              "SectionId": 0,
+              "IsEditable": true,
+              "answer": ""
             },
             {
               "IsAllCaps": false,
@@ -273,12 +280,29 @@
               "maxLength": 0,
               "minLength": 0,
               "name": "27",
-              "optionList": [],
+              "optionList": [
+                {
+                  "gotoId": "",
+                  "id": "1",
+                  "isChecked": false,
+                  "value": "Android",
+                  "QuestionId": 0
+                },
+                {
+                  "gotoId": "",
+                  "id": "0",
+                  "isChecked": false,
+                  "value": "IOS",
+                  "QuestionId": 0
+                }
+              ],
               "ReadMoreURL": null,
               "Regex": null,
-              "required": "0",
-              "type": "text",
-              "SectionId": 0
+              "required": "n",
+              "type": "choice",
+              "SectionId": 0,
+              "IsEditable": true,
+              "answer": ""
             },
             {
               "IsAllCaps": false,
@@ -289,9 +313,11 @@
               "optionList": [],
               "ReadMoreURL": null,
               "Regex": null,
-              "required": "0",
+              "required": "n",
               "type": "text",
-              "SectionId": 0
+              "SectionId": 0,
+              "IsEditable": true,
+              "answer": ""
             },
             {
               "IsAllCaps": false,
@@ -302,9 +328,11 @@
               "optionList": [],
               "ReadMoreURL": null,
               "Regex": null,
-              "required": "0",
+              "required": "n",
               "type": "text",
-              "SectionId": 0
+              "SectionId": 0,
+              "IsEditable": true,
+              "answer": ""
             },
             {
               "IsAllCaps": false,
@@ -330,9 +358,11 @@
               ],
               "ReadMoreURL": null,
               "Regex": null,
-              "required": "0",
+              "required": "n",
               "type": "choice",
-              "SectionId": 0
+              "SectionId": 0,
+              "IsEditable": true,
+              "answer": ""
             },
             {
               "IsAllCaps": false,
@@ -343,9 +373,11 @@
               "optionList": [],
               "ReadMoreURL": null,
               "Regex": null,
-              "required": "0",
+              "required": "n",
               "type": "text",
-              "SectionId": 0
+              "SectionId": 0,
+              "IsEditable": true,
+              "answer": ""
             },
             {
               "IsAllCaps": false,
@@ -356,9 +388,11 @@
               "optionList": [],
               "ReadMoreURL": null,
               "Regex": null,
-              "required": "0",
+              "required": "n",
               "type": "text",
-              "SectionId": 0
+              "SectionId": 0,
+              "IsEditable": true,
+              "answer": ""
             },
             {
               "IsAllCaps": false,
@@ -369,9 +403,11 @@
               "optionList": [],
               "ReadMoreURL": null,
               "Regex": null,
-              "required": "0",
+              "required": "n",
               "type": "text",
-              "SectionId": 0
+              "SectionId": 0,
+              "IsEditable": true,
+              "answer": ""
             },
             {
               "IsAllCaps": false,
@@ -382,9 +418,11 @@
               "optionList": [],
               "ReadMoreURL": null,
               "Regex": null,
-              "required": "0",
+              "required": "n",
               "type": "text",
-              "SectionId": 0
+              "SectionId": 0,
+              "IsEditable": true,
+              "answer": ""
             },
             {
               "IsAllCaps": false,
@@ -395,9 +433,11 @@
               "optionList": [],
               "ReadMoreURL": null,
               "Regex": null,
-              "required": "0",
+              "required": "n",
               "type": "text",
-              "SectionId": 0
+              "SectionId": 0,
+              "IsEditable": true,
+              "answer": ""
             },
             {
               "IsAllCaps": false,
@@ -437,9 +477,11 @@
               ],
               "ReadMoreURL": null,
               "Regex": null,
-              "required": "0",
+              "required": "n",
               "type": "dropdown",
-              "SectionId": 0
+              "SectionId": 0,
+              "IsEditable": true,
+              "answer": ""
             },
             {
               "IsAllCaps": false,
@@ -450,9 +492,11 @@
               "optionList": [],
               "ReadMoreURL": null,
               "Regex": null,
-              "required": "0",
+              "required": "n",
               "type": "text",
-              "SectionId": 0
+              "SectionId": 0,
+              "IsEditable": true,
+              "answer": ""
             },
             {
               "IsAllCaps": false,
@@ -463,9 +507,11 @@
               "optionList": [],
               "ReadMoreURL": null,
               "Regex": null,
-              "required": "0",
+              "required": "n",
               "type": "text",
-              "SectionId": 0
+              "SectionId": 0,
+              "IsEditable": true,
+              "answer": ""
             },
             {
               "IsAllCaps": false,
@@ -491,9 +537,11 @@
               ],
               "ReadMoreURL": null,
               "Regex": null,
-              "required": "0",
+              "required": "n",
               "type": "choice",
-              "SectionId": 0
+              "SectionId": 0,
+              "IsEditable": true,
+              "answer": ""
             },
             {
               "IsAllCaps": false,
@@ -506,7 +554,9 @@
               "Regex": null,
               "required": null,
               "type": "button",
-              "SectionId": 0
+              "SectionId": 0,
+              "IsEditable": false,
+              "answer": null
             }
           ],
           "gotoId": "3",
@@ -520,31 +570,20 @@
             {
               "IsAllCaps": false,
               "label": "Picture",
-              "maxLength": 0,
-              "minLength": 0,
+              "maxLength": 4,
+              "minLength": 1,
               "name": "8",
               "optionList": [],
               "ReadMoreURL": null,
               "Regex": null,
-              "required": "1",
+              "required": "y",
               "type": "snap",
-              "SectionId": 0
+              "SectionId": 0,
+              "IsEditable": true,
+              "answer": ""
             },
             {
               "IsAllCaps": false,
-              "label": "Remarks Test",
-              "maxLength": 10,
-              "minLength": 5,
-              "name": "900",
-              "optionList": [],
-              "ReadMoreURL": null,
-              "Regex": null,
-              "required": "N",
-              "type": "remarks",
-              "SectionId": 0
-            },
-            {
-              "IsAllCaps": true,
               "label": "Submit",
               "maxLength": 0,
               "minLength": 0,
@@ -554,7 +593,9 @@
               "Regex": null,
               "required": null,
               "type": "button",
-              "SectionId": 0
+              "SectionId": 0,
+              "IsEditable": false,
+              "answer": null
             }
           ],
           "gotoId": null,
