@@ -74,7 +74,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         imgBack.setOnClickListener(this);
         tvHeader = (TextView) findViewById(R.id.tv_header);
         tvHeader.setText(getIntent().getStringExtra(ADDRESS_LABEL_KEY));
-        tvSelectedAddressHeading = (TextView) findViewById(R.id.tv_selected_address_heading);
+        tvSelectedAddressHeading = (TextView) findViewById(R.id.tv_map_address_heading);
         tvSelectedAddressHeading.setText(getIntent().getStringExtra(ADDRESS_LABEL_KEY));
 
     }
