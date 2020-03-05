@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             StateCityDBHandler.save(this, stateCityListResponse.getStateCityList());
 
             Intent intent = new Intent(this, DynamicControlRendererActivity.class);
-            intent.putExtra(DynamicControlRendererActivity.WORKFLOW_ID, 0);
+            intent.putExtra(DynamicControlRendererActivity.WORKFLOW_ID, 82);
             startActivity(intent);
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         } catch (Exception ex) {

@@ -23,6 +23,7 @@ public class Types {
     public static final String GALLERY = "gallery";
     public static final String SNAP = "snap";
     public static final String SEARCH_EDITTEXT_TYPE = "searchtext";
+    public static final String SINGLE_SEARCH_EDITTEXT_TYPE = "searchtext";
     public static final String MAP_ADDRESS = "mapaddress";
 
     public static final String PDF_FILE = "pdf";

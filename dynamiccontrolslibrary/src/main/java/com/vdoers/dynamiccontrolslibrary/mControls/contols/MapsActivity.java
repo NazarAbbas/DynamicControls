@@ -45,12 +45,14 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private Button btnDone;
     private EditText etAddress;
     public static final String ADDRESS_NAME_KEY = "address_name_key";
+    public static final String ADDRESS_LABEL_KEY = "address_label_key";
     public static final String TITLE = "title";
     private ImageView imgBack;
     private TextView tvHeader;
     private GoogleApiClient mGoogleApiClient;
     private LocationRequest mLocationRequest;
     private Location location;
+    private TextView tvSelectedAddressHeading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,8 +73,9 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         imgBack = (ImageView) findViewById(R.id.img_back);
         imgBack.setOnClickListener(this);
         tvHeader = (TextView) findViewById(R.id.tv_header);
-        tvHeader.setText(getResources().getString(R.string.selecet_address));
-
+        tvHeader.setText(getIntent().getStringExtra(ADDRESS_LABEL_KEY));
+        tvSelectedAddressHeading = (TextView) findViewById(R.id.tv_selected_address_heading);
+        tvSelectedAddressHeading.setText(getIntent().getStringExtra(ADDRESS_LABEL_KEY));
 
     }
 

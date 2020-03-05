@@ -76,7 +76,7 @@ public class mMapEditBoxAddress extends LinearLayout implements View.OnClickList
 
     private void showUI(JsonWorkflowList.Field field) {
         tvAddress.setText((String) field.getAnswer());
-        tvHeading.setHint(field.getLabel());
+        tvHeading.setText(field.getLabel());
     }
 
     @Override
@@ -91,6 +91,7 @@ public class mMapEditBoxAddress extends LinearLayout implements View.OnClickList
                 }
                 Intent intent = new Intent(context, MapsActivity.class);
                 intent.putExtra(MapsActivity.ADDRESS_NAME_KEY, field.getName());
+                intent.putExtra(MapsActivity.ADDRESS_LABEL_KEY, field.getLabel());
                 context.startActivity(intent);
                 context.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             } else {

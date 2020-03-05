@@ -18,8 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
-public class mSearchEditBox extends LinearLayout implements View.OnClickListener {
+public class mSingleSearchEditBox extends LinearLayout implements View.OnClickListener {
 
     private TextView tvText;
     private TextView tvHeading;
@@ -29,7 +28,7 @@ public class mSearchEditBox extends LinearLayout implements View.OnClickListener
     private JsonWorkflowList.OptionList option;
     private JsonWorkflowList.Field field;
 
-    public mSearchEditBox(Context context) {
+    public mSingleSearchEditBox(Context context) {
         super(context);
     }
 
@@ -45,7 +44,7 @@ public class mSearchEditBox extends LinearLayout implements View.OnClickListener
         tvText.setText(value);
     }
 
-    public mSearchEditBox(Activity context, JsonWorkflowList.Field field) {
+    public mSingleSearchEditBox(Activity context, JsonWorkflowList.Field field) {
         super(context);
         setOrientation(LinearLayout.VERTICAL);
         this.field = field;
@@ -67,7 +66,7 @@ public class mSearchEditBox extends LinearLayout implements View.OnClickListener
         @Override
         public void onReceive(Context context, Intent intent) {
             // Get extra data included in the Intent
-            String result = intent.getStringExtra("message");
+            String result = intent.getStringExtra("singlemessage");
             Gson gson = new Gson();
             option = gson.fromJson(result, JsonWorkflowList.OptionList.class);
             if (option != null)
@@ -99,14 +98,14 @@ public class mSearchEditBox extends LinearLayout implements View.OnClickListener
     @Override
     public void onClick(View v) {
         if(v.getId()==R.id.tv_text){
-            Intent intent = new Intent(activity, mSearchListView.class);
+            Intent intent = new Intent(activity, mSingleSearchEditBox.class);
             intent.putExtra(mSearchListView.SEARCH_EDITTEXT_NAME_KEY, field.getName());
             intent.putExtra(mSearchListView.TITLE, field.getLabel());
             intent.putExtra(mSearchListView.OPTIONS_LIST, jsonOptionList);
             activity.startActivity(intent);
             activity.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         }
-
+       
 
     }
 

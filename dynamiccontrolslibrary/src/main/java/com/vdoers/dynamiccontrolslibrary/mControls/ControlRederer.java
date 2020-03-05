@@ -41,6 +41,7 @@ import com.vdoers.dynamiccontrolslibrary.mControls.contols.mPermanentAndCurrentE
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.mRemarks;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.mSearchEditBox;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.mSingleChoice;
+import com.vdoers.dynamiccontrolslibrary.mControls.contols.mSingleSearchEditBox;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.mSpinner;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.mTextView;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.mTime;
@@ -327,10 +328,15 @@ public class ControlRederer {
                 mSearchEditBox checkbox = (mSearchEditBox) field.getObject();
                 field.setAnswer(checkbox.getValue(), field);
             }
+            if (field.getType().equalsIgnoreCase(Types.SINGLE_SEARCH_EDITTEXT_TYPE)) {
+                mSingleSearchEditBox mSingleSearchEditBox = (mSingleSearchEditBox) field.getObject();
+                field.setAnswer(mSingleSearchEditBox.getValue(), field);
+            }
             if (field.getType().equalsIgnoreCase(Types.MAP_ADDRESS)) {
                 mMapEditBoxAddress mapEditBoxAddress = (mMapEditBoxAddress) field.getObject();
                 field.setAnswer(mapEditBoxAddress.getValue(), field);
             }
+
             if (field.getType().equalsIgnoreCase(Types.PERMANENT_AND_CURRENT_ADDRESS)) {
                 mPermanentAndCurrentEditBoxAddress permanentAndCurrentEditBoxAddress = (mPermanentAndCurrentEditBoxAddress) field.getObject();
                 field.setAnswer(permanentAndCurrentEditBoxAddress.getValue(), field);

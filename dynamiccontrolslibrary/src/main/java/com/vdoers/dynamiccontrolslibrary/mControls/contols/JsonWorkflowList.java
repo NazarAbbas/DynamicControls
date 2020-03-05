@@ -15,10 +15,10 @@ public class JsonWorkflowList implements Serializable {
 
     @SerializedName("CaseTypeId")
     @Expose
-    private Integer caseTypeId;
+    private int caseTypeId;
     @SerializedName("WorkflowId")
     @Expose
-    private Integer workflowId;
+    private int workflowId;
     @SerializedName("id")
     @Expose
     private String id;
@@ -56,19 +56,19 @@ public class JsonWorkflowList implements Serializable {
     }
 
 
-    public Integer getCaseTypeId() {
+    public int getCaseTypeId() {
         return caseTypeId;
     }
 
-    public void setCaseTypeId(Integer caseTypeId) {
+    public void setCaseTypeId(int caseTypeId) {
         this.caseTypeId = caseTypeId;
     }
 
-    public Integer getWorkflowId() {
+    public int getWorkflowId() {
         return workflowId;
     }
 
-    public void setWorkflowId(Integer workflowId) {
+    public void setWorkflowId(int workflowId) {
         this.workflowId = workflowId;
     }
 
@@ -206,7 +206,7 @@ public class JsonWorkflowList implements Serializable {
         private String required;
         @SerializedName("maxLength")
         @Expose
-        private Integer maxLength;
+        private int maxLength;
 
         @SerializedName("Regex")
         @Expose
@@ -226,7 +226,7 @@ public class JsonWorkflowList implements Serializable {
 
         @SerializedName("minLength")
         @Expose
-        private Integer minLength;
+        private int minLength;
 
         @SerializedName("IsEditable")
         @Expose
@@ -251,11 +251,11 @@ public class JsonWorkflowList implements Serializable {
             isEditable = editable;
         }
 
-        public Integer getMinLength() {
+        public int getMinLength() {
             return minLength;
         }
 
-        public void setMinLength(Integer minLength) {
+        public void setMinLength(int minLength) {
             this.minLength = minLength;
         }
 
@@ -404,11 +404,11 @@ public class JsonWorkflowList implements Serializable {
             this.required = required;
         }
 
-        public Integer getMaxLength() {
+        public int getMaxLength() {
             return maxLength;
         }
 
-        public void setMaxLength(Integer maxLength) {
+        public void setMaxLength(int maxLength) {
             this.maxLength = maxLength;
         }
 
