@@ -21,7 +21,6 @@ public class Types {
     public static final String TIME = "time";
     public static final String SIGNATURE = "sign";
     public static final String GALLERY = "gallery";
-    public static final String SNAP = "snap";
     public static final String SEARCH_EDITTEXT_TYPE = "searchtext";
     public static final String SINGLE_SEARCH_EDITTEXT_TYPE = "signlesearchtext";
     public static final String MAP_ADDRESS = "mapaddress";
@@ -37,6 +36,11 @@ public class Types {
     public static final String TEXT_FILE = "txt";
     public static final String CAMERA = "snap";
     public static final String CROP_CAMERA = "cropcamera";
+
+    public static final String CAMERA_WITH_ADDRESS = "snapwithaddress";
+    public static final String CROP_CAMERA_WITH_ADDRESS = "cropcamerawithaddress";
+
+
     public static final String OTP_RECIEVER = "otp_reciever";
     public static final String HEADING = "heading";
     public static final String PERMANENT_AND_CURRENT_ADDRESS = "permanent_and_current_address";

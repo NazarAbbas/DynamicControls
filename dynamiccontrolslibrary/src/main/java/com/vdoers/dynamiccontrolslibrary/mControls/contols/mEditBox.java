@@ -47,7 +47,7 @@ public class mEditBox extends LinearLayout {
         LinearLayout topLayout = (LinearLayout) context.getLayoutInflater().inflate(R.layout.dynamic_edittext, null);
         editText = (EditText) topLayout.findViewById(R.id.edit_text);
         tilTvHeading = (TextInputLayout) topLayout.findViewById(R.id.til);
-       /* if (field.isEditable()) {
+      /*  if (field.isEditable()) {
             editText.setEnabled(true);
         } else {
             editText.setEnabled(false);

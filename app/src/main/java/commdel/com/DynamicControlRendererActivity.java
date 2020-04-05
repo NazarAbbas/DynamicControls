@@ -19,7 +19,7 @@ import com.vdoers.dynamiccontrolslibrary.mControls.Constant;
 import com.vdoers.dynamiccontrolslibrary.mControls.ControlRederer;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.JsonWorkflowList;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.Types;
-import com.vdoers.dynamiccontrolslibrary.mControls.contols.mFile;
+import com.vdoers.dynamiccontrolslibrary.mControls.contols.mFileViewPager;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.mOTPReciever;
 import com.vdoers.dynamiccontrolslibrary.mControls.models.FileSavedModel;
 import com.vdoers.dynamiccontrolslibrary.mControls.models.ImageSavedModel;
@@ -371,7 +371,7 @@ public class DynamicControlRendererActivity extends Permissions implements View.
 
         if (requestCode == Types.CROP_File_REQUEST_CODE) {
             if (resultCode == RESULT_OK) {
-                Uri selectedImage = mFile.fileUri;//getOutputMediaFileUri(this);// fileUri.getPath();//.getData();
+                Uri selectedImage = mFileViewPager.fileUri;//getOutputMediaFileUri(this);// fileUri.getPath();//.getData();
                 CropImage.activity(selectedImage)
                         .setGuidelines(CropImageView.Guidelines.ON)//.setRequestedSize(Constant.IMAGE_REQUESTED_WIDTH, Constant.IMAGE_REQUESTED_HEIGHT)
                         .start(this);
@@ -385,7 +385,6 @@ public class DynamicControlRendererActivity extends Permissions implements View.
             for (int j = 0; j < jsonWorkflowList.getSubforms().get(i).getFields().size(); j++) {
                 if (jsonWorkflowList.getSubforms().get(i).getFields().get(j).getType().equalsIgnoreCase(Types.GALLERY)
                         || jsonWorkflowList.getSubforms().get(i).getFields().get(j).getType().equalsIgnoreCase(Types.SIGNATURE)
-                        || jsonWorkflowList.getSubforms().get(i).getFields().get(j).getType().equalsIgnoreCase(Types.SNAP)
                         || jsonWorkflowList.getSubforms().get(i).getFields().get(j).getType().equalsIgnoreCase(Types.PDF_FILE)
                         || jsonWorkflowList.getSubforms().get(i).getFields().get(j).getType().equalsIgnoreCase(Types.WORD_FILE)
                         || jsonWorkflowList.getSubforms().get(i).getFields().get(j).getType().equalsIgnoreCase(Types.PPT_FILE)
@@ -397,7 +396,9 @@ public class DynamicControlRendererActivity extends Permissions implements View.
                         || jsonWorkflowList.getSubforms().get(i).getFields().get(j).getType().equalsIgnoreCase(Types.TEXT_FILE)
                         || jsonWorkflowList.getSubforms().get(i).getFields().get(j).getType().equalsIgnoreCase(Types.GALLERY)
                         || jsonWorkflowList.getSubforms().get(i).getFields().get(j).getType().equalsIgnoreCase(Types.CAMERA)
-                        || jsonWorkflowList.getSubforms().get(i).getFields().get(j).getType().equalsIgnoreCase(Types.CROP_CAMERA)) {
+                        || jsonWorkflowList.getSubforms().get(i).getFields().get(j).getType().equalsIgnoreCase(Types.CROP_CAMERA)
+                        || jsonWorkflowList.getSubforms().get(i).getFields().get(j).getType().equalsIgnoreCase(Types.CAMERA_WITH_ADDRESS)
+                        || jsonWorkflowList.getSubforms().get(i).getFields().get(j).getType().equalsIgnoreCase(Types.CROP_CAMERA_WITH_ADDRESS)) {
                     if (Permissions.dataObject.containsKey(jsonWorkflowList.getSubforms().get(i).getFields().get(j).getName())) {
                         List<FileSavedModel> fileImageSavedModelList = null;
                         int caseId = 0;// MyApplication.sharedPreference.getString(Constant.CASE_ID);

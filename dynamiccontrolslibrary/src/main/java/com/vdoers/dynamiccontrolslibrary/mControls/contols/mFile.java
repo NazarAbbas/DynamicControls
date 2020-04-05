@@ -36,9 +36,7 @@ public class mFile extends LinearLayout implements View.OnClickListener {
     private mCircleButton button;
     private Activity context;
     private TextView tvHeading;
-    private boolean isImageClicked;
     private JsonWorkflowList.Field field;
-    //private TextView tvFileName;
     private FileAdapter fileAdapter;
     List<FileSavedModel> fileSavedModelList = null;
     public static Uri fileUri;
@@ -65,12 +63,12 @@ public class mFile extends LinearLayout implements View.OnClickListener {
         button = (mCircleButton) topLayout.findViewById(R.id.btn);
         button.setColor(ThemeColor.themeColor);
         if (field.getType().equalsIgnoreCase(Types.CAMERA)
-                || field.getType().equalsIgnoreCase(Types.CROP_CAMERA)) {
-            // button.setImageDrawable(context.getResources().getDrawable(R.drawable.camera_white));
+                || field.getType().equalsIgnoreCase(Types.CROP_CAMERA)
+                || field.getType().equalsIgnoreCase(Types.CROP_CAMERA_WITH_ADDRESS)
+                || field.getType().equalsIgnoreCase(Types.CAMERA_WITH_ADDRESS)) {
             button.setImageResource(R.drawable.camera_white);
         }
         if (field.getType().equalsIgnoreCase(Types.SIGNATURE)) {
-            //button.setImageDrawable(context.getResources().getDrawable(R.drawable.signature_button));
             button.setImageResource(R.drawable.signature_button);
         }
 
@@ -182,14 +180,6 @@ public class mFile extends LinearLayout implements View.OnClickListener {
                     openFileChooser();
                 }
             }
-            /*if (fileSavedModelList == null || fileSavedModelList.size() < field.getMaxLength()
-            || field.getRequired().equalsIgnoreCase("N")) {
-
-            } else {
-                Toast.makeText(context, "You can select max " + field.getMaxLength() + " file", Toast.LENGTH_LONG).show();
-            }*/
-
-
         }
 
 
@@ -218,7 +208,7 @@ public class mFile extends LinearLayout implements View.OnClickListener {
             intent.setType("text/plain");
         } else if (field.getType().equalsIgnoreCase(Types.GALLERY)) {
             intent.setType("image/*");
-        } else if (field.getType().equalsIgnoreCase(Types.CAMERA)) {
+        } else if (field.getType().equalsIgnoreCase(Types.CAMERA)|| field.getType().equalsIgnoreCase(Types.CAMERA_WITH_ADDRESS)) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 if (ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
                     ((Permissions) context).checkCameraPermission();
@@ -227,7 +217,7 @@ public class mFile extends LinearLayout implements View.OnClickListener {
             }
             fileUri = FileUtilsPath.takePicture(context, Types.File_REQUEST_CODE);
             return;
-        } else if (field.getType().equalsIgnoreCase(Types.CROP_CAMERA)) {
+        } else if (field.getType().equalsIgnoreCase(Types.CROP_CAMERA)|| field.getType().equalsIgnoreCase(Types.CROP_CAMERA_WITH_ADDRESS)) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 if (ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
                     ((Permissions) context).checkCameraPermission();
@@ -242,10 +232,6 @@ public class mFile extends LinearLayout implements View.OnClickListener {
             context.startActivityForResult(intent, Types.File_REQUEST_CODE);
             return;
         } else {
-            //if you want you can also define the intent type for any other file
-            //additionally use else clause below, to manage other unknown extensions
-            //in this case, Android will show all applications installed on the device
-            //so you can choose which application to use
             intent.setType("*/*");
         }
 
@@ -260,28 +246,14 @@ public class mFile extends LinearLayout implements View.OnClickListener {
         WindowManager manager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
 
         int galleryWidth = manager.getDefaultDisplay().getWidth();
-
-        // We are taking the item widths and spacing from a dimension resource
-        // because:
-        // 1. No way to get spacing at runtime (no accessor in the Gallery
-        // class)
-        // 2. There might not yet be any item view created when we are calling
-        // this
-        // function
         int itemWidth = getsize(100);
         int spacing = getsize(20);
-
-        // The offset is how much we will pull the gallery to the left in order
-        // to simulate left alignment of the first item
         final int offset;
         if (galleryWidth <= itemWidth) {
             offset = galleryWidth / 2 - itemWidth / 2 - spacing;
         } else {
             offset = galleryWidth - itemWidth - 2 * spacing;
         }
-
-        // Now update the layout parameters of the gallery in order to set the
-        // left margin
         MarginLayoutParams mlp = (MarginLayoutParams) gallery.getLayoutParams();
         mlp.setMargins(-offset, mlp.topMargin, mlp.rightMargin,
                 mlp.bottomMargin);

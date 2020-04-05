@@ -32,6 +32,7 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.vdoers.dynamiccontrolslibrary.R;
 import com.vdoers.dynamiccontrolslibrary.Utils.ThemeColor;
+import com.vdoers.dynamiccontrolslibrary.location.LocationClass;
 
 import java.util.List;
 import java.util.Locale;
@@ -109,7 +110,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
                 LatLng midLatLng = googleMap.getCameraPosition().target;
                 //AddressViaLattLong.getCompleteAddressViaLocation()
-                String address = getCompleteAddressViaLocation(MapsActivity.this, midLatLng.latitude, midLatLng.longitude);
+                String address = LocationClass.getCompleteAddressViaLocation(MapsActivity.this, midLatLng.latitude, midLatLng.longitude);
                 etAddress.setText(address + "(" + midLatLng.latitude + ", " + midLatLng.longitude + ")");
                 etAddress.setSelection(etAddress.getText().length());
 
@@ -131,7 +132,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     }
 
-    public String getCompleteAddressViaLocation(Context activity, double LATITUDE, double LONGITUDE) {
+   /* public String getCompleteAddressViaLocation(Context activity, double LATITUDE, double LONGITUDE) {
         String strAdd = "Address not found!";
         Geocoder geocoder = new Geocoder(activity, Locale.getDefault());
         try {
@@ -153,7 +154,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             //Log.w("My Current loction address", "Canont get Address!");
         }
         return strAdd;
-    }
+    }*/
 
     @Override
     public void onBackPressed() {

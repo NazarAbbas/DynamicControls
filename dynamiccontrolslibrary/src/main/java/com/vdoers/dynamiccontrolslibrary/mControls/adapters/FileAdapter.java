@@ -89,6 +89,8 @@ public class FileAdapter extends BaseAdapter {
                 viewHolder.image.setImageDrawable(mContext.getResources().getDrawable(R.drawable.text_img));
             } else if (field.getType().equalsIgnoreCase(Types.GALLERY) || field.getType().equalsIgnoreCase(Types.CAMERA)
                     || field.getType().equalsIgnoreCase(Types.CROP_CAMERA)
+                    || field.getType().equalsIgnoreCase(Types.CAMERA_WITH_ADDRESS)
+                    || field.getType().equalsIgnoreCase(Types.CROP_CAMERA_WITH_ADDRESS)
                     || field.getType().equalsIgnoreCase(Types.SIGNATURE)) {
                 File file = new File(dataSet.get(position).getFilePath());
                 Uri uri = Uri.fromFile(file);

@@ -10,6 +10,10 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Typeface;
+import android.location.Location;
 import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Environment;
@@ -25,14 +29,16 @@ import android.widget.Toast;
 import com.vdoers.cropper.CropImage;
 import com.vdoers.dynamiccontrolslibrary.R;
 import com.vdoers.dynamiccontrolslibrary.Utils.FileUtilsPath;
+import com.vdoers.dynamiccontrolslibrary.Utils.NetworkUtil;
 import com.vdoers.dynamiccontrolslibrary.Utils.Permissions;
+import com.vdoers.dynamiccontrolslibrary.location.LocationClass;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.JsonWorkflowList;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.Types;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.mButton;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.mCheckbox;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.mDate;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.mEditBox;
-import com.vdoers.dynamiccontrolslibrary.mControls.contols.mFile;
+import com.vdoers.dynamiccontrolslibrary.mControls.contols.mFileViewPager;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.mHeading;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.mMapEditBoxAddress;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.mMultipleChoice;
@@ -61,15 +67,14 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-import okhttp3.internal.Util;
-
 
 public class ControlRederer {
+    private static ScrollView scrollView;
 
     public static void renderSubScreens(
             final Activity ctx, JsonWorkflowList.Subform subForm, LinearLayout llTopLayout) {
         LinearLayout headerLayout = (LinearLayout) llTopLayout.getChildAt(0);
-        ScrollView scrollView = (ScrollView) llTopLayout.getChildAt(1);
+        scrollView = (ScrollView) llTopLayout.getChildAt(1);
         LinearLayout contentLayout = (LinearLayout) scrollView.getChildAt(0);
         headerLayout.addView(new mToolbar(ctx, subForm));
         renderFields(ctx, contentLayout, subForm);
@@ -116,6 +121,8 @@ public class ControlRederer {
                     || field.getType().equalsIgnoreCase(Types.GALLERY)
                     || field.getType().equalsIgnoreCase(Types.CAMERA)
                     || field.getType().equalsIgnoreCase(Types.CROP_CAMERA)
+                    || field.getType().equalsIgnoreCase(Types.CROP_CAMERA_WITH_ADDRESS)
+                    || field.getType().equalsIgnoreCase(Types.CAMERA_WITH_ADDRESS)
                     || field.getType().equalsIgnoreCase(Types.SIGNATURE)) {
                 if (Permissions.dataObject.containsKey(field.getName())) {
                     List<FileSavedModel> fileSavedModelList = null;
@@ -222,8 +229,10 @@ public class ControlRederer {
                     || field.getType().equalsIgnoreCase(Types.GALLERY)
                     || field.getType().equalsIgnoreCase(Types.CAMERA)
                     || field.getType().equalsIgnoreCase(Types.CROP_CAMERA)
+                    || field.getType().equalsIgnoreCase(Types.CROP_CAMERA_WITH_ADDRESS)
+                    || field.getType().equalsIgnoreCase(Types.CAMERA_WITH_ADDRESS)
                     || field.getType().equalsIgnoreCase(Types.SIGNATURE)) {
-                field.setObject(new mFile(ctx, field));
+                field.setObject(new mFileViewPager(ctx, field, scrollView));
                 mainLayout.addView((View) field.getObject());
 
             } else if (field.getType().equalsIgnoreCase(Types.PERMANENT_AND_CURRENT_ADDRESS)) {
@@ -317,6 +326,8 @@ public class ControlRederer {
                     || field.getType().equalsIgnoreCase(Types.GALLERY)
                     || field.getType().equalsIgnoreCase(Types.CAMERA)
                     || field.getType().equalsIgnoreCase(Types.CROP_CAMERA)
+                    || field.getType().equalsIgnoreCase(Types.CROP_CAMERA_WITH_ADDRESS)
+                    || field.getType().equalsIgnoreCase(Types.CAMERA_WITH_ADDRESS)
                     || field.getType().equalsIgnoreCase(Types.SIGNATURE)) {
                 if (field.getFileSavedModelList() == null || field.getFileSavedModelList().size() == 0) {
                     field.setAnswer("", field);
@@ -587,6 +598,8 @@ public class ControlRederer {
                     || field.getType().equalsIgnoreCase(Types.GALLERY)
                     || field.getType().equalsIgnoreCase(Types.CAMERA)
                     || field.getType().equalsIgnoreCase(Types.CROP_CAMERA)
+                    || field.getType().equalsIgnoreCase(Types.CROP_CAMERA_WITH_ADDRESS)
+                    || field.getType().equalsIgnoreCase(Types.CAMERA_WITH_ADDRESS)
                     || field.getType().equalsIgnoreCase(Types.SIGNATURE)) {
                 if (field.getRequired().equalsIgnoreCase("Y")) {
                     if (field.getFileSavedModelList() == null || field.getFileSavedModelList().size() == 0) {
@@ -770,6 +783,7 @@ public class ControlRederer {
         FileSavedModel fileSavedModel;// new FileSavedModel();
         String selectedFileName = "";
         Cursor cursor = null;
+        Location location = null;
         // File myFile;
         String displayName;
         for (int fieldIdx = 0; fieldIdx < subForm.getFields().size(); fieldIdx++) {
@@ -786,27 +800,30 @@ public class ControlRederer {
                     || field.getType().equalsIgnoreCase(Types.GALLERY)
                     || field.getType().equalsIgnoreCase(Types.CAMERA)
                     || field.getType().equalsIgnoreCase(Types.CROP_CAMERA)
+                    || field.getType().equalsIgnoreCase(Types.CROP_CAMERA_WITH_ADDRESS)
+                    || field.getType().equalsIgnoreCase(Types.CAMERA_WITH_ADDRESS)
                     || field.getType().equalsIgnoreCase(Types.SIGNATURE)) {
 
-                if (mFile.controlName != null && mFile.controlName == field.getName()) {
-                    mFile mPdfFile = null;
+                if (mFileViewPager.controlName != null && mFileViewPager.controlName == field.getName()) {
+                    mFileViewPager mFileViewPager = null;
                     //Uri uri = null;
-                    if (field.getType().equalsIgnoreCase(Types.CAMERA)) {
+                    if (field.getType().equalsIgnoreCase(Types.CAMERA) || field.getType().equalsIgnoreCase(Types.CAMERA_WITH_ADDRESS)) {
                         try {
                             data = new Intent();
-                            data.setData(mFile.fileUri);
-                            mFile.fileUri = null;
+                            data.setData(mFileViewPager.fileUri);
+                            mFileViewPager.fileUri = null;
                         } catch (Exception ex) {
                             String x = "";
                         }
                     }
 
-                    if (field.getType().equalsIgnoreCase(Types.CROP_CAMERA)) {
+                    if (field.getType().equalsIgnoreCase(Types.CROP_CAMERA)
+                            || field.getType().equalsIgnoreCase(Types.CROP_CAMERA_WITH_ADDRESS)) {
                         try {
                             CropImage.ActivityResult result = CropImage.getActivityResult(data);
                             data = new Intent();
                             data.setData(result.getUri());
-                            mFile.fileUri = null;
+                            mFileViewPager.fileUri = null;
                         } catch (Exception ex) {
                             String x = "";
                         }
@@ -816,7 +833,7 @@ public class ControlRederer {
                             String path = data.getStringExtra(context.getString(R.string.signature_bytes_array));
                             data = new Intent();
                             data.setData(Uri.parse(path));
-                            mFile.fileUri = null;
+                            mFileViewPager.fileUri = null;
                         } catch (Exception ex) {
                             String x = "";
                         }
@@ -824,10 +841,13 @@ public class ControlRederer {
                     if (null != data) {
                         if (data.getData() != null) {
                             Uri uri = null;
-                            mPdfFile = (mFile) field.getObject();
+                            mFileViewPager = (mFileViewPager) field.getObject();
                             if (field.getType().equalsIgnoreCase(Types.CAMERA)
-                                    || field.getType().equalsIgnoreCase(Types.CROP_CAMERA)) {
-                                uri = compressImage(data.getData(), context);
+                                    || field.getType().equalsIgnoreCase(Types.CROP_CAMERA)
+                                    || field.getType().equalsIgnoreCase(Types.CROP_CAMERA_WITH_ADDRESS)
+                                    || field.getType().equalsIgnoreCase(Types.CAMERA_WITH_ADDRESS)) {
+                                location = LocationClass.getLocation(context);
+                                uri = compressImage(data.getData(), context, field, location);
                             } else {
                                 uri = data.getData();
                             }
@@ -842,6 +862,11 @@ public class ControlRederer {
                                         fileSavedModel = new FileSavedModel();
                                         fileSavedModel.setFileName(fileName);
                                         fileSavedModel.setFilePath(path);
+                                        fileSavedModel.setType(field.getType());
+                                        if (location != null) {
+                                            fileSavedModel.setLattitude(location.getLatitude());
+                                            fileSavedModel.setLongitude(location.getLongitude());
+                                        }
                                         field.setFileSavedModelList(fileSavedModel);
 
                                     }
@@ -849,18 +874,23 @@ public class ControlRederer {
                                     cursor.close();
                                 }
                             } else if (uri.toString().startsWith("file://")) {
-                                mPdfFile = (mFile) field.getObject();
+                                mFileViewPager = (mFileViewPager) field.getObject();
                                 String fileName = selectedFileName + myFile.getName();
                                 fileSavedModel = new FileSavedModel();
                                 fileSavedModel.setFileName(fileName);
                                 fileSavedModel.setFilePath(path);
+                                fileSavedModel.setType(field.getType());
+                                if (location != null) {
+                                    fileSavedModel.setLattitude(location.getLatitude());
+                                    fileSavedModel.setLongitude(location.getLongitude());
+                                }
                                 field.setFileSavedModelList(fileSavedModel);
                                 //selectedFileName.add(displayName);
                             }
 
                         } else {
                             if (data.getClipData() != null) {
-                                mPdfFile = (mFile) field.getObject();
+                                mFileViewPager = (mFileViewPager) field.getObject();
                                 ClipData mClipData = data.getClipData();
                                 int totalCount;
                                 if (field.getFileSavedModelList() != null) {
@@ -869,7 +899,7 @@ public class ControlRederer {
                                     totalCount = mClipData.getItemCount();
                                 }
                                 if (totalCount > field.getMaxLength()) {
-                                    Toast.makeText(context, "You can select max " + field.getMaxLength() + " file", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(context, "You can select max " + field.getMaxLength() + " File for " + field.getLabel(), Toast.LENGTH_LONG).show();
                                     return;
                                 }
                                 for (int i = 0; i < mClipData.getItemCount(); i++) {
@@ -887,6 +917,11 @@ public class ControlRederer {
                                                 fileSavedModel = new FileSavedModel();
                                                 fileSavedModel.setFileName(fileName);
                                                 fileSavedModel.setFilePath(path);
+                                                fileSavedModel.setType(field.getType());
+                                                if (location != null) {
+                                                    fileSavedModel.setLattitude(location.getLatitude());
+                                                    fileSavedModel.setLongitude(location.getLongitude());
+                                                }
                                                 field.setFileSavedModelList(fileSavedModel);
 
                                             }
@@ -894,11 +929,16 @@ public class ControlRederer {
                                             cursor.close();
                                         }
                                     } else if (uri.toString().startsWith("file://")) {
-                                        mPdfFile = (mFile) field.getObject();
+                                        mFileViewPager = (mFileViewPager) field.getObject();
                                         String fileName = selectedFileName + myFile.getName();
                                         fileSavedModel = new FileSavedModel();
                                         fileSavedModel.setFileName(fileName);
                                         fileSavedModel.setFilePath(path);
+                                        fileSavedModel.setType(field.getType());
+                                        if (location != null) {
+                                            fileSavedModel.setLattitude(location.getLatitude());
+                                            fileSavedModel.setLongitude(location.getLongitude());
+                                        }
                                         field.setFileSavedModelList(fileSavedModel);
                                     }
                                 }
@@ -906,11 +946,11 @@ public class ControlRederer {
                         }
                     }
 
-                    if (mPdfFile != null) {
-                        mPdfFile.bindFileAdapter(field.getFileSavedModelList());
+                    if (mFileViewPager != null) {
+                        mFileViewPager.bindFileAdapter(field.getFileSavedModelList());
                         Permissions.dataObject.setProperty(field.getName(), field.getFileSavedModelList());
                     }
-                    mFile.controlName = null;
+                    mFileViewPager.controlName = null;
                     break;
                 }
 
@@ -921,7 +961,7 @@ public class ControlRederer {
     }
 
 
-    private static Uri getImagePath(Uri uri, Context context) {
+/*    private static Uri getImagePath(Uri uri, Context context) {
         Uri imageUri = null;
         Bitmap bitmap = null;
         try {
@@ -964,10 +1004,10 @@ public class ControlRederer {
             String x = ex.getMessage();
         }
         return imageUri;
-    }
+    }*/
 
 
-    public static Uri compressImage(Uri imageUri, Context context) {
+    public static Uri compressImage(Uri imageUri, Context context, JsonWorkflowList.Field field, Location location) {
 
         String filePath = FileUtilsPath.getPath(context, imageUri);//.getRealPathFromURI(imageUri.toString(), context);
         Bitmap scaledBitmap = null;
@@ -1080,29 +1120,64 @@ public class ControlRederer {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }*/
+
+        String firstAddress = "";
+        String lastAddress = "";
+        if (NetworkUtil.isNetAvailable(context)) {
+            String address = LocationClass.getCompleteAddressViaLocation(context, location.getLatitude(), location.getLongitude());
+            int prevIndex = address.lastIndexOf(",", address.length() - 1);
+            firstAddress = address.substring(0, prevIndex);
+            prevIndex = firstAddress.lastIndexOf(",", firstAddress.length() - 1);
+            lastAddress = address.substring(prevIndex + 1, address.length()).trim();
+            firstAddress = address.replace(lastAddress, "");
+            String x = "";
+
+            /*lastIndex = lastString.lastIndexOf(",");
+            prevIndex = lastString.lastIndexOf(",", lastIndex - 1);
+            lastString = address.substring(prevIndex + 1, lastIndex).trim();*/
+        }
+        Bitmap mutableBitmap = scaledBitmap.copy(Bitmap.Config.ARGB_8888, true);
+
+        if (field.getType().equalsIgnoreCase(Types.CROP_CAMERA_WITH_ADDRESS)
+                || field.getType().equalsIgnoreCase(Types.CAMERA_WITH_ADDRESS)) {
+            canvas = new Canvas(mutableBitmap);
+            canvas.drawBitmap(mutableBitmap, 0, 0, null);
+            Paint paint = new Paint();
+            paint.setColor(context.getResources().getColor(R.color.Orange));
+            paint.setTextSize(20);
+            //Typeface bold = Typeface.create(Typeface.DEFAULT_BOLD);
+            paint.setTypeface(Typeface.create("Arial", Typeface.BOLD));
+            canvas.drawText(firstAddress, 10f, scaledBitmap
+                    .getHeight() - 80, paint);
+            canvas.drawText(lastAddress, 10f, scaledBitmap
+                    .getHeight() - 50, paint);
+            canvas.drawText(location.getLatitude() + ", " + location.getLongitude(), 10f, scaledBitmap
+                    .getHeight() - 20, paint);
+        }
+
         File f = null;
         try {
             File dir = new File(Environment.getExternalStorageDirectory(), FileUtilsPath.folderName);
             if (!dir.exists()) {
                 dir.mkdirs();
             }
-            String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss",
-                    Locale.getDefault()).format(new Date());
+            String timeStamp = new SimpleDateFormat("dd-MMM-yyyy_HH:mm:ss:SSS",
+                    Locale.getDefault()).format(new Date().getTime());
             f = new File(dir.getPath() + File.separator
-                    + "SERVER_IMG" + timeStamp + ".png");
+                    + "IMG-" + new Date().getTime() + ".png");
             f.createNewFile();
             FileOutputStream fo = new FileOutputStream(f);
-            scaledBitmap.compress(Bitmap.CompressFormat.JPEG, 100, fo);
+            mutableBitmap.compress(Bitmap.CompressFormat.JPEG, 100, fo);
             fo.close();
             //imageUri = Uri.fromFile(f);
         } catch (Exception e) {
-
+            String x = "";
         }
         return Uri.fromFile(f);
 
     }
 
-    public static String getFilename() {
+   /* public static String getFilename() {
         File file = new File(Environment.getExternalStorageDirectory(), FileUtilsPath.folderName);
         if (!file.exists()) {
             file.mkdirs();
@@ -1121,7 +1196,7 @@ public class ControlRederer {
             int index = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
             return cursor.getString(index);
         }
-    }
+    }*/
 
     public static int calculateInSampleSize(BitmapFactory.Options options, int reqWidth, int reqHeight) {
         final int height = options.outHeight;
@@ -1141,6 +1216,30 @@ public class ControlRederer {
 
         return inSampleSize;
     }
+
+/*
+
+    private static Bitmap ProcessingBitmap(Bitmap bm1, String captionString, Context activity, Uri fileUri) {
+        File finalFile = new File(FileUtilsPath.getPath(activity, fileUri));
+        FileOutputStream fos = null;
+        try {
+            fos = new FileOutputStream(finalFile);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Bitmap mutableBitmap = bm1.copy(Bitmap.Config.ARGB_8888, true);
+        Canvas canvas = new Canvas(mutableBitmap);
+        canvas.drawBitmap(mutableBitmap, 0, 0, null);
+        Paint paint = new Paint();
+        paint.setColor(activity.getResources().getColor(R.color.white));
+        paint.setTextSize(80);
+        canvas.drawText(captionString, 10f, bm1
+                .getHeight() - 100, paint);
+
+        mutableBitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+        return mutableBitmap;
+    }
+*/
 
 
 

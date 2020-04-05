@@ -82,7 +82,7 @@ public class TermsAndConditionWebViewActivity extends AppCompatActivity implemen
             webView.setVisibility(View.VISIBLE);
             webView.getSettings().setJavaScriptEnabled(true);
             webView.loadUrl(URL);
-          //  Util.showProgressDialog(this, true);
+          //  NetworkUtil.showProgressDialog(this, true);
             webView.setWebViewClient(new WebViewClient() {
                 //  ProgressDialog progressDialog;
 //If you will not use this method url links are opeen in new brower not in webview
@@ -97,7 +97,7 @@ public class TermsAndConditionWebViewActivity extends AppCompatActivity implemen
                 }
 
                 public void onPageFinished(WebView view, String url) {
-                  //  Util.dismissProgressDialog();
+                  //  NetworkUtil.dismissProgressDialog();
                 }
 
             });

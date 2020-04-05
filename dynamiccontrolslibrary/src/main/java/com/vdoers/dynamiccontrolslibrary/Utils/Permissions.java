@@ -83,6 +83,19 @@ public class Permissions extends AppCompatActivity implements GoogleApiClient.Co
     public void checkCameraPermission() {
         String[] PERMISSIONS = {
                 Manifest.permission.CAMERA,
+
+        };
+        if (!hasPermissions(this, PERMISSIONS)) {
+            ActivityCompat.requestPermissions(this, PERMISSIONS, PERMISSION_ALL);
+        }
+
+    }
+
+    public void checkCameraAndLocationPermission() {
+        String[] PERMISSIONS = {
+                Manifest.permission.CAMERA,
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
         };
         if (!hasPermissions(this, PERMISSIONS)) {
             ActivityCompat.requestPermissions(this, PERMISSIONS, PERMISSION_ALL);
@@ -119,7 +132,9 @@ public class Permissions extends AppCompatActivity implements GoogleApiClient.Co
                             showPermissionAlert();
                         }
                         // checkPermissions();
-                    } else if (Manifest.permission.WRITE_CONTACTS.equals(permission)) {
+                    }
+
+                    else if (Manifest.permission.WRITE_CONTACTS.equals(permission)) {
                         String x = "";
                         // showRationale(permission, R.string.permission_denied_contacts);
                         // user did NOT check "never ask again"
@@ -206,6 +221,7 @@ public class Permissions extends AppCompatActivity implements GoogleApiClient.Co
                             // All location settings are satisfied. The client can
                             // initialize location
                             // requests here.
+                            String x="";
                             break;
                         case LocationSettingsStatusCodes.RESOLUTION_REQUIRED:
                             // Location settings are not satisfied. But could be
