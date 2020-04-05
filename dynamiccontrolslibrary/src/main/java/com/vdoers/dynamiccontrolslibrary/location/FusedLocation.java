@@ -138,13 +138,6 @@ public class FusedLocation extends Activity implements GoogleApiClient.Connectio
 
     @Override
     public void onConnected(Bundle arg0) {
-        //startLocationUpdates();
-        // getLatestLocation();
-    /*    ActivityRecognition.ActivityRecognitionApi.requestActivityUpdates(
-                mGoogleApiClient,
-                DETECTION_INTERVAL_IN_MILLISECONDS,
-                getActivityDetectionPendingIntent()
-        ).setResultCallback(this);*/
         startLocationUpdates();
     }
 
@@ -167,28 +160,6 @@ public class FusedLocation extends Activity implements GoogleApiClient.Connectio
     }
 
     public Location getLocation() {
-        if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return null;
-        }
-       /* mUpdateLocation = LocationServices.FusedLocationApi
-                .getLastLocation(mGoogleApiClient);*/
-       /* if (MyApplication.locationGPSTracker.isGPSEnabled(mContext)) {
-            try {
-                String[] latlong = MyApplication.sharedPreference.getString(Constant.CURRENT_LOCATION).split(",");
-                location = new Location("");
-                location.setLatitude(Double.parseDouble(latlong[0]));
-                location.setLongitude(Double.parseDouble(latlong[1]));
-            } catch (Exception ex) {
-                location = null;
-            }
-        }*/
         return location;
 
     }

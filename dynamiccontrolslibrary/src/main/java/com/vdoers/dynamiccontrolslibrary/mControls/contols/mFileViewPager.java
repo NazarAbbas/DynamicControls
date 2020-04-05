@@ -2,6 +2,7 @@ package com.vdoers.dynamiccontrolslibrary.mControls.contols;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -218,22 +219,36 @@ public class mFileViewPager extends LinearLayout implements View.OnClickListener
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.ll_camera || v.getId() == R.id.btn) {
-            if (((Permissions) context).isGPSEnabled(context)) {
-                LocationGPSTracker locationGPSTracker = new LocationGPSTracker(context);
-                FusedLocation fusedLocation = new FusedLocation(context);
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    if (ContextCompat.checkSelfPermission(context, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                        ((Permissions) context).checkCameraAndLocationPermission();
+            if (field.getType().equalsIgnoreCase(Types.CROP_CAMERA_WITH_ADDRESS)
+                    || field.getType().equalsIgnoreCase(Types.CAMERA_WITH_ADDRESS)) {
+                if (((Permissions) context).isGPSEnabled(context)) {
+
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                        if (ContextCompat.checkSelfPermission(context, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                                || ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED
+                                || ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                            ((Permissions) context).checkCameraAndLocationPermission();
+                            return;
+                        }
+                    }
+                } else {
+                    LocationGPSTracker.location = null;
+                    FusedLocation.location = null;
+                    ((Permissions) context).turnOnGPS();
+                    return;
+                }
+
+            }
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                if (field.getType().equalsIgnoreCase(Types.CAMERA)
+                        || field.getType().equalsIgnoreCase(Types.CROP_CAMERA)) {
+                    if (ContextCompat.checkSelfPermission(context, android.Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED
+                            || ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                        ((Permissions) context).checkCameraStoragePermission();
                         return;
                     }
                 }
-
-            } else {
-                ((Permissions) context).turnOnGPS();
-                return;
             }
-
-            Location loc = LocationClass.getLocation(context);
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 if (ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
@@ -241,6 +256,49 @@ public class mFileViewPager extends LinearLayout implements View.OnClickListener
                     return;
                 }
             }
+            if (field.getType().equalsIgnoreCase(Types.CROP_CAMERA_WITH_ADDRESS)
+                    || field.getType().equalsIgnoreCase(Types.CAMERA_WITH_ADDRESS)) {
+                Location location = LocationClass.getLocation(context);
+                //location = null;
+                if (location == null
+                        || location.getLongitude() == 0.0 || location.getLatitude() == 0.0) {
+                    showProgressDialog(context, true);
+                    Thread thread = new Thread() {
+                        @Override
+                        public void run() {
+                            try {
+                                //Location location = LocationClass.getLocation(DynamicControlRendererActivity.this);
+                                Thread.sleep(2000);
+
+                            } catch (Exception e) {
+                                String message = e.getMessage();
+                            }
+                            context.runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    dismissProgressDialog();
+                                    Location location = LocationClass.getLocation(context);
+                                    if (location == null
+                                            || location.getLongitude() == 0.0 || location.getLatitude() == 0.0) {
+
+                                    } else {
+                                        Toast.makeText(context, "Location fetched successfully!, please continue...", Toast.LENGTH_LONG).show();
+                                    }
+
+
+                                }
+                            });
+                        }
+                    };
+                    thread.start();
+                    Toast.makeText(context, "We are trying to fetch location, please wait...", Toast.LENGTH_LONG).show();
+                    return;
+                } else {
+                    Toast.makeText(context, "Location fetched successfully!, please continue...", Toast.LENGTH_LONG).show();
+                }
+            }
+
+
             if (field.getRequired().equalsIgnoreCase("Y")) {
                 if (field.getFileSavedModelList() == null || field.getFileSavedModelList().size() < field.getMaxLength()
                         || field.getMaxLength() == -1) {
@@ -278,6 +336,7 @@ public class mFileViewPager extends LinearLayout implements View.OnClickListener
         }
 
         if (v.getId() == R.id.ll_preview) {
+
             if (fileSavedModelList != null && fileSavedModelList.size() > 0) {
                 Intent intent = new Intent(context, PreviewActivity.class);
                 Gson gsonFestive = new Gson();
@@ -399,6 +458,35 @@ public class mFileViewPager extends LinearLayout implements View.OnClickListener
         });
 
 
+    }
+
+    ProgressDialog progressDialog;
+
+    public void showProgressDialog(Context context, boolean flag) {
+        progressDialog = new ProgressDialog(context);
+        if (flag) {
+            if (!progressDialog.isShowing()) {
+                progressDialog.show();
+            }
+        }
+        progressDialog.setContentView(R.layout.custom_progressbar);
+        progressDialog.setCancelable(false);
+        progressDialog.setIndeterminate(true);
+
+    }
+
+    /**
+     * @param :
+     * @return :
+     * @author : Nazar
+     * @created : Nov 20, 2016
+     * @method name : dismissProgressDialog().
+     * @description : This method is used to show the dismiss Progress Dialog Box.
+     */
+    public void dismissProgressDialog() {
+        if (progressDialog != null && progressDialog.isShowing()) {
+            progressDialog.dismiss();
+        }
     }
 
 }

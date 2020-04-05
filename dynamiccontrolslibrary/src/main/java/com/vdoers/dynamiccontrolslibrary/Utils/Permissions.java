@@ -32,6 +32,7 @@ import com.google.android.gms.location.LocationSettingsStates;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
 import com.vdoers.dynamiccontrolslibrary.R;
 import com.vdoers.dynamiccontrolslibrary.mControls.DataObject;
+import com.vdoers.dynamiccontrolslibrary.mControls.contols.Types;
 
 
 public class Permissions extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
@@ -95,6 +96,17 @@ public class Permissions extends AppCompatActivity implements GoogleApiClient.Co
         String[] PERMISSIONS = {
                 Manifest.permission.CAMERA,
                 Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+        };
+        if (!hasPermissions(this, PERMISSIONS)) {
+            ActivityCompat.requestPermissions(this, PERMISSIONS, PERMISSION_ALL);
+        }
+
+    }
+
+    public void checkCameraStoragePermission() {
+        String[] PERMISSIONS = {
+                Manifest.permission.CAMERA,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE,
         };
         if (!hasPermissions(this, PERMISSIONS)) {
@@ -231,7 +243,7 @@ public class Permissions extends AppCompatActivity implements GoogleApiClient.Co
                                 // Show the dialog by calling
                                 // startResolutionForResult(),
                                 // and check the result in onActivityResult().
-                                status.startResolutionForResult(Permissions.this, 1000);
+                                status.startResolutionForResult(Permissions.this, Types.GPS_ENABLED_REQUEST_CODE);
                             } catch (IntentSender.SendIntentException e) {
                                 // Ignore the error.
                             }
@@ -249,7 +261,7 @@ public class Permissions extends AppCompatActivity implements GoogleApiClient.Co
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == 1000) {
+        if (requestCode == Types.GPS_ENABLED_REQUEST_CODE) {
             if (resultCode == Activity.RESULT_OK) {
                 String result = data.getStringExtra("result");
 

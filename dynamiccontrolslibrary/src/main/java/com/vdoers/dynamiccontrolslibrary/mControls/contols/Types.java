@@ -50,6 +50,7 @@ public class Types {
     public static final int SIGNATURE_CODE = 200;
     public static final int File_REQUEST_CODE = 1000;
     public static final int CROP_File_REQUEST_CODE = 1500;
+    public static final int GPS_ENABLED_REQUEST_CODE = 7000;
 
 
 }

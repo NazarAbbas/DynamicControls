@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.github.chrisbanes.photoview.PhotoView;
 import com.vdoers.dynamiccontrolslibrary.R;
+import com.vdoers.dynamiccontrolslibrary.Utils.NetworkUtil;
 import com.vdoers.dynamiccontrolslibrary.location.LocationClass;
 import com.vdoers.dynamiccontrolslibrary.mControls.Constant;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.Types;
@@ -64,8 +65,14 @@ public class PreviewAdapter extends PagerAdapter {
         if (fileSavedModels.get(position).getType().equalsIgnoreCase(Types.CROP_CAMERA_WITH_ADDRESS)
                 || fileSavedModels.get(position).getType().equalsIgnoreCase(Types.CAMERA_WITH_ADDRESS)) {
             llBottom.setVisibility(View.VISIBLE);
-            String address = LocationClass.getCompleteAddressViaLocation(context, fileSavedModels.get(position).getLattitude(), fileSavedModels.get(position).getLongitude());
-            tvAddress.setText(address + " (" + fileSavedModels.get(position).getLattitude() + ", " + fileSavedModels.get(position).getLongitude() + ")");
+            String address = "";
+            if (NetworkUtil.isNetAvailable(context)) {
+                address = LocationClass.getCompleteAddressViaLocation(context, fileSavedModels.get(position).getLattitude(), fileSavedModels.get(position).getLongitude());
+                tvAddress.setText(address + " (" + fileSavedModels.get(position).getLattitude() + ", " + fileSavedModels.get(position).getLongitude() + ")");
+            } else {
+                tvAddress.setText("Unable to find address (Please check your internet connection and try again...!)");
+            }
+
         } else {
             llBottom.setVisibility(View.GONE);
         }

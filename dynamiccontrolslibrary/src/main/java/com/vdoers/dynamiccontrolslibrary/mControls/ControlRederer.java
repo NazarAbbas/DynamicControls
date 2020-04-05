@@ -1123,14 +1123,20 @@ public class ControlRederer {
 
         String firstAddress = "";
         String lastAddress = "";
-        if (NetworkUtil.isNetAvailable(context)) {
-            String address = LocationClass.getCompleteAddressViaLocation(context, location.getLatitude(), location.getLongitude());
-            int prevIndex = address.lastIndexOf(",", address.length() - 1);
-            firstAddress = address.substring(0, prevIndex);
-            prevIndex = firstAddress.lastIndexOf(",", firstAddress.length() - 1);
-            lastAddress = address.substring(prevIndex + 1, address.length()).trim();
-            firstAddress = address.replace(lastAddress, "");
-            String x = "";
+        if (NetworkUtil.isNetAvailable(context)
+                && (field.getType().equalsIgnoreCase(Types.CROP_CAMERA_WITH_ADDRESS)
+                || field.getType().equalsIgnoreCase(Types.CAMERA_WITH_ADDRESS))) {
+            try {
+                String address = LocationClass.getCompleteAddressViaLocation(context, location.getLatitude(), location.getLongitude());
+                int prevIndex = address.lastIndexOf(",", address.length() - 1);
+                firstAddress = address.substring(0, prevIndex);
+                prevIndex = firstAddress.lastIndexOf(",", firstAddress.length() - 1);
+                lastAddress = address.substring(prevIndex + 1, address.length()).trim();
+                firstAddress = address.replace(lastAddress, "");
+                String x = "";
+            } catch (Exception ex) {
+
+            }
 
             /*lastIndex = lastString.lastIndexOf(",");
             prevIndex = lastString.lastIndexOf(",", lastIndex - 1);

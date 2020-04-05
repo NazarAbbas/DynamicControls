@@ -3,6 +3,7 @@ package commdel.com;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -10,11 +11,15 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.vdoers.cropper.CropImage;
 import com.vdoers.cropper.CropImageView;
 import com.vdoers.dynamiccontrolslibrary.Utils.Permissions;
+import com.vdoers.dynamiccontrolslibrary.location.FusedLocation;
+import com.vdoers.dynamiccontrolslibrary.location.LocationClass;
+import com.vdoers.dynamiccontrolslibrary.location.LocationGPSTracker;
 import com.vdoers.dynamiccontrolslibrary.mControls.Constant;
 import com.vdoers.dynamiccontrolslibrary.mControls.ControlRederer;
 import com.vdoers.dynamiccontrolslibrary.mControls.contols.JsonWorkflowList;
@@ -375,6 +380,46 @@ public class DynamicControlRendererActivity extends Permissions implements View.
                 CropImage.activity(selectedImage)
                         .setGuidelines(CropImageView.Guidelines.ON)//.setRequestedSize(Constant.IMAGE_REQUESTED_WIDTH, Constant.IMAGE_REQUESTED_HEIGHT)
                         .start(this);
+            }
+        }
+        if (requestCode == Types.GPS_ENABLED_REQUEST_CODE) {
+            if (resultCode == RESULT_OK) {
+                LocationGPSTracker locationGPSTracker = new LocationGPSTracker(this);
+                locationGPSTracker.startUsingGPS();
+                FusedLocation fusedLocation = new FusedLocation(this);
+                fusedLocation.startLocationUpdates();
+                Location location = LocationClass.getLocation(this);
+                String x = "";
+                if (location == null
+                        || location.getLongitude() == 0.0 || location.getLatitude() == 0.0)
+                    showProgressDialog(this, true);
+                final Thread thread = new Thread() {
+                    @Override
+                    public void run() {
+                        try {
+                            //Location location = LocationClass.getLocation(DynamicControlRendererActivity.this);
+                            Thread.sleep(2000);
+
+                        } catch (Exception e) {
+                            String message = e.getMessage();
+                        }
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                dismissProgressDialog();
+                                Location location = LocationClass.getLocation(DynamicControlRendererActivity.this);
+                                if (location == null
+                                        || location.getLongitude() == 0.0 || location.getLatitude() == 0.0) {
+                                    Toast.makeText(DynamicControlRendererActivity.this, "We are unable to fetch location!, please try again...", Toast.LENGTH_LONG).show();
+                                }
+
+
+                            }
+                        });
+                    }
+                };
+                thread.start();
+
             }
         }
     }//onActivityResult
