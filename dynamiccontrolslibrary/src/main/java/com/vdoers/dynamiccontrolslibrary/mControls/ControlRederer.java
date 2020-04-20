@@ -1153,6 +1153,9 @@ public class ControlRederer {
             paint.setTextSize(20);
             //Typeface bold = Typeface.create(Typeface.DEFAULT_BOLD);
             paint.setTypeface(Typeface.create("Arial", Typeface.BOLD));
+            canvas.drawText(FileUtilsPath.getCurrentDateTime(), 10f, scaledBitmap
+                    .getHeight() - 110, paint);
+
             canvas.drawText(firstAddress, 10f, scaledBitmap
                     .getHeight() - 80, paint);
             canvas.drawText(lastAddress, 10f, scaledBitmap

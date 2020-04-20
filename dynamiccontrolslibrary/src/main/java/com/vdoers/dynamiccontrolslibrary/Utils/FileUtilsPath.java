@@ -27,10 +27,13 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.TimeZone;
 
 
 public class FileUtilsPath {
@@ -373,6 +376,23 @@ public class FileUtilsPath {
         }
         int mask = ApplicationInfo.FLAG_SYSTEM | ApplicationInfo.FLAG_UPDATED_SYSTEM_APP;
         return (ai.flags & mask) != 0;
+    }
+
+
+    public static String getCurrentDateTime() {
+        String dateTime = null;
+        try {
+            DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy ;HH.mm");
+            Date currentDate = new Date();
+            // convert date to calendar
+            Calendar c = Calendar.getInstance(TimeZone.getTimeZone("Gmt+8"));
+            c.setTime(currentDate);
+            dateTime = dateFormat.format(c.getTime());
+        } catch (Exception e) {
+            String v = "";
+        }
+        return  dateTime;
+
     }
 
 }
