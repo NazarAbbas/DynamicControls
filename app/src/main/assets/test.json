@@ -11,7 +11,8 @@
       "id": "42",
       "name": "New Lead",
       "version": "1",
-      "subforms": [{
+      "subforms": [
+        {
         "id": "1",
         "title": "Basic Details",
         "back": "True",
@@ -240,7 +241,9 @@
             "EntityTypeId": 0
           }
         ]
-      }],
+      }
+
+      ],
       "IsMandatory": true
     },
     {
@@ -257,7 +260,8 @@
         "next": "True",
         "gotoId": "2",
         "IsVisibleOnView": false,
-        "fields": [{
+        "fields": [
+          {
           "minLength": 1,
           "name": "Cabang",
           "label": "Cabang",
