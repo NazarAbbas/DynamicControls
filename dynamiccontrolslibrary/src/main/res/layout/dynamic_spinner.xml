@@ -42,7 +42,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv_remarks_text"
+                android:id="@+id/tv_spinner_remarks_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
@@ -52,7 +52,7 @@
                 android:textSize="@dimen/text_size_13" />
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/til_remarks"
+                android:id="@+id/til_spinner_remarks"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/padding_five"
@@ -61,7 +61,7 @@
                 app:hintTextAppearance="@style/InputHintStyle">
 
                 <EditText
-                    android:id="@+id/et_remarks"
+                    android:id="@+id/et_spinner_remarks"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/square_border"

@@ -64,9 +64,9 @@ public class mSpinner extends LinearLayout implements AdapterView.OnItemSelected
         spinner = (Spinner) topLayout.findViewById(R.id.spn);
         spinner.setOnItemSelectedListener(this);
         llSpinnerRemarks = (LinearLayout) topLayout.findViewById(R.id.ll_spinner_remarks);
-        etSpinnerRemarks = (EditText) topLayout.findViewById(R.id.et_remarks);
-        tilSpinnerRemarks = (TextInputLayout) topLayout.findViewById(R.id.til_remarks);
-        tvSpinnerRemarks = (TextView) topLayout.findViewById(R.id.tv_remarks_text);
+        etSpinnerRemarks = (EditText) topLayout.findViewById(R.id.et_spinner_remarks);
+        tilSpinnerRemarks = (TextInputLayout) topLayout.findViewById(R.id.til_spinner_remarks);
+        tvSpinnerRemarks = (TextView) topLayout.findViewById(R.id.tv_spinner_remarks_text);
         addView(topLayout);
 
         /*spinner.setOnTouchListener(new OnTouchListener() {
