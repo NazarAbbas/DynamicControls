@@ -209,7 +209,7 @@ public class mSpinner extends LinearLayout implements AdapterView.OnItemSelected
 
         @Override
         public void afterTextChanged(Editable editable) {
-            if (til.getId() == R.id.til_remarks) {
+            if (til.getId() == R.id.til_spinner_remarks) {
                 if (!etSpinnerRemarks.getText().toString().trim().trim().equalsIgnoreCase(""))
                     til.setErrorEnabled(false);
             }
