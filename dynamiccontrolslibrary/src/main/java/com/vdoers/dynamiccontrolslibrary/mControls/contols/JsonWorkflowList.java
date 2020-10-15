@@ -451,6 +451,30 @@ public class JsonWorkflowList implements Serializable {
         @Expose
         private boolean isChecked;
 
+        @SerializedName("editable")
+        @Expose
+        private boolean enableEdit;
+
+        @SerializedName("editFieldName")
+        @Expose
+        private String editFieldName;
+
+        public boolean isEnableEdit() {
+            return enableEdit;
+        }
+
+        public void setEnableEdit(boolean enableEdit) {
+            this.enableEdit = enableEdit;
+        }
+
+        public String getEditFieldName() {
+            return editFieldName;
+        }
+
+        public void setEditFieldName(String editFieldName) {
+            this.editFieldName = editFieldName;
+        }
+
         public boolean getIsChecked() {
             return isChecked;
         }

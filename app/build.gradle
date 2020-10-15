@@ -120,7 +120,7 @@ dependencies {
     implementation('com.crashlytics.sdk.android:crashlytics:2.9.5@aar') {
         transitive = true;
     }
-    compile project(path: ':dynamiccontrolslibrary')
+    implementation project(path: ':dynamiccontrolslibrary')
 
 
 }

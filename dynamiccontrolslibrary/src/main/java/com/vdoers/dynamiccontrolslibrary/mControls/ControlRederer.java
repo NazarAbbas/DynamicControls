@@ -187,7 +187,7 @@ public class ControlRederer {
             } else if (field.getType().equalsIgnoreCase(Types.TEXTVIEW)) {
                 field.setObject(new mTextView(ctx, field));
                 mainLayout.addView((View) field.getObject());
-            } else if (field.getType().equalsIgnoreCase(Types.REMARKS)) {
+            } else if (field.getType().equalsIgnoreCase(Types.REMARKS)||field.getType().equalsIgnoreCase(Types.TEXT_AREA)) {
                 field.setObject(new mRemarks(ctx, field));
                 mainLayout.addView((View) field.getObject());
             } else if (field.getType().equalsIgnoreCase(Types.TIME)) {
@@ -255,7 +255,7 @@ public class ControlRederer {
                 field.setAnswer(dynamicEditBox.getValue(), field);
             }
 
-            if (field.getType().equalsIgnoreCase(Types.REMARKS)) {
+            if (field.getType().equalsIgnoreCase(Types.REMARKS)||field.getType().equalsIgnoreCase(Types.TEXT_AREA)) {
                 mRemarks remarks = (mRemarks) field.getObject();
                 field.setAnswer(remarks.getValue(), field);
             }
@@ -263,6 +263,25 @@ public class ControlRederer {
             if (field.getType().equalsIgnoreCase(Types.DROPDOWN) || field.getType().equalsIgnoreCase(Types.CITY) || field.getType().equalsIgnoreCase(Types.STATE)) {
                 mSpinner spinner = (mSpinner) field.getObject();
                 field.setAnswer(spinner.getValue(), field);
+                for (int i = 0; i < field.getOptionList().size(); i++) {
+                    if (field.getOptionList().get(i).isEnableEdit()) {
+                        if (spinner.llSpinnerRemarks.getVisibility() == View.VISIBLE) {
+                            Permissions.dataObject.put(field.getOptionList().get(i).getEditFieldName(), spinner.getRemarksValue());
+                        } else {
+                            if (Permissions.dataObject.containsKey(field.getOptionList().get(i).getEditFieldName())) {
+                                Permissions.dataObject.remove(field.getOptionList().get(i).getEditFieldName());
+                            }
+                        }
+                    }
+                }
+
+               /* if (spinner.llSpinnerRemarks.getVisibility() == View.VISIBLE) {
+                    String values[] = spinner.getValue().split("\\|");
+                    field.setAnswer(values[0], field);
+                } else {
+                    field.setAnswer(spinner.getValue(), field);
+                }*/
+
             }
             if (field.getType().equalsIgnoreCase(Types.CHOICE)) {
                 mSingleChoice choice = (mSingleChoice) field.getObject();
@@ -353,6 +372,16 @@ public class ControlRederer {
                 field.setAnswer(permanentAndCurrentEditBoxAddress.getValue(), field);
             }
 
+            /*if (field.getType().equalsIgnoreCase(Types.DROPDOWN)) {
+                mSpinner spinner = (mSpinner) field.getObject();
+                if (spinner.llSpinnerRemarks.getVisibility() == View.VISIBLE) {
+                    String values[] = spinner.getValue().split("\\|");
+                    field.setAnswer(values[0], field);
+                } else {
+                    field.setAnswer(spinner.getValue(), field);
+                }
+            }*/
+
 
         }
     }
@@ -436,7 +465,7 @@ public class ControlRederer {
                 }
             }
 
-            if (field.getType().equalsIgnoreCase(Types.REMARKS)) {
+            if (field.getType().equalsIgnoreCase(Types.REMARKS)||field.getType().equalsIgnoreCase(Types.TEXT_AREA)) {
                 mRemarks dynamicEditBox = (mRemarks) field.getObject();
                 if (field.getRequired().equalsIgnoreCase("Y")) {
                     if (dynamicEditBox.getValue().isEmpty()) {
@@ -500,6 +529,15 @@ public class ControlRederer {
                         return false;
                     }
                 }
+                if (spinner.llSpinnerRemarks.getVisibility() == View.VISIBLE) {
+                    if (spinner.etSpinnerRemarks.getText().toString().trim().isEmpty()) {
+                        spinner.setError(activity.getString(R.string.please_enter) + " " + spinner.tvSpinnerRemarks.getText().toString().trim().replace("*", ""));
+                        return false;
+                    }
+
+                }
+
+
             }
 
             if (field.getType().equalsIgnoreCase(Types.CHOICE)) {

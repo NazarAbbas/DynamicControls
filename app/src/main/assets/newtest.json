@@ -1,0 +1,131 @@
+{
+  "UserID": 454,
+  "ResponseCode": 200,
+  "ResponseMessage": "Success",
+  "Count": 7,
+  "IsMandatory": true,
+  "JsonWorkflowList": [
+    {
+      "CaseTypeId": 13,
+      "WorkflowId": 82,
+      "id": "42",
+      "name": "New Lead",
+      "version": "1",
+      "subforms": [
+        {
+          "id": "1",
+          "title": "Basic Details",
+          "back": "True",
+          "next": "True",
+          "gotoId": "2",
+          "IsVisibleOnView": false,
+          "fields": [
+            {
+              "minLength": 1,
+              "name": "TanggalDiscovery",
+              "label": "Tanggal (Discovery)\t\t\t",
+              "type": "date",
+              "required": "Y",
+              "maxLength": 1,
+              "Regex": "",
+              "FieldData": null,
+              "IsVisibleFromJson": false,
+              "IsVisibleOnView": false,
+              "optionList": null,
+              "ReadMoreURL": "",
+              "IsAllCaps": false,
+              "IsEntityType": false,
+              "EntityTypeId": 0
+            },
+            {
+              "IsAllCaps": true,
+              "label": "Region",
+              "maxLength": 0,
+              "minLength": 0,
+              "name": "Region",
+              "optionList": [
+                {
+                  "gotoId": "0",
+                  "id": "167",
+                  "isChecked": false,
+                  "value": "Medan"
+                },
+                {
+                  "gotoId": "1",
+                  "id": "164",
+                  "isChecked": false,
+                  "value": "Other"
+                }
+              ],
+              "ReadMoreURL": "",
+              "Regex": "",
+              "required": "N",
+              "type": "dropdown"
+            },
+            {
+              "minLength": 1,
+              "name": "TanggalDiscovery",
+              "label": "Next",
+              "type": "button",
+              "required": "Y",
+              "maxLength": 1,
+              "Regex": "",
+              "FieldData": null,
+              "IsVisibleFromJson": false,
+              "IsVisibleOnView": false,
+              "optionList": null,
+              "ReadMoreURL": "",
+              "IsAllCaps": false,
+              "IsEntityType": false,
+              "EntityTypeId": 0
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "title": "Basic Details",
+          "back": "True",
+          "next": "True",
+          "gotoId": "0",
+          "IsVisibleOnView": false,
+          "fields": [
+            {
+              "minLength": 1,
+              "name": "jjjj",
+              "label": "Tanggal jjjjjj",
+              "type": "date",
+              "required": "Y",
+              "maxLength": 1,
+              "Regex": "",
+              "FieldData": null,
+              "IsVisibleFromJson": false,
+              "IsVisibleOnView": false,
+              "optionList": null,
+              "ReadMoreURL": "",
+              "IsAllCaps": false,
+              "IsEntityType": false,
+              "EntityTypeId": 0
+            },
+            {
+              "minLength": 1,
+              "name": "Submit",
+              "label": "Submit",
+              "type": "button",
+              "required": "Y",
+              "maxLength": 1,
+              "Regex": "",
+              "FieldData": null,
+              "IsVisibleFromJson": false,
+              "IsVisibleOnView": false,
+              "optionList": null,
+              "ReadMoreURL": "",
+              "IsAllCaps": false,
+              "IsEntityType": false,
+              "EntityTypeId": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

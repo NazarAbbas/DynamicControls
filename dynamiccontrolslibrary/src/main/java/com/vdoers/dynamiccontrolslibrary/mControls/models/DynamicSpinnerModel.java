@@ -14,6 +14,31 @@ public class DynamicSpinnerModel {
     @Expose
     private String gotoId;
 
+
+    @SerializedName("enableEdit")
+    @Expose
+    private boolean enableEdit;
+
+    @SerializedName("EditFieldName")
+    @Expose
+    private String editFieldName;
+
+    public String getEditFieldName() {
+        return editFieldName;
+    }
+
+    public void setEditFieldName(String editFieldName) {
+        this.editFieldName = editFieldName;
+    }
+
+    public boolean isEnableEdit() {
+        return enableEdit;
+    }
+
+    public void setEnableEdit(boolean enableEdit) {
+        this.enableEdit = enableEdit;
+    }
+
     private boolean isSelected;
 
     public boolean isSelected() {

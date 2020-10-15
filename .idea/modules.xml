@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DynamicControls.iml" filepath="$PROJECT_DIR$/DynamicControls.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/dynamiccontrolslibrary/dynamiccontrolslibrary.iml" filepath="$PROJECT_DIR$/dynamiccontrolslibrary/dynamiccontrolslibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DynamicControls.iml" filepath="$PROJECT_DIR$/DynamicControls.iml" group="DynamicControls" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="DynamicControls/app" />
+      <module fileurl="file://$PROJECT_DIR$/dynamiccontrolslibrary/dynamiccontrolslibrary.iml" filepath="$PROJECT_DIR$/dynamiccontrolslibrary/dynamiccontrolslibrary.iml" group="DynamicControls/dynamiccontrolslibrary" />
     </modules>
   </component>
 </project>

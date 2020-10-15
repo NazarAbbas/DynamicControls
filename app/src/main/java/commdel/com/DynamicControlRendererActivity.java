@@ -94,9 +94,7 @@ public class DynamicControlRendererActivity extends Permissions implements View.
         } else {
             jsonWorkflowList = JSONWorkflowDBHandler.getJsonWorkFlow(this, workFlowId, id);
         }
-
         showUI();
-
     }
 
     private void initUI() {

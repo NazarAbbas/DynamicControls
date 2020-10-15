@@ -6,6 +6,8 @@ public class Types {
     public static final String BUTTON_TYPE = "button";
     public static final String EDITBOX_NUMBER_TYPE = "number";
     public static final String REMARKS = "remarks";
+    public static final String TEXT_AREA = "textarea";
+
     public static final String EXACT_EDITBOX_NUMBER_TYPE = "exactnumber";
     public static final String EDITBOX_PHONE_TYPE = "phone";
     public static final String EDITBOX_PIN_CODE = "pincode";
