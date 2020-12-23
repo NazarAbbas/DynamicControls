@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         try {
+			//Testing
             //String x="";
             String json = AssetJSONFile(this, "hitek.json");
             Gson gson = new Gson();
