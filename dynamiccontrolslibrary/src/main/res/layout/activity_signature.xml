@@ -26,7 +26,7 @@
             android:textSize="18dp"
             android:textStyle="bold" />
 
-        <com.williamww.silkysignature.views.SignaturePad xmlns:android="http://schemas.android.com/apk/res/android"
+        <com.vdoers.dynamiccontrolslibrary.signaturepad.UI.SilkySignaturePad
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/signaturePad"
             android:layout_width="match_parent"

@@ -114,8 +114,10 @@ public class mSpinner extends LinearLayout implements AdapterView.OnItemSelected
                     || spinnerModelList.get(i).getValue().equalsIgnoreCase((String) field.getAnswer())) {
                 selectedIndex = i;
             }
-            if (Permissions.dataObject.containsKey(field.getOptionList().get(i).getEditFieldName())) {
-                etSpinnerRemarks.setText((String) Permissions.dataObject.get(field.getOptionList().get(i).getEditFieldName()));
+            if(field.getOptionList()!=null) {
+                if (Permissions.dataObject.containsKey(field.getOptionList().get(i).getEditFieldName())) {
+                    etSpinnerRemarks.setText((String) Permissions.dataObject.get(field.getOptionList().get(i).getEditFieldName()));
+                }
             }
         }
         spinner.setSelection(selectedIndex);

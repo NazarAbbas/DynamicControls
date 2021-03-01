@@ -11,12 +11,11 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.vdoers.dynamiccontrolslibrary.BuildConfig;
 import com.vdoers.dynamiccontrolslibrary.R;
 import com.vdoers.dynamiccontrolslibrary.Utils.FileUtilsPath;
 import com.vdoers.dynamiccontrolslibrary.Utils.Permissions;
 import com.vdoers.dynamiccontrolslibrary.Utils.ThemeColor;
-import com.williamww.silkysignature.views.SignaturePad;
+import com.vdoers.dynamiccontrolslibrary.signaturepad.UI.SilkySignaturePad;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -28,7 +27,7 @@ import java.util.Locale;
 
 public class SignatureActivity extends Permissions implements View.OnClickListener {
 
-    private SignaturePad signaturePad;
+    private SilkySignaturePad signaturePad;
     private Button btnDone, btnClear;
     private boolean isSignatured = false;
     private boolean TakeSign = false;
@@ -64,13 +63,13 @@ public class SignatureActivity extends Permissions implements View.OnClickListen
     }
 
     private void initUI() {
-        signaturePad = (SignaturePad) findViewById(R.id.signaturePad);
+        signaturePad = (SilkySignaturePad) findViewById(R.id.signaturePad);
         btnDone = (Button) findViewById(R.id.btn_done);
         btnDone.setBackgroundColor(ThemeColor.themeColor);
         btnClear = (Button) findViewById(R.id.btn_clear);
         btnClear.setBackgroundColor(ThemeColor.themeColor);
         tvheading = (TextView) findViewById(R.id.tv_signature_heading);
-        signaturePad.setOnSignedListener(new SignaturePad.OnSignedListener() {
+        signaturePad.setOnSignedListener(new SilkySignaturePad.OnSignedListener() {
             @Override
             public void onStartSigning() {
             }

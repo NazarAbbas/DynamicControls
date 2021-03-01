@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             //String x="";
-            String json = AssetJSONFile(this, "hitek.json");
+            String json = AssetJSONFile(this, "workflowlistresponse.json");
             Gson gson = new Gson();
             JsonWorkflowListResponse jsonWorkflowListResponse = gson.fromJson(json, JsonWorkflowListResponse.class);
             JSONWorkflowDBHandler.delete(this);
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             StateCityDBHandler.save(this, stateCityListResponse.getStateCityList());
 
             Intent intent = new Intent(this, DynamicControlRendererActivity.class);
-            intent.putExtra(DynamicControlRendererActivity.WORKFLOW_ID, 82);
+            intent.putExtra(DynamicControlRendererActivity.WORKFLOW_ID, 63);
             startActivity(intent);
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         } catch (Exception ex) {

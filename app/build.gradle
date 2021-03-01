@@ -111,7 +111,6 @@ dependencies {
 
     // dexter runtime permissions
     implementation 'com.karumi:dexter:4.2.0'
-    implementation 'com.williamww:silky-signature:0.1.0'
     implementation 'org.apache.commons:commons-lang3:3.4'
     implementation 'android.arch.lifecycle:livedata:1.1.1'
     implementation 'android.arch.lifecycle:viewmodel:1.1.1'
